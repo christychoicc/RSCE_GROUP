@@ -6,3 +6,5 @@ title: "Presentation"
 xaringanExtra::embed_xaringan(url = "slides/presentation.html",
                               ratio = "16:9")
 ```
+
+View the full-screen version at: [Presentation](https://christychoicc.github.io/RSCE_GROUP/slides/presentation.html)
