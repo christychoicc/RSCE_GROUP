@@ -1,0 +1,8 @@
+---
+title: "Presentation"
+---
+
+```{r}
+xaringanExtra::embed_xaringan(url = "slides/presentation.html",
+                              ratio = "16:9")
+```
