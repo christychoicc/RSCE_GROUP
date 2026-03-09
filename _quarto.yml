@@ -12,6 +12,13 @@ book:
   title: "Barcelona"
   author: "Christy Choi, Entao Wang, Jiaying Li, Tianyi Chen, Yanxi Ren"
   date: "3/9/2026"
+  navbar:
+    background: light
+    search: true
+    reader-mode: true
+    right:
+      - icon: github
+        href: "https://github.com/christychoicc/RSCE_GROUP"
   chapters:
     - index.qmd
     - presentation.qmd
