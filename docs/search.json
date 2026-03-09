@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Barcelona",
+    "section": "",
+    "text": "Preface",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "\n1  Presentation\n",
+    "section": "",
+    "text": "xaringanExtra::embed_xaringan(url = \"slides/presentation.html\",\n                              ratio = \"16:9\")",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Presentation</span>"
+    ]
+  }
+]
