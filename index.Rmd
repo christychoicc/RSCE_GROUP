@@ -1,14 +1,75 @@
 ---
-title: "Title"
-subtitle: "Subtitle"
-author: "Group RGB"
+title: "Solar Potential in Barcelona through Earth Observation"
+subtitle: "Group RGB"
+author: "Christy Choi, Entao Wang, Jiaying Li, Renxi Yan, Tianyi Chen"
 institute: "CASA0023 Remotely Sensing Cities and Environments"
 date: "2026/03/09 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
+    css: [default, xaringan-themer.css]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+#library(RefManageR)
+#BibOptions(check.entries = FALSE,
+           #bib.style = "authoryear",
+           #cite.style = "authoryear",
+           #style = "markdown",
+           #hyperlink = TRUE,
+           #dashed = FALSE,
+           #no.print.fields=c("doi", "url", "urldate", "issn"))
+#myBib <- ReadBib("references.bib", check = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+
+style_mono_light(
+  base_color = "#722f37",
+  background_color = "#fafafa",
+  header_font_google = google_font("Lato"),
+  text_font_google   = google_font("Lato"),
+  code_font_google   = google_font("Lato"),
+  base_font_size = "16px",
+  header_h1_font_size = "2.2rem",
+  header_h2_font_size = "1.8rem",
+  header_h3_font_size = "1.4rem",
+  extra_css = list(
+    # Title (h1)
+    ".title-slide h1" = list(
+      "font-size" = "40px",
+      "margin-bottom" = "15px"
+    ),
+    # Subtitle (h2)
+    ".title-slide h2" = list(
+      "font-size" = "28px",
+      "margin-top" = "0px",
+      "margin-bottom" = "30px"
+    ),
+    # Author, Institute, Date (h3)
+    ".title-slide h3" = list(
+      "font-size" = "18px",
+      "font-weight" = "normal",
+      "margin-bottom" = "10px",
+      "text-shadow" = "none"
+    )
+  )
+)
+```
+
+# What is Photovoltaic Solar Energy?
+
+---
+# Problem and Issue
+
+---
+# References
+
+```{r, echo=FALSE, results='asis'}
+#PrintBibliography(myBib)
+```
 ---
