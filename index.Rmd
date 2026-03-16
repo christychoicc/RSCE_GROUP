@@ -39,22 +39,32 @@ style_mono_light(
   header_h2_font_size = "1.8rem",
   header_h3_font_size = "1.4rem",
   extra_css = list(
-    # Title (h1)
-    ".title-slide h1" = list(
-      "font-size" = "40px",
-      "margin-bottom" = "15px"
+    ".title-slide" = list(
+      "background-image" = "url('images/barca_skyline_solar.webp')",
+      "background-size" = "cover",
+      "background-position" = "center",
+      "background-repeat" = "no-repeat",
+      "color" = "white",
+      "text-shadow" = "none"
     ),
-    # Subtitle (h2)
+    ".title-slide h1" = list(
+      "font-size" = "48px",
+      "margin-bottom" = "16px",
+      "color" = "white",
+      "text-shadow" = "none"
+    ),
     ".title-slide h2" = list(
       "font-size" = "28px",
       "margin-top" = "0px",
-      "margin-bottom" = "30px"
+      "margin-bottom" = "30px",
+      "color" = "white",
+      "text-shadow" = "none"
     ),
-    # Author, Institute, Date (h3)
     ".title-slide h3" = list(
       "font-size" = "18px",
       "font-weight" = "normal",
       "margin-bottom" = "10px",
+      "color" = "white",
       "text-shadow" = "none"
     )
   )

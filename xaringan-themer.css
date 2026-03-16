@@ -295,18 +295,31 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 
 /* Extra CSS */
+.title-slide {
+  background-image: url('images/barca_skyline_solar.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: none;
+}
 .title-slide h1 {
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: white;
+  text-shadow: none;
 }
 .title-slide h2 {
   font-size: 28px;
   margin-top: 0px;
   margin-bottom: 30px;
+  color: white;
+  text-shadow: none;
 }
 .title-slide h3 {
   font-size: 18px;
   font-weight: normal;
   margin-bottom: 10px;
+  color: white;
   text-shadow: none;
 }
