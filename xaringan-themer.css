@@ -327,3 +327,14 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   color: white;
   text-shadow: none;
 }
+
+
+/* Extra CSS */
+.pull-left-wide {
+  float: left;
+  width: 65%;
+}
+.pull-right-narrow {
+  float: right;
+  width: 30%;
+}
