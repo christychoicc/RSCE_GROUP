@@ -13,6 +13,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
+
 ```{r setup, include=FALSE}
 #library(RefManageR)
 #BibOptions(check.entries = FALSE,
