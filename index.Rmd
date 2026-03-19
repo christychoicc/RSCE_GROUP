@@ -97,11 +97,11 @@ xaringanExtra::use_panelset()
 ```
 
 # Barcelona
-- Barcelona is a strong case for urban photovoltaic deployment because it combines high solar potential with strong climate policy ambition.
-- The city estimates 7,899,532 m² of roof area available for energy capture.
-- Rooftop PV generation potential is estimated at 1,191 GWh/year, roughly 60% of domestic electricity consumption.
-- Flat and slightly inclined terraces account for 67% of roof surface area, creating major rooftop opportunity.
-- Yet Barcelona still produces just over 1% of the energy it consumes on its territory from renewables.
+- Barcelona receives around 2,550 hours of sunshine per year (highest in Europe)
+- Mediterranean climate with low cloud cover, ideal for consistent PV yield
+- There is an estimated 7,899,532 m² available roof area for energy capture
+- Rooftop PV is estimated a generation potential of 1,191 GWh/year, roughly 60% of domestic electricity consumption
+- Flat and slightly inclined terraces account for 67% of roof surface area for PV opportunities
 .pull-left[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 # Add EU sunshine picture
@@ -114,10 +114,10 @@ Figure 1: Levels of sunshine across Europe (Source: <a href="https://quierosol.c
 .pull-right[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 # Add picture
-knitr::include_graphics("images/average_annual_insulation.webp")
+knitr::include_graphics("images/solar_panels_barca.webp")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 2: Average Annual Insolation Map (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
+Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/jul/24/barcelona-school-residents-create-solar-energy-community">the Guardian (2022)</a>)
 </p>
 ]
 
@@ -132,43 +132,59 @@ Figure 3: Solar Photovoltaic System Diagram (Source: <a href="https://solargis.c
 </p>
 - Photovoltaic (PV) solar energy converts sunlight directly into electricity.
 - The electricity generated can be used on-site, stored, shared, or exported to the grid.
-- PV is particularly suitable for cities because it can be installed on existing roofs, façades, pergolas, and public infrastructure.
+- PV is particularly suitable for cities as it can be installed on existing roofs, façades, public infrastructure, etc.
 - In Barcelona, rooftop PV offers a way to reduce emissions, improve local energy resilience, and lower dependence on external energy supplies. 
 
 ---
 # Problems and Issues
+Barcelona has high rooftop solar potential, but remains undeveloped at local and regional scale...
+.panelset[
+.panel[.panel-name[Low Local Energy Self-Sufficiency]
+- Barcelona produces approximately 1% of the energy it consumes on its territory (Climate City Contract, 2023)
+- Only 5% of households have solar energy installations
+- Renewable energy generation remains underdeveloped at both local and regional scale
+]
 
-Barcelona has major rooftop solar potential, but deployment remains below what is technically possible and socially desirable.
+.panel[.panel-name[Under Utilised Rooftop Potential]
+- 7.9 million m² of available roof area
+- Potential to generate 1,191 GWh/year (approximately ~60% of domestic electricity consumption)
+- Flat and slightly inclined terraces account for 67% of total roof surface
+- Current installations are concentrated in public and municipal buildings, residential areas remains........
+]
 
-1. Low local renewable self-sufficiency
-   - Just over 1% of the energy consumed in Barcelona is produced locally from renewables
-   - Only 5% of inhabitants had solar energy in their homes in 2022
-
-2. Underused rooftop resource
-   - 7,899,532 m² available roof area for energy capture
-   - 1,191 GWh/year rooftop PV potential
-   - 67% of roofs are flat or slightly inclined terraces
-
-3. Social and urban constraints
-   - Ageing housing stock and energy-poverty risks increase the need for targeted intervention
-   - Current deployment is not yet sufficiently aligned with social need
-
-4. Governance gap
-   - Existing installations are concentrated in municipal buildings and infrastructure
-   - Barcelona needs a city-scale operational method to prioritise rooftop solar and storage for maximum public benefit
+.panel[.panel-name[Social and Building Constraints]
+- 81% of properties have a low energy performance rating (E, F, or G)
+- Ageing housing stock: most residential buildings predate modern energy efficiency standards
+- Energy bills account for over 10% of household income for many Barcelona residents — a clear energy poverty indicator
+- Low-income households in poorer neighborhoods are least likely to invest in solar installation, compounding spatial inequality
+]
+]
+---
+class: inverse, center, middle
+#What is missing?
+### Barcelona lacks a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
 ---
 # Policy Goals and Agenda
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add picture
+knitr::include_graphics("images/policy_chart_v2.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 4: Current Policy Related to Solar Energy
+</p>
+---
+# Policy Goals and Agenda
 .panelset[
-.panel[.panel-name[Local Policy 1]
-Barcelona Climate Plan 2018-2030 
+.panel[.panel-name[Barcelona Climate Plan]
+
 .pull-left-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
 knitr::include_graphics("images/bcp5.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 4: Barcelona Climate Action Plan, Line of Action 5 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 5:Line of Action 5, recover terrace roofs and increase PV generation (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-middle-3[
@@ -177,7 +193,7 @@ Figure 4: Barcelona Climate Action Plan, Line of Action 5 (Source: <a href="http
 knitr::include_graphics("images/bcp9.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 5: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 6: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-right-3[
@@ -186,26 +202,33 @@ Figure 5: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="http
 knitr::include_graphics("images/bcp12.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 6: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 7: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 ]
 
-.panel[.panel-name[Local Policy 2]
-- The city offers tax incentives for solar installations
-- Barcelona aims to triple municipal PV capacity by 2027 and achieve a fivefold increase by 2030
+.panel[.panel-name[Tax Incentives]
+- The Barcelona City Council offers tax incentives for solar installations
+  - Up to 50% reduction on property tax (IBI) for first 3 years after installation
+  - 95% reduction on construction and installation works tax (ICIO)
+  - 50% reduction on business activity tax (IAE) for related economic activities
 ]
 
 
 .panel[.panel-name[National Policy]
-- Spain’s updated PNIEC/NECP targets 81% renewable electricity generation by 2030
-- Expanding urban rooftop PV supports national decarbonisation and electrification goals
+- National Energy and Climate Plan (NECP) (PNIEC in Spanish) 2023-2030
+  - Targets 81 % renewable energy in electricity generation and 48 % renewables on final energy use  by 2030
+  - Aid programmes to accelerate large scale deployment of solar thermal energy
 
 ]
 
 .panel[.panel-name[EU]
-- The SET Plan treats PV as a strategic technology for the energy transition
-- EU policy emphasises rapid deployment and stronger PV system capacity
+- **The European Green Deal, Renewable Energy Directive (RED II)**
+  - Binding target of 42.5% renewable energy across the EU by 2030
+- **EU Solar Energy Strategy**
+  - Target of 600 GW of solar PV capacity across the EU by 2030
+- **Renovation Wave Strategy**
+  - Target to renovate 35 million buildings by 2030 (including improving energy performance improvement)
 ]
 
 .panel[.panel-name[SDG]
@@ -216,7 +239,7 @@ Figure 6: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="htt
 knitr::include_graphics("images/sdg7.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 7: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 8: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 .pull-middle-3[
@@ -225,7 +248,7 @@ Figure 7: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news
 knitr::include_graphics("images/sdg11.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 8: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 9: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 .pull-right-3[
@@ -234,7 +257,7 @@ Figure 8: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/new
 knitr::include_graphics("images/sdg13.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 9: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 10: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 
