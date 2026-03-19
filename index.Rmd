@@ -1,7 +1,7 @@
 ---
 title: "Solar Potential in Barcelona through Earth Observation"
 subtitle: "Group RGB"
-author: "Christy Choi, Entao Wang, Jiaying Li, Renxi Yan, Tianyi Chen"
+author: "Christy Choi, Entao Wang, Jiaying Li, Yanxi Ren, Tianyi Chen"
 institute: "CASA0023 Remotely Sensing Cities and Environments"
 date: "2026/03/09 (updated: `r Sys.Date()`)"
 output:
@@ -92,26 +92,37 @@ xaringanExtra::use_panelset()
 ```
 
 # Barcelona
-
-
+.pull-left[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add EU sunshine picture
+knitr::include_graphics("images/eu_sunshine_arrow.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 1: Levels of sunshine across Europe (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
+</p>
+]
+.pull-right[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add picture
+knitr::include_graphics("images/average_annual_insulation.webp")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 2: Average Annual Insolation Map (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
+</p>
+]
 
 ---
 # What is Photovoltaic Solar Energy?
-.pull-left-wide[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
 knitr::include_graphics("images/diagram.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Solar Photovoltaic System Diagram (Source: <a href="https://www.researchgate.net/figure/Schematic-diagram-of-the-solar-photovoltaic-systems_fig1_372103821">Dada(2023)</a>)
+Figure 3: Solar Photovoltaic System Diagram (Source: <a href="https://solargis.com/technology/expertise#modeling-site-conditions">Solargis.com(2026)</a>)
 </p>
-]
-
-.pull-right-narrow[
 - Allows electricity to be generated from sunlight 
 - The electricity generated can be brought onto the electric grid or can be used on site instantly to reduce energy consumption of conventional networks.
 - Provide shade and simultaneously uses solar power to generate electricity. 
-]
 
 ---
 # Problems and Issues
