@@ -85,8 +85,13 @@ library(xaringanExtra)
 options(htmltools.dir.version = FALSE)
 # Load xaringanExtra for the tabs
 style_extra_css(css = list(
+  # pull left wide and right narrow
    ".pull-left-wide" = list("float" = "left", "width" = "65%"),
-   ".pull-right-narrow" = list("float" = "right", "width" = "30%")
+   ".pull-right-narrow" = list("float" = "right", "width" = "30%"),
+   # 3 columns
+   ".pull-left-3" = list("float" = "left", "width" = "30%"),
+   ".pull-middle-3" = list("float" = "left", "width" = "30%", "margin-left" = "5%", "margin-right" = "5%"),
+   ".pull-right-3" = list("float" = "right", "width" = "30%")
 ))
 xaringanExtra::use_panelset()
 ```
@@ -147,14 +152,52 @@ Barcelona has major rooftop solar potential, but that potential is not fully uti
 
 ---
 # Policy Goals and Agenda
+.panelset[
+.panel[.panel-name[Local Policy]
 
----
-# Benefits
+]
 
----
-# Workflow
+.panel[.panel-name[National Policy]
 
+]
 
+.panel[.panel-name[EU]
+
+]
+
+.panel[.panel-name[SDG]
+
+.pull-left-3[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add picture
+knitr::include_graphics("images/sdg7.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 4: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+</p>
+]
+.pull-middle-3[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add picture
+knitr::include_graphics("images/sdg11.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 5: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+</p>
+]
+.pull-right-3[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add picture
+knitr::include_graphics("images/sdg13.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 6: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+</p>
+]
+
+]
+
+]
 
 ---
 class: inverse, center, middle
