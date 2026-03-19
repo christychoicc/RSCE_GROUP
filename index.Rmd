@@ -184,56 +184,38 @@ Figure 4: Current Policy Related to Solar Energy
 ---
 # Policy Goals and Agenda
 .panelset[
-.panel[.panel-name[Barcelona Climate Plan]
+.panel[.panel-name[SDG]
 
 .pull-left-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
-knitr::include_graphics("images/bcp5.png")
+knitr::include_graphics("images/sdg7.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 5:Line of Action 5, recover terrace roofs and increase PV generation (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 5: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 .pull-middle-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
-knitr::include_graphics("images/bcp9.png")
+knitr::include_graphics("images/sdg11.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 6: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 6: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 .pull-right-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
-knitr::include_graphics("images/bcp12.png")
+knitr::include_graphics("images/sdg13.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 7: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 7: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
-]
-
-.panel[.panel-name[Tax Incentives]
-- The Barcelona City Council offers tax incentives for solar installations
-
-  - Up to 50% reduction on property tax (IBI) for first 3 years after installation
-  
-  - 95% reduction on construction and installation works tax (ICIO)
-  
-  - 50% reduction on business activity tax (IAE) for related economic activities
-]
-
-
-.panel[.panel-name[National Policy]
-- National Energy and Climate Plan (NECP) (PNIEC in Spanish) 2023-2030
-
-  - Targets 81 % renewable energy in electricity generation and 48 % renewables on final energy use  by 2030
-  
-  - Aid programmes to accelerate large scale deployment of solar thermal energy
 
 ]
+
 
 .panel[.panel-name[EU]
 - **The European Green Deal, Renewable Energy Directive (RED II)**
@@ -246,38 +228,55 @@ Figure 7: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="htt
   - Target to renovate 35 million buildings by 2030 (including improving energy performance improvement)
 ]
 
-.panel[.panel-name[SDG]
+.panel[.panel-name[National Policy]
+- National Energy and Climate Plan (NECP) (PNIEC in Spanish) 2023-2030
+
+  - Targets 81 % renewable energy in electricity generation and 48 % renewables on final energy use  by 2030
+  
+  - Aid programmes to accelerate large scale deployment of solar thermal energy
+
+]
+
+.panel[.panel-name[Tax Incentives]
+- The Barcelona City Council offers tax incentives for solar installations
+
+  - Up to 50% reduction on property tax (IBI) for first 3 years after installation
+  
+  - 95% reduction on construction and installation works tax (ICIO)
+  
+  - 50% reduction on business activity tax (IAE) for related economic activities
+]
+
+.panel[.panel-name[Barcelona Climate Plan]
 
 .pull-left-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
-knitr::include_graphics("images/sdg7.jpg")
+knitr::include_graphics("images/bcp5.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 8: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 8:Line of Action 5, recover terrace roofs and increase PV generation (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-middle-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
-knitr::include_graphics("images/sdg11.jpg")
+knitr::include_graphics("images/bcp9.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 9: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 9: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-right-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
-knitr::include_graphics("images/sdg13.jpg")
+knitr::include_graphics("images/bcp12.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 10: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 10: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
-
 ]
-
 ]
 
 ---
