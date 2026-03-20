@@ -289,7 +289,7 @@ Source: <a href="https://www.energia.barcelona/en/generate-energy/generate-energ
 
 ---
 class: inverse, center, middle
-#What is missing?
+#What is missing from policy?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
 
@@ -372,7 +372,20 @@ Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimat
 ### The "Integration" Gap:  
 Auto-Syncing API - Open Data 
 
+---
+# What is missing from the current dashboard panel?
+- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
+- Some solar panels are not detected well, especially those located on top of private properties.
+- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
+- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
 
+---
+# Our Solution
+
+1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
+2. Use Machine Learning methods to better understand the current solar panel distribution.
+3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
+4. Add more ways to calculate and prioritise the huge potential rooftop area.
 
 ???
 # Analysis of Barcelona’s Current Solar Dashboard
@@ -406,24 +419,36 @@ Auto-Syncing API - Open Data
  --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
 
 
----
-# Methodology - Step1: U-net
-.pull-left[
-**5. End-to-End Extraction** 
-        --Enables automated identification of PV arrays within complex urban environments without manual intervention.
-        
-**6. Interference Robustness**
-        --Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
-        
-**7. High IoU Performance**
-        --Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
-        
-**8. Data Implementation** 
-        -- Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
-        
-]
 
-.pull-right[
+---
+class: reverse, center, middle
+# Dashboard Redesign   
+
+--
+### Static---Dynamic  
+
+--
+### Theoretical---Practical  
+
+--
+### Isolated---Intergrated  
+ 
+???
+"While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
+
+
+---
+# Workflow
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/workflow_hstep.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure: Model Workflow
+</p>
+
+---
+# Methodology - Step 1: U-net
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/U-net1.png")
@@ -431,10 +456,18 @@ knitr::include_graphics("images/U-net1.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
 </p>
-]
 
 ---
-# Methodology - Step 1: U-net
+# Methodology - Step 1.1: U-net
+
+**1. Contraction Path (Encoder)**: Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
+        
+**2. Expansion Path (Decoder)**: Achieves precise localization to address the "Where" (Restoration of spatial resolution).
+        
+**3. Skip Connections**: Facilitates cross-layer feature fusion to eliminate boundary blurring, ensuring pixel-level accuracy for rooftop edges.
+        
+**4. Symmetrical Design**: Harmonizes global semantic understanding with localized topological details.
+
 **5. End-to-End Extraction** 
   - Enables automated identification of PV arrays within complex urban environments without manual intervention.
         
@@ -449,17 +482,7 @@ Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/
 
 
 ---
-# Methodology - Step 1: U-net
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/U-net1.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
-</p>
-
----
-# Methodology - Step 1: OBIA
+# Methodology - Step 1.2: OBIA
 **1. Multiresolution Segmentation** 
   - Aggregates spectrally similar pixels into geographically meaningful objects to mitigate "salt-and-pepper" noise.
         
@@ -473,7 +496,7 @@ Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/
   - Facilitates the direct export of GIS-compliant polygonal boundaries, streamlining precise surface area calculations.
 
 ---
-# Methodology- Step 1: OBIA
+# Methodology- Step 1.2: OBIA
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/OBIA_1.png")
@@ -483,7 +506,7 @@ Figure: Workflow of OBIA model (Source: <a href="https://www.spiedigitallibrary.
 </p>
 
 ---
-# Methodology - Step 1: OBIA
+# Methodology - Step 1.2: OBIA
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/OBIA_2.png")
@@ -503,7 +526,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 </p>
 
 ---
-# Step2- Lidar Workflow
+# Methodology - Step2- Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/lidar1.png")
@@ -514,7 +537,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 
 
 ---
-# Step2-Solar Radiation
+# Methodology -Step2-Solar Radiation
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/lidar2.png")
@@ -533,27 +556,29 @@ knitr::include_graphics("images/lidar3.png")
 Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
 
+---
+# Methodology -Step3 -
+NDVI
+NDWI
+NDBI
+
+--
+
+Poliocy
+Energy security
+Regional Difference
+
+where??
 
 
 ---
-class: reverse, center, middle
-# Dashboard Redesign   
+class: inverse, center, middle
+# Dashboard Show TIME
 
---
-### Static---Dynamic  
-
---
-### Theoretical---Practical  
-
---
-### Isolated---Intergrated  
- 
-???
-"While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 
 ---
 
-## **Step A：Deep Learning_Existing Asset Detection  **
+## **Step 1：Deep Learning_Existing Asset Detection  **
 ```{css, echo=FALSE}
 /* 布局控制 */
 .left-70 { width: 68%; float: left; }
@@ -646,7 +671,7 @@ function doReset() {
 
 ---
 
-## **Step B：LiDAR_Precision Refinement**
+## **Step 2：LiDAR_Precision Refinement**
 
 ```{css, echo=FALSE}
 /* 保持与上一页一致的 7-3 比例 */
@@ -953,52 +978,6 @@ function swapAPI(path, name, btn) {
 ]
 ]
 
----
-
-# Formula  
-
-Outline and show the benefits it would bring to the city and its population. 
-
-Formula:  
-
-Social 
-
-Economic 
-
-Environmental 
-
-Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e 
-
-### **1.1 Net Solar Potential Gap ($E_{gap}$)**
-*Correcting the "Precision Gap" by filtering micro-obstacles and existing stock.*
-$$E_{gap} = \left[ (A_{roof} \times f_{obs}) - A_{exist} \right] \times G \times \eta_{sys} \times PR$$
-* **$f_{obs}$**: LiDAR-derived Obstacle Factor (Usable Area / Total Area).
-* **$A_{exist}$**: RS-detected existing PV area.
-* **$PR$**: Performance Ratio (Correction for temperature and system losses).
-
-
-
-### **1.2 Tilt & Azimuth Gain ($G_{eff}$)**
-*Correcting irradiation based on 3D geometry from LiDAR point clouds.*
-$$G_{eff} = G \times \frac{\cos(i)}{\cos(z)}$$
-* **$i$**: Incidence angle (angle between the roof's normal vector and the sun).
-
----
-
-### **1.3 Solar Gap Score ($Score_{gap}$)**
-*Ranking rooftops for strategic development.*
-$$Score_{gap} = \frac{E_{gap}}{E_{max\_cadastre}} \times \text{Confidence\_Score}$$
-
-
-### **1.4 Social Equity Index ($SEI$)**
-*Weighting potential by socio-economic vulnerability.*
-$$SEI = \text{Norm}(Score_{gap}) \times \omega_{poverty}$$
-
-
-### **1.5 Self-Sufficiency Ratio ($SSR_{live}$)**
-*Real-time resilience monitoring for public building pilots.*
-$$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
-
 
 ???
 ## 2. API Field Specification (Table)
@@ -1084,24 +1063,13 @@ $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
   }
 }
 ```
----
-# What is missing from the current dashboard panel?
-- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
-- Some solar panels are not detected well, especially those located on top of private properties.
-- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
-- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
 
----
-# Our Solution
 
-1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
-2. Use Machine Learning methods to better understand the current solar panel distribution.
-3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
-4. Add more ways to calculate and prioritise the huge potential rooftop area.
+
 
 ---
 
-# Data Feasibility Analysis - ML (Solar PV Mapping)
+# Data Feasibility Analysis - Step 1_ ML (Solar PV Mapping)
 **Main data source:** Airbus Pléiades Neo (30 cm)
 - Advantage: 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 - Disadvantage: higher acquisition cost.
@@ -1111,12 +1079,17 @@ $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
 - Disadvantage: does not provide NIR, so generalisation may require careful transfer learning.
 
 ---
-# ML Expected Result
-- PV segmentation/detection outputs (masks or polygons) for the city-scale mapping workflow.
-- Quantitative performance metrics (e.g., IoU / precision / recall) and confidence scores for downstream prioritisation.
+# Data Feasibility Analysis - Step 2_Potential Layers (Terrain & Shadows)
+
+**Main data source:** ICGC LiDAR
+- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
+- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
+
+**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+
 
 ---
-# Data Feasibility Analysis - Other Layers (Context & Indicators)
+# Data Feasibility Analysis - Step 3_Other Layers (Context & Indicators)
 **Main data source:** Sentinel-2
 - Advantage: 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
 - Disadvantage: limited spatial detail for rooftop-scale signatures; cloud availability issues.
@@ -1125,31 +1098,9 @@ $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
 - Advantage: complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
 - Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
 
----
-# OL Expected Result
-- Derived context layers to support dashboard indicators (e.g., vegetation/urban fabric proxies via NDVI/NDBI/NDWI).
-- Heat/context maps to interpret environmental conditions alongside solar potential (for policy narrative).
-- Inputs exposed through the API schema as additional attributes/impact layers.
----
-# Data Feasibility Analysis - Potential Layers (Terrain & Shadows)
 
-**Main data source:** ICGC LiDAR
-- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
-- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
-**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
 
----
-# PL Expected Results
-- Terrain-derived products: elevation, slope, aspect, and shadow/illumination rasters.
-- LiDAR-based obstacle metrics (e.g., obstacle ratio) and geometry-correction inputs for effective potential (tilt & azimuth gain).
-- Improved support for rooftop “gap” computation that maps directly to dashboard/API fields.
-
----
-# Other needed to purchase / prepare
-- Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
-- Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
-- GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
 
 ---
 # Budget (£500,000 total)
@@ -1161,40 +1112,65 @@ $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
 
 
 ---
-# Workflow
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/workflow_hstep.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Model Workflow
-</p>
----
-# Methodology - Step 1: U-net
-
-.pull-left[
-**1. Contraction Path (Encoder)**: Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
-        
-**2. Expansion Path (Decoder)**: Achieves precise localization to address the "Where" (Restoration of spatial resolution).
-        
-**3. Skip Connections**: Facilitates cross-layer feature fusion to eliminate boundary blurring, ensuring pixel-level accuracy for rooftop edges.
-        
-**4. Symmetrical Design**: Harmonizes global semantic understanding with localized topological details.
-        
-]
-
-.pull-right[
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/U-net.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
-</p>
-]
+# Other needed to purchase / prepare
+- Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
+- Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
+- GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
 
 ---
 # Project Timeline
+
+https://qiyuechen1202.github.io/CASA0023_group/?panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#26
+
+---
+
+# Formula  
+
+Outline and show the benefits it would bring to the city and its population. 
+
+Formula:  
+
+Social 
+
+Economic 
+
+Environmental 
+
+Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e 
+
+### **1.1 Net Solar Potential Gap ($E_{gap}$)**
+*Correcting the "Precision Gap" by filtering micro-obstacles and existing stock.*
+$$E_{gap} = \left[ (A_{roof} \times f_{obs}) - A_{exist} \right] \times G \times \eta_{sys} \times PR$$
+* **$f_{obs}$**: LiDAR-derived Obstacle Factor (Usable Area / Total Area).
+* **$A_{exist}$**: RS-detected existing PV area.
+* **$PR$**: Performance Ratio (Correction for temperature and system losses).
+
+
+
+### **1.2 Tilt & Azimuth Gain ($G_{eff}$)**
+*Correcting irradiation based on 3D geometry from LiDAR point clouds.*
+$$G_{eff} = G \times \frac{\cos(i)}{\cos(z)}$$
+* **$i$**: Incidence angle (angle between the roof's normal vector and the sun).
+
+---
+
+### **1.3 Solar Gap Score ($Score_{gap}$)**
+*Ranking rooftops for strategic development.*
+$$Score_{gap} = \frac{E_{gap}}{E_{max\_cadastre}} \times \text{Confidence\_Score}$$
+
+
+### **1.4 Social Equity Index ($SEI$)**
+*Weighting potential by socio-economic vulnerability.*
+$$SEI = \text{Norm}(Score_{gap}) \times \omega_{poverty}$$
+
+
+### **1.5 Self-Sufficiency Ratio ($SSR_{live}$)**
+*Real-time resilience monitoring for public building pilots.*
+$$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
+
+---
+# Risk & Limitations
+https://qiyuechen1202.github.io/CASA0023_group/?panelset3=risks-%2526-ethic-considerations-&panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#28
 
 ---
 # References
