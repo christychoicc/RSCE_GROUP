@@ -108,8 +108,6 @@ class: center, middle, title-slide
 ### 2026/03/09 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
 
 ### `r fa("github", fill = "white")` [GitHub Repository](https://github.com/christychoicc/RSCE_GROUP)
-
----
 ---
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
