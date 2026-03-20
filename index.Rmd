@@ -268,9 +268,9 @@ Figure 9: Line of Action 12,green jobs, self-employment and climate-related econ
 .pull-right-narrow[
 **Strategy for Energy Transition**
 
-Increasing electricity generation by 10% with renewables throughout the city (to supply clean electricity to 20,000 households) 
+Increasing electricity generation by 10% with renewables across city, increase PV capacity fivefold,support energy refurbishment, promote and financially support installations
 <p style="font-size: 0.4em; text-align: left; margin-top: 0;">
-Source: <a href="https://ajuntament.barcelona.cat/ecologiaurbana/en/what-we-do-and-why/energy-and-climate-change/strategy-energy-transition">Ajuntament de Barcelona(n.d.)</a>
+Source: <a href="https://ajuntament.barcelona.cat/ecologiaurbana/en/what-we-do-and-why/energy-and-climate-change/strategy-energy-transition">Ajuntament de Barcelona(n.d.)</a>, <a href="https://www.barcelona.cat/barcelona-pel-clima/en/pla-clima/pla-transicio-energetica">Barcelona for Climate(2025)</a>
 </p>
 ]
 ]
@@ -283,6 +283,10 @@ Tax Incentives
   - 95% reduction on construction and installation works tax (ICIO)
   
   - 50% reduction on business activity tax (IAE) for related economic activities
+
+<p style="font-size: 0.4em; text-align: left; margin-top: 0;">
+Source: <a href="https://www.energia.barcelona/en/generate-energy/generate-energy/grants-and-allowances">Barcelona Energia(n.d.)</a>
+</p>
 ]
 ]
 
