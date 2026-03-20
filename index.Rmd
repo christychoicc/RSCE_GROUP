@@ -12,7 +12,21 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+bibliography: references.bib
 ---
+```{r refs_setup, include=FALSE}
+library(RefManageR)
+
+myBib <- ReadBib("references.bib")
+
+BibOptions(
+  check.entries = FALSE,
+  bib.style = "authoryear",
+  cite.style = "authoryear",
+  style = "html",
+  hyperlink = "to.doc"
+)
+```
 
 ```{r setup, include=FALSE}
 #library(RefManageR)
@@ -95,6 +109,7 @@ style_extra_css(css = list(
 ))
 xaringanExtra::use_panelset()
 ```
+
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
@@ -110,7 +125,7 @@ xaringanExtra::use_panelset()
 knitr::include_graphics("images/eu_sunshine_arrow.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Levels of sunshine across Europe (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
+Figure 1: Levels of sunshine across Europe `r Citep(myBib, "quierosolSolarPanelsInstallation")`
 </p>
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 # Add picture
@@ -1174,8 +1189,10 @@ https://qiyuechen1202.github.io/CASA0023_group/?panelset3=risks-%2526-ethic-cons
 
 ---
 # References
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+library(RefManageR)
 
-```{r, echo=FALSE, results='asis'}
-#PrintBibliography(myBib)
+refs <- ReadBib("references.bib")
+PrintBibliography(refs, .opts = list(style = "html"))
 ```
 ---

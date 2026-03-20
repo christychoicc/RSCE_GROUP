@@ -38,6 +38,8 @@ class: center, middle, inverse, title-slide
 
 
 
+
+
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
@@ -50,7 +52,7 @@ class: center, middle, inverse, title-slide
 .pull-right-narrow[
 &lt;img src="images/eu_sunshine_arrow.jpg" alt="" width="80%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure 1: Levels of sunshine across Europe (Source: &lt;a href="https://quierosol.com/en/solar-panels/installation/barcelona"&gt;Quiero Sol.(2021)&lt;/a&gt;)
+Figure 1: Levels of sunshine across Europe &lt;a id='cite-quierosolSolarPanelsInstallation'&gt;&lt;/a&gt;(&lt;a href='#bib-quierosolSolarPanelsInstallation'&gt;Sol, 2026&lt;/a&gt;)
 &lt;/p&gt;
 &lt;img src="images/solar_panels_barca.webp" alt="" width="80%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
@@ -873,52 +875,6 @@ function swapAPI(path, name, btn) {
 ]
 ]
 
----
-
-# Formula  
-
-Outline and show the benefits it would bring to the city and its population. 
-
-Formula:  
-
-Social 
-
-Economic 
-
-Environmental 
-
-Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e 
-
-### **1.1 Net Solar Potential Gap (`\(E_{gap}\)`)**
-*Correcting the "Precision Gap" by filtering micro-obstacles and existing stock.*
-`$$E_{gap} = \left[ (A_{roof} \times f_{obs}) - A_{exist} \right] \times G \times \eta_{sys} \times PR$$`
-* **$f_{obs}$**: LiDAR-derived Obstacle Factor (Usable Area / Total Area).
-* **$A_{exist}$**: RS-detected existing PV area.
-* **$PR$**: Performance Ratio (Correction for temperature and system losses).
-
-
-
-### **1.2 Tilt &amp; Azimuth Gain (`\(G_{eff}\)`)**
-*Correcting irradiation based on 3D geometry from LiDAR point clouds.*
-`$$G_{eff} = G \times \frac{\cos(i)}{\cos(z)}$$`
-* **$i$**: Incidence angle (angle between the roof's normal vector and the sun).
-
----
-
-### **1.3 Solar Gap Score (`\(Score_{gap}\)`)**
-*Ranking rooftops for strategic development.*
-`$$Score_{gap} = \frac{E_{gap}}{E_{max\_cadastre}} \times \text{Confidence\_Score}$$`
-
-
-### **1.4 Social Equity Index (`\(SEI\)`)**
-*Weighting potential by socio-economic vulnerability.*
-`$$SEI = \text{Norm}(Score_{gap}) \times \omega_{poverty}$$`
-
-
-### **1.5 Self-Sufficiency Ratio (`\(SSR_{live}\)`)**
-*Real-time resilience monitoring for public building pilots.*
-`$$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$`
-
 
 ???
 ## 2. API Field Specification (Table)
@@ -1010,7 +966,7 @@ Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e
 
 ---
 
-# Data Feasibility Analysis - ML (Solar PV Mapping)
+# Data Feasibility Analysis - Step 1_ ML (Solar PV Mapping)
 **Main data source:** Airbus Pléiades Neo (30 cm)
 - Advantage: 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 - Disadvantage: higher acquisition cost.
@@ -1019,9 +975,18 @@ Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e
 - Advantage: 25 cm RGB plus infrared imagery to improve classification detail and robustness.
 - Disadvantage: does not provide NIR, so generalisation may require careful transfer learning.
 
+---
+# Data Feasibility Analysis - Step 2_Potential Layers (Terrain &amp; Shadows)
+
+**Main data source:** ICGC LiDAR
+- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
+- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
+
+**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+
 
 ---
-# Data Feasibility Analysis - Other Layers (Context &amp; Indicators)
+# Data Feasibility Analysis - Step 3_Other Layers (Context &amp; Indicators)
 **Main data source:** Sentinel-2
 - Advantage: 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
 - Disadvantage: limited spatial detail for rooftop-scale signatures; cloud availability issues.
@@ -1030,31 +995,9 @@ Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e
 - Advantage: complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
 - Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
 
----
-# OL Expected Result
-- Derived context layers to support dashboard indicators (e.g., vegetation/urban fabric proxies via NDVI/NDBI/NDWI).
-- Heat/context maps to interpret environmental conditions alongside solar potential (for policy narrative).
-- Inputs exposed through the API schema as additional attributes/impact layers.
----
-# Data Feasibility Analysis - Potential Layers (Terrain &amp; Shadows)
 
-**Main data source:** ICGC LiDAR
-- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
-- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
-**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
 
----
-# PL Expected Results
-- Terrain-derived products: elevation, slope, aspect, and shadow/illumination rasters.
-- LiDAR-based obstacle metrics (e.g., obstacle ratio) and geometry-correction inputs for effective potential (tilt &amp; azimuth gain).
-- Improved support for rooftop “gap” computation that maps directly to dashboard/API fields.
-
----
-# Other needed to purchase / prepare
-- Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
-- Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
-- GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
 
 ---
 # Budget (£500,000 total)
@@ -1066,12 +1009,73 @@ Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e
 
 
 ---
+# Other needed to purchase / prepare
+- Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
+- Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
+- GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
+
+---
 # Project Timeline
+
+https://qiyuechen1202.github.io/CASA0023_group/?panelset4=social2&amp;panelset5=heat-hazard%253A-lst2&amp;panelset6=low2&amp;panelset7=risks-%2526-ethic-considerations-2#26
+
+---
+
+# Formula  
+
+Outline and show the benefits it would bring to the city and its population. 
+
+Formula:  
+
+Social 
+
+Economic 
+
+Environmental 
+
+Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e 
+
+### **1.1 Net Solar Potential Gap (`\(E_{gap}\)`)**
+*Correcting the "Precision Gap" by filtering micro-obstacles and existing stock.*
+`$$E_{gap} = \left[ (A_{roof} \times f_{obs}) - A_{exist} \right] \times G \times \eta_{sys} \times PR$$`
+* **$f_{obs}$**: LiDAR-derived Obstacle Factor (Usable Area / Total Area).
+* **$A_{exist}$**: RS-detected existing PV area.
+* **$PR$**: Performance Ratio (Correction for temperature and system losses).
+
+
+
+### **1.2 Tilt &amp; Azimuth Gain (`\(G_{eff}\)`)**
+*Correcting irradiation based on 3D geometry from LiDAR point clouds.*
+`$$G_{eff} = G \times \frac{\cos(i)}{\cos(z)}$$`
+* **$i$**: Incidence angle (angle between the roof's normal vector and the sun).
+
+---
+
+### **1.3 Solar Gap Score (`\(Score_{gap}\)`)**
+*Ranking rooftops for strategic development.*
+`$$Score_{gap} = \frac{E_{gap}}{E_{max\_cadastre}} \times \text{Confidence\_Score}$$`
+
+
+### **1.4 Social Equity Index (`\(SEI\)`)**
+*Weighting potential by socio-economic vulnerability.*
+`$$SEI = \text{Norm}(Score_{gap}) \times \omega_{poverty}$$`
+
+
+### **1.5 Self-Sufficiency Ratio (`\(SSR_{live}\)`)**
+*Real-time resilience monitoring for public building pilots.*
+`$$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$`
+
+---
+# Risk &amp; Limitations
+https://qiyuechen1202.github.io/CASA0023_group/?panelset3=risks-%2526-ethic-considerations-&amp;panelset4=social2&amp;panelset5=heat-hazard%253A-lst2&amp;panelset6=low2&amp;panelset7=risks-%2526-ethic-considerations-2#28
 
 ---
 # References
-
-
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-quierosolSolarPanelsInstallation'&gt;&lt;/a&gt;&lt;a href="#cite-quierosolSolarPanelsInstallation"&gt;Sol, Q.&lt;/a&gt;
+(2026).
+&lt;em&gt;Solar Panels Installation in Barcelona&lt;/em&gt;.
+https://quierosol.com/en/solar-panels/installation/barcelona,.
+(Visited on Mar. 20, 2026).&lt;/cite&gt;&lt;/p&gt;
 ---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
