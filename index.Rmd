@@ -419,11 +419,6 @@ knitr::include_graphics("images/workflow_hstep.png")
 Figure: Model Workflow
 </p>
 ---
-# Workflow
-![](images/workflow_hstep.png)
-Figure 11: Workflow of the model 
-
----
 # Methodology - Step 1: U-net
 
 .pull-left[
@@ -446,43 +441,20 @@ knitr::include_graphics("images/U-net.png")
 Figure: U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
 </p>
 ]
----
-# Methodology-Step1
-## U-net
 
-.pull-left-wide[
-**1. Contraction Path (Encoder)** 
-        --Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
-        
-**2. Expansion Path (Decoder)**
-        --Achieves precise localization to address the "Where" (Restoration of spatial resolution).
-        
-**3. Skip Connections**
-        --Facilitates cross-layer feature fusion to eliminate boundary blurring, ensuring pixel-level accuracy for rooftop edges.
-        
-**4. Symmetrical Design** 
-        --Harmonizes global semantic understanding with localized topological details.
-        
-]
-
-.pull-right-narrow[
-![](images/U-net.png)
-Figure 12: U-net model 
-[Source](https://www.mdpi.com/2076-3417/11/14/6524)
-]
 ---
 # Methodology - Step1: U-net
 .pull-left[
-**1. End-to-End Extraction** 
+**5. End-to-End Extraction** 
         --Enables automated identification of PV arrays within complex urban environments without manual intervention.
         
-**2. Interference Robustness**
+**6. Interference Robustness**
         --Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
         
-**3. High IoU Performance**
+**7. High IoU Performance**
         --Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
         
-**4. Data Implementation** 
+**8. Data Implementation** 
         -- Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
         
 ]
@@ -496,42 +468,19 @@ knitr::include_graphics("images/U-net1.png")
 Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
 </p>
 ]
----
-# Methodology-Step1
-## U-net
-
-.pull-left[
-**1. End-to-End Extraction** 
-        --Enables automated identification of PV arrays within complex urban environments without manual intervention.
-        
-**2. Interference Robustness**
-        --Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
-        
-**3. High IoU Performance**
-        --Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
-        
-**4. Data Implementation** 
-        -- Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
-        
-]
-
-.pull-right[
-![](images/U-net1.png)
-Figure 13: Results of U-net model([Source](https://www.mdpi.com/2076-3417/11/14/6524))
-]
 
 ---
 # Methodology - Step 1: U-net
-**1. End-to-End Extraction** 
+**5. End-to-End Extraction** 
   - Enables automated identification of PV arrays within complex urban environments without manual intervention.
         
-**2. Interference Robustness**
+**6. Interference Robustness**
   - Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
         
-**3. High IoU Performance**
+**7. High IoU Performance**
   - Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
         
-**4. Data Implementation** 
+**8. Data Implementation** 
   - Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
 
 
@@ -544,16 +493,9 @@ knitr::include_graphics("images/U-net1.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
 </p>
----
-# Methodology-Step1
-## U-net
-
-![](images/U-net1.png)
-Figure 13: Results of U-net model([Source](https://www.mdpi.com/2076-3417/11/14/6524))
-]
 
 ---
-# Workflow - Step 1: OBIA
+# Methodology - Step 1: OBIA
 **1. Multiresolution Segmentation** 
   - Aggregates spectrally similar pixels into geographically meaningful objects to mitigate "salt-and-pepper" noise.
         
@@ -567,7 +509,7 @@ Figure 13: Results of U-net model([Source](https://www.mdpi.com/2076-3417/11/14/
   - Facilitates the direct export of GIS-compliant polygonal boundaries, streamlining precise surface area calculations.
 
 ---
-# Workflow - Step 1: OBIA
+# Methodology- Step 1: OBIA
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/OBIA_1.png")
@@ -575,16 +517,9 @@ knitr::include_graphics("images/OBIA_1.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure: Workflow of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
----
-# Workflow - Step1
-## OBIA
-
-![](images/OBIA_1.png)
-Figure 14: workflow of OBIA model([Source](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited))
-]
 
 ---
-# Workflow - Step 1: OBIA
+# Methodology - Step 1: OBIA
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/OBIA_2.png")
@@ -592,15 +527,9 @@ knitr::include_graphics("images/OBIA_2.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure: Process of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
----
-# Workflow-Step1
-## OBIA
 
-![](images/OBIA_2.png)
-Figure 15: Process of OBIA model([Source](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited))
-]
 ---
-# Workflow - Step 1: OBIA
+# Methodology - Step 1: OBIA
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/OBIA_3.png")
@@ -608,14 +537,6 @@ knitr::include_graphics("images/OBIA_3.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
-
----
-# Workflow-Step1
-## OBIA
-
-![](images/OBIA_3.png)
-Figure 16: Results of OBIA model([Source](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited))
-]
 
 ---
 # Workflow-Step2
