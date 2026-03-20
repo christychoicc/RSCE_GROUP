@@ -155,7 +155,7 @@ Barcelona has high rooftop solar potential, but remains undeveloped at local and
 ---
 class: inverse, center, middle
 #What is missing?
-### Barcelona lacks a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
+### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 ---
 # Policy Goals and Agenda
 .panelset[
@@ -210,13 +210,13 @@ Figure 6: SDG 13: reduces emissions and strengthens climate action in the built 
 ]
 
 .panel[.panel-name[Local Policy]
-Barcelona Climate Plan
+Barcelona 2030 Agenda localises SDGs into city scale targets and indicators as a municipal framework, policy objectives were implemented within the Barcelona Climate Plan through lines of action on rooftops, renewable energy, and green transition. 
 .pull-left-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
 knitr::include_graphics("images/bcp5.png")
 ```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+<p style="font-size: 0.4em; text-align: center; margin-top: 0;">
 Figure 7:Line of Action 5, recover terrace roofs and increase PV generation (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
@@ -225,8 +225,8 @@ Figure 7:Line of Action 5, recover terrace roofs and increase PV generation (Sou
 # Add picture
 knitr::include_graphics("images/bcp9.png")
 ```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 8: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+<p style="font-size: 0.4em; text-align: center; margin-top: 0;">
+Figure 8: Line of Action 9, renewables in public space and municipal deployment (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-right-3[
@@ -234,8 +234,8 @@ Figure 8: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="http
 # Add picture
 knitr::include_graphics("images/bcp12.png")
 ```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 9: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+<p style="font-size: 0.4em; text-align: center; margin-top: 0;">
+Figure 9: Line of Action 12,green jobs, self-employment and climate-related economic transition (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 ]
