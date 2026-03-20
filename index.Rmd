@@ -956,6 +956,82 @@ $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
 }
 ```
 ---
+# What is missing from the current dashboard panel?
+- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
+- Some solar panels are not detected well, especially those located on top of private properties.
+- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
+- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
+
+---
+# Our Solution
+
+1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
+2. Use Machine Learning methods to better understand the current solar panel distribution.
+3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
+4. Add more ways to calculate and prioritise the huge potential rooftop area.
+
+---
+
+# Data Feasibility Analysis - ML (Solar PV Mapping)
+**Main data source:** Airbus Pléiades Neo (30 cm)
+- Advantage: 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
+- Disadvantage: higher acquisition cost.
+
+**Supplementary data source:** Cartographic and Geological Institute of Catalonia (ICGC)
+- Advantage: 25 cm RGB plus infrared imagery to improve classification detail and robustness.
+- Disadvantage: does not provide NIR, so generalisation may require careful transfer learning.
+
+---
+# ML Expected Result
+- PV segmentation/detection outputs (masks or polygons) for the city-scale mapping workflow.
+- Quantitative performance metrics (e.g., IoU / precision / recall) and confidence scores for downstream prioritisation.
+
+---
+# Data Feasibility Analysis - Other Layers (Context & Indicators)
+**Main data source:** Sentinel-2
+- Advantage: 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
+- Disadvantage: limited spatial detail for rooftop-scale signatures; cloud availability issues.
+
+**Supplementary data source:** Sentinel-3
+- Advantage: complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
+- Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
+
+---
+# OL Expected Result
+- Derived context layers to support dashboard indicators (e.g., vegetation/urban fabric proxies via NDVI/NDBI/NDWI).
+- Heat/context maps to interpret environmental conditions alongside solar potential (for policy narrative).
+- Inputs exposed through the API schema as additional attributes/impact layers.
+---
+# Data Feasibility Analysis - Potential Layers (Terrain & Shadows)
+
+**Main data source:** ICGC LiDAR
+- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
+- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
+
+**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+
+---
+# PL Expected Results
+- Terrain-derived products: elevation, slope, aspect, and shadow/illumination rasters.
+- LiDAR-based obstacle metrics (e.g., obstacle ratio) and geometry-correction inputs for effective potential (tilt & azimuth gain).
+- Improved support for rooftop “gap” computation that maps directly to dashboard/API fields.
+
+---
+# Other needed to purchase / prepare
+- Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
+- Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
+- GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
+
+---
+# Budget (£500,000 total)
+- Work Package 1: Project Management & Scoping (10%) = £50,000
+- Work Package 2: EO Data & Infrastructure (15%) = £75,000
+- Work Package 3: Data Pipeline Development (40%) = £200,000
+- Work Package 4: Integration & Capacity Building (25%) = £125,000
+- Work Package 5: Contingency Fund (10%) = £50,000
+
+
+---
 # Workflow
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
