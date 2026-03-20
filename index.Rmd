@@ -12,32 +12,10 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-bibliography: references.bib
+    seal: false
 ---
-```{r refs_setup, include=FALSE}
-library(RefManageR)
-
-myBib <- ReadBib("references.bib")
-
-BibOptions(
-  check.entries = FALSE,
-  bib.style = "authoryear",
-  cite.style = "authoryear",
-  style = "html",
-  hyperlink = "to.doc"
-)
-```
-
-```{r setup, include=FALSE}
-#library(RefManageR)
-#BibOptions(check.entries = FALSE,
-           #bib.style = "authoryear",
-           #cite.style = "authoryear",
-           #style = "markdown",
-           #hyperlink = TRUE,
-           #dashed = FALSE,
-           #no.print.fields=c("doi", "url", "urldate", "issn"))
-#myBib <- ReadBib("references.bib", check = FALSE)
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(fontawesome)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -65,7 +43,14 @@ style_mono_light(
       "background-repeat" = "no-repeat",
       "color" = "white",
       "text-shadow" = "none"
-    ),
+      ),
+    ".title-slide a" = list(
+      "color" = "white",
+      "text-decoration" = "none"
+      ),
+    ".title-slide a:visited" = list(
+      "color" = "white"
+      ),
     ".title-slide h1" = list(
       "font-size" = "44px",
       "margin-bottom" = "16px",
@@ -110,6 +95,22 @@ style_extra_css(css = list(
 xaringanExtra::use_panelset()
 ```
 
+class: center, middle, title-slide
+
+# Solar Potential in Barcelona through Earth Observation
+
+## Group RGB
+
+### Christy Choi, Entao Wang, Jiaying Li, Yanxi Ren, Tianyi Chen
+
+### CASA0023 Remotely Sensing Cities and Environments
+
+### 2026/03/09 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
+
+### `r fa("github", fill = "white")` [GitHub Repository](https://github.com/christychoicc/RSCE_GROUP)
+
+---
+---
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
@@ -125,7 +126,7 @@ xaringanExtra::use_panelset()
 knitr::include_graphics("images/eu_sunshine_arrow.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Levels of sunshine across Europe `r Citep(myBib, "quierosolSolarPanelsInstallation")`
+Figure 1: Levels of sunshine across Europe (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
 </p>
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 # Add picture
@@ -547,7 +548,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
 
@@ -558,7 +559,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar2.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
 
 ---
@@ -568,7 +569,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar3.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
 
 ---
@@ -1114,9 +1115,6 @@ function swapAPI(path, name, btn) {
 - Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
 
 
-
-
-
 ---
 # Budget (£500,000 total)
 - Work Package 1: Project Management & Scoping (10%) = £50,000
@@ -1185,14 +1183,13 @@ $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
 
 ---
 # Risk & Limitations
-https://qiyuechen1202.github.io/CASA0023_group/?panelset3=risks-%2526-ethic-considerations-&panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#28
+.panelset[
+.panel[.panel-name[Risks and Ethics]
 
----
-# References
-```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
-library(RefManageR)
+]
 
-refs <- ReadBib("references.bib")
-PrintBibliography(refs, .opts = list(style = "html"))
-```
+.panel[.panel-name[Limitations]
+
+]
+]
 ---
