@@ -85,9 +85,9 @@ library(xaringanExtra)
 options(htmltools.dir.version = FALSE)
 # Load xaringanExtra for the tabs
 style_extra_css(css = list(
-  # pull left wide and right narrow
-   ".pull-left-wide" = list("float" = "left", "width" = "65%"),
-   ".pull-right-narrow" = list("float" = "right", "width" = "30%"),
+   # pull left wide and right narrow
+   ".pull-left-wide" = list("float" = "left", "width" = "60%"),
+   ".pull-right-narrow" = list("float" = "right", "width" = "35%"),
    # 3 columns
    ".pull-left-3" = list("float" = "left", "width" = "30%"),
    ".pull-middle-3" = list("float" = "left", "width" = "30%", "margin-left" = "5%", "margin-right" = "5%"),
@@ -96,37 +96,15 @@ style_extra_css(css = list(
 xaringanExtra::use_panelset()
 ```
 # Barcelona
-## High Solar Potential, Low Energy Self-sufficiency
+### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
-- **Ideal conditions**: High solar exposure, dense flat roofscape (67%), policy climate targets
+- **Ideal conditions**: High solar exposure, dense flat roofscape, exisiting policy commitments
 - **Potential**: 7.9M m² suitable roof area, generation potential of 1,191 GWh/year around 60% of domestic electricity demand
-- **Low realisation**: City produces just 1% of its own energy, only 5% of residents have solar installations in 2022
-- **Core tension**: High location and technical potential, but minimum deployment capacity
+- **Low realisation**: City produces just 1% of its own energy, only 5% of households have solar installations in 2022
+- **Core Issue**: High location and technical potential, but low deployment
 - **Why**: Barcelona faces pressure on resilience, affordability and decarbonisation
 ]
 .pull-right-narrow[
-```{r, echo=FALSE, out.width='100%', fig.align='right'}
-# Add picture
-knitr::include_graphics("images/barcelona_stats.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Barcelona Summary Statistics
-</p>
-]
----
-# Problems and Issues
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/barcelona_problem_diagram.png")
-```
----
-# Barcelona
-- Barcelona receives around 2,550 hours of sunshine per year (highest in Europe)
-- Mediterranean climate with low cloud cover, ideal for consistent PV yield
-- There is an estimated 7,899,532 m² available roof area for energy capture
-- Rooftop PV is estimated a generation potential of 1,191 GWh/year, roughly 60% of domestic electricity consumption
-- Flat and slightly inclined terraces account for 67% of roof surface area
-.pull-left[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 # Add EU sunshine picture
 knitr::include_graphics("images/eu_sunshine_arrow.jpg")
@@ -134,8 +112,6 @@ knitr::include_graphics("images/eu_sunshine_arrow.jpg")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure 1: Levels of sunshine across Europe (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
 </p>
-]
-.pull-right[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/solar_panels_barca.webp")
@@ -145,7 +121,7 @@ Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/
 </p>
 ]
 ---
-# Problems and Issues
+# Key Problems and Issues
 Barcelona has high rooftop solar potential, but remains undeveloped at local and regional scale...
 .panelset[
 .panel[.panel-name[Low Local Energy Self-Sufficiency]
@@ -180,20 +156,10 @@ Barcelona has high rooftop solar potential, but remains undeveloped at local and
 class: inverse, center, middle
 #What is missing?
 ### Barcelona lacks a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
-
----
-# Policy Goals and Agenda
-```{r, echo=FALSE, out.width='80%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/policy_flowchart.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 4: Current Policy Related to Solar Energy
-</p>
 ---
 # Policy Goals and Agenda
 .panelset[
-.panel[.panel-name[SDG]
+.panel[.panel-name[Global Agenda]
 
 .pull-left-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
@@ -201,7 +167,7 @@ Figure 4: Current Policy Related to Solar Energy
 knitr::include_graphics("images/sdg7.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 5: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 4: SDG 7: increases access to affordable, reliable and clean energy (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 .pull-middle-3[
@@ -210,7 +176,7 @@ Figure 5: SDG 7 (Source: <a href="https://www.un.org/sustainabledevelopment/news
 knitr::include_graphics("images/sdg11.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 6: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 5: SDG 11: supports a more sustainable and resilient urban system (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
 .pull-right-3[
@@ -219,14 +185,11 @@ Figure 6: SDG 11 (Source: <a href="https://www.un.org/sustainabledevelopment/new
 knitr::include_graphics("images/sdg13.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 7: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
+Figure 6: SDG 13: reduces emissions and strengthens climate action in the built environment (Source: <a href="https://www.un.org/sustainabledevelopment/news/communications-material/">United Nations(2024)</a>)
 </p>
 ]
-
 ]
-
-
-.panel[.panel-name[EU]
+.panel[.panel-name[EU Policy]
 - **The European Green Deal, Renewable Energy Directive (RED II)**
   - Binding target of 42.5% renewable energy across the EU by 2030
   
@@ -246,15 +209,15 @@ Figure 7: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/new
 
 ]
 
-.panel[.panel-name[Barcelona Climate Plan]
-
+.panel[.panel-name[Local Policy]
+Barcelona Climate Plan
 .pull-left-3[
 ```{r, echo=FALSE, out.width='100%', fig.align='right'}
 # Add picture
 knitr::include_graphics("images/bcp5.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 8:Line of Action 5, recover terrace roofs and increase PV generation (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 7:Line of Action 5, recover terrace roofs and increase PV generation (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-middle-3[
@@ -263,7 +226,7 @@ Figure 8:Line of Action 5, recover terrace roofs and increase PV generation (Sou
 knitr::include_graphics("images/bcp9.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 9: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 8: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 .pull-right-3[
@@ -272,11 +235,12 @@ Figure 9: Barcelona Climate Action Plan, Line of Action 9 (Source: <a href="http
 knitr::include_graphics("images/bcp12.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 10: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
+Figure 9: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
 ]
-.panel[.panel-name[Tax Incentives]
+.panel[.panel-name[Local Incentives]
+Tax Incentives
 - The Barcelona City Council offers tax incentives for solar installations
 
   - Up to 50% reduction on property tax (IBI) for first 3 years after installation

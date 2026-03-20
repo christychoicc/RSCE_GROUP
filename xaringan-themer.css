@@ -332,11 +332,11 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 /* Extra CSS */
 .pull-left-wide {
   float: left;
-  width: 65%;
+  width: 60%;
 }
 .pull-right-narrow {
   float: right;
-  width: 30%;
+  width: 35%;
 }
 .pull-left-3 {
   float: left;
