@@ -95,7 +95,31 @@ style_extra_css(css = list(
 ))
 xaringanExtra::use_panelset()
 ```
-
+# Barcelona
+## High Solar Potential, Low Energy Self-sufficiency
+.pull-left-wide[
+- **Ideal conditions**: High solar exposure, dense flat roofscape (67%), policy climate targets
+- **Potential**: 7.9M m² suitable roof area, generation potential of 1,191 GWh/year around 60% of domestic electricity demand
+- **Low realisation**: City produces just 1% of its own energy, only 5% of residents have solar installations in 2022
+- **Core tension**: High location and technical potential, but minimum deployment capacity
+- **Why**: Barcelona faces pressure on resilience, affordability and decarbonisation
+]
+.pull-right-narrow[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add picture
+knitr::include_graphics("images/barcelona_stats.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 1: Barcelona Summary Statistics
+</p>
+]
+---
+# Problems and Issues
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/barcelona_problem_diagram.png")
+```
+---
 # Barcelona
 - Barcelona receives around 2,550 hours of sunshine per year (highest in Europe)
 - Mediterranean climate with low cloud cover, ideal for consistent PV yield
@@ -120,21 +144,6 @@ knitr::include_graphics("images/solar_panels_barca.webp")
 Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/jul/24/barcelona-school-residents-create-solar-energy-community">the Guardian (2022)</a>)
 </p>
 ]
-
----
-# What is Photovoltaic Solar Energy?
-```{r, echo=FALSE, out.width='80%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/diagram.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 3: Solar Photovoltaic System Diagram (Source: <a href="https://solargis.com/technology/expertise#modeling-site-conditions">Solargis.com(2026)</a>)
-</p>
-- Photovoltaic (PV) solar energy converts sunlight directly into electricity.
-- The electricity generated can be used on-site, stored, shared, or exported to the grid.
-- PV is particularly suitable for cities as it can be installed on existing roofs, façades, public infrastructure, etc.
-- In Barcelona, rooftop PV offers a way to reduce emissions, improve local energy resilience, and lower dependence on external energy supplies. 
-
 ---
 # Problems and Issues
 Barcelona has high rooftop solar potential, but remains undeveloped at local and regional scale...
@@ -237,16 +246,6 @@ Figure 7: SDG 13 (Source: <a href="https://www.un.org/sustainabledevelopment/new
 
 ]
 
-.panel[.panel-name[Tax Incentives]
-- The Barcelona City Council offers tax incentives for solar installations
-
-  - Up to 50% reduction on property tax (IBI) for first 3 years after installation
-  
-  - 95% reduction on construction and installation works tax (ICIO)
-  
-  - 50% reduction on business activity tax (IAE) for related economic activities
-]
-
 .panel[.panel-name[Barcelona Climate Plan]
 
 .pull-left-3[
@@ -276,6 +275,15 @@ knitr::include_graphics("images/bcp12.png")
 Figure 10: Barcelona Climate Action Plan, Line of Action 12 (Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>)
 </p>
 ]
+]
+.panel[.panel-name[Tax Incentives]
+- The Barcelona City Council offers tax incentives for solar installations
+
+  - Up to 50% reduction on property tax (IBI) for first 3 years after installation
+  
+  - 95% reduction on construction and installation works tax (ICIO)
+  
+  - 50% reduction on business activity tax (IAE) for related economic activities
 ]
 ]
 
