@@ -578,9 +578,35 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 </p>
 
 ---
-# Workflow-Step2
-## Lidar
+# Step2- Lidar Workflow
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar1.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+</p>
 
+
+---
+# Step2-Solar Radiation
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar2.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+</p>
+
+---
+
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar3.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+</p>
 
 ---
 # Project Timeline
