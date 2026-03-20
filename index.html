@@ -330,14 +330,40 @@ class: inverse, center, middle
 ```
 ---
 # Workflow
+&lt;img src="images/workflow_hstep.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Model Workflow
+&lt;/p&gt;
+---
+# Workflow
 ![](images/workflow_hstep.png)
 Figure 11: Workflow of the model 
 
 ---
+# Methodology - Step 1: U-net
+
+.pull-left[
+**1. Contraction Path (Encoder)**: Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
+        
+**2. Expansion Path (Decoder)**: Achieves precise localization to address the "Where" (Restoration of spatial resolution).
+        
+**3. Skip Connections**: Facilitates cross-layer feature fusion to eliminate boundary blurring, ensuring pixel-level accuracy for rooftop edges.
+        
+**4. Symmetrical Design**: Harmonizes global semantic understanding with localized topological details.
+        
+]
+
+.pull-right[
+&lt;img src="images/U-net.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: U-net model (Source: &lt;a href="https://www.mdpi.com/2076-3417/11/14/6524"&gt; Pérez-González et.al.,(2021) &lt;/a&gt;) 
+&lt;/p&gt;
+]
+---
 # Methodology-Step1
 ## U-net
 
-.pull-left[
+.pull-left-wide[
 **1. Contraction Path (Encoder)** 
         --Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
         
@@ -352,13 +378,34 @@ Figure 11: Workflow of the model
         
 ]
 
-.pull-right[
+.pull-right-narrow[
 ![](images/U-net.png)
 Figure 12: U-net model 
 [Source](https://www.mdpi.com/2076-3417/11/14/6524)
 ]
+---
+# Methodology - Step1: U-net
+.pull-left[
+**1. End-to-End Extraction** 
+        --Enables automated identification of PV arrays within complex urban environments without manual intervention.
+        
+**2. Interference Robustness**
+        --Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
+        
+**3. High IoU Performance**
+        --Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
+        
+**4. Data Implementation** 
+        -- Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
+        
+]
 
-
+.pull-right[
+&lt;img src="images/U-net1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Results of U-net model (Source: &lt;a href="https://www.mdpi.com/2076-3417/11/14/6524"&gt; Pérez-González et.al.,(2021) &lt;/a&gt;) 
+&lt;/p&gt;
+]
 ---
 # Methodology-Step1
 ## U-net
@@ -384,21 +431,26 @@ Figure 13: Results of U-net model([Source](https://www.mdpi.com/2076-3417/11/14/
 ]
 
 ---
-# Methodology-Step1
-## U-net
+# Methodology - Step 1: U-net
 **1. End-to-End Extraction** 
-        --Enables automated identification of PV arrays within complex urban environments without manual intervention.
+  - Enables automated identification of PV arrays within complex urban environments without manual intervention.
         
 **2. Interference Robustness**
-        --Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
+  - Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
         
 **3. High IoU Performance**
-        --Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
+  - Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
         
 **4. Data Implementation** 
-        -- Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
+  - Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
 
 
+---
+# Methodology - Step 1: U-net
+&lt;img src="images/U-net1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Results of U-net model (Source: &lt;a href="https://www.mdpi.com/2076-3417/11/14/6524"&gt; Pérez-González et.al.,(2021) &lt;/a&gt;) 
+&lt;/p&gt;
 ---
 # Methodology-Step1
 ## U-net
@@ -408,23 +460,27 @@ Figure 13: Results of U-net model([Source](https://www.mdpi.com/2076-3417/11/14/
 ]
 
 ---
-# Workflow-Step1
-## OBIA
+# Workflow - Step 1: OBIA
 **1. Multiresolution Segmentation** 
-        --Aggregates spectrally similar pixels into geographically meaningful objects to mitigate "salt-and-pepper" noise.
+  - Aggregates spectrally similar pixels into geographically meaningful objects to mitigate "salt-and-pepper" noise.
         
 **2. Geometric Constraints**
-        --Leverages physical attributes—including aspect ratio, rectangularity, and area—to filter out non-PV entities (e.g., circular water tanks).
+  - Leverages physical attributes—including aspect ratio, rectangularity, and area—to filter out non-PV entities (e.g., circular water tanks).
         
 **3. Spectral-Spatial Integration**
-        --Evaluates object regularity alongside spectral signatures to significantly reduce false-positive rates.
+  - Evaluates object regularity alongside spectral signatures to significantly reduce false-positive rates.
         
 **4. Vectorized Output** 
-        -- Facilitates the direct export of GIS-compliant polygonal boundaries, streamlining precise surface area calculations.
-
+  - Facilitates the direct export of GIS-compliant polygonal boundaries, streamlining precise surface area calculations.
 
 ---
-# Workflow-Step1
+# Workflow - Step 1: OBIA
+&lt;img src="images/OBIA_1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Workflow of OBIA model (Source: &lt;a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
+&lt;/p&gt;
+---
+# Workflow - Step1
 ## OBIA
 
 ![](images/OBIA_1.png)
@@ -432,12 +488,24 @@ Figure 14: workflow of OBIA model([Source](https://www.spiedigitallibrary.org/co
 ]
 
 ---
+# Workflow - Step 1: OBIA
+&lt;img src="images/OBIA_2.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Process of OBIA model (Source: &lt;a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
+&lt;/p&gt;
+---
 # Workflow-Step1
 ## OBIA
 
 ![](images/OBIA_2.png)
 Figure 15: Process of OBIA model([Source](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited))
 ]
+---
+# Workflow - Step 1: OBIA
+&lt;img src="images/OBIA_3.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Results of OBIA model (Source: &lt;a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
+&lt;/p&gt;
 
 ---
 # Workflow-Step1
