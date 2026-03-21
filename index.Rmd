@@ -116,7 +116,6 @@ class: center, middle, title-slide
 - **Potential**: 7.9M m² suitable roof area, generation potential of 1,191 GWh/year around 60% of domestic electricity demand
 - **Low realisation**: City produces just 1% of its own energy, only 5% of households have solar installations in 2022
 - **Core Issue**: High location and technical potential, but low deployment
-- **Why**: Barcelona faces pressure on resilience, affordability and decarbonisation
 ]
 .pull-right-narrow[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
@@ -1180,10 +1179,22 @@ $$SEI = \text{Norm}(Score_{gap}) \times \omega_{poverty}$$
 $$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
 
 ---
-# Risk & Limitations
+# Risk, Ethics and Limitations
 .panelset[
 .panel[.panel-name[Risks and Ethics]
-
+.pull-left[
+**Risks**
+- Budget Constraints and Cost Exceedance
+- Data Accuracy and Uncertainty
+- Technical and Implementation Barriers
+- Policy, Regulatory and Institutional Barriers
+]
+.pull-right[
+**Ethics**
+- Transparency and Accountability
+- Data Usage Consent, Privacy Concerns
+- Safety standards for rooftop installations
+]
 ]
 
 .panel[.panel-name[Limitations]
