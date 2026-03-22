@@ -359,3 +359,13 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   float: right;
   width: 30%;
 }
+.bottom-note {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+}
+.clearfix {
+  clear: both;
+  display: block;
+}
