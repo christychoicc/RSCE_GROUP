@@ -307,13 +307,6 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   color: white;
   text-shadow: none;
 }
-.title-slide a {
-  color: white;
-  text-decoration: none;
-}
-.title-slide a:visited {
-  color: white;
-}
 .title-slide h1 {
   font-size: 44px;
   margin-bottom: 16px;

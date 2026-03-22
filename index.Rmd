@@ -12,10 +12,18 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-    seal: false
 ---
-```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
-library(fontawesome)
+
+```{r setup, include=FALSE}
+#library(RefManageR)
+#BibOptions(check.entries = FALSE,
+           #bib.style = "authoryear",
+           #cite.style = "authoryear",
+           #style = "markdown",
+           #hyperlink = TRUE,
+           #dashed = FALSE,
+           #no.print.fields=c("doi", "url", "urldate", "issn"))
+#myBib <- ReadBib("references.bib", check = FALSE)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -43,14 +51,7 @@ style_mono_light(
       "background-repeat" = "no-repeat",
       "color" = "white",
       "text-shadow" = "none"
-      ),
-    ".title-slide a" = list(
-      "color" = "white",
-      "text-decoration" = "none"
-      ),
-    ".title-slide a:visited" = list(
-      "color" = "white"
-      ),
+    ),
     ".title-slide h1" = list(
       "font-size" = "44px",
       "margin-bottom" = "16px",
@@ -94,21 +95,6 @@ style_extra_css(css = list(
 ))
 xaringanExtra::use_panelset()
 ```
-
-class: center, middle, title-slide
-
-# Solar Potential in Barcelona through Earth Observation
-
-## Group RGB
-
-### Christy Choi, Entao Wang, Jiaying Li, Yanxi Ren, Tianyi Chen
-
-### CASA0023 Remotely Sensing Cities and Environments
-
-### 2026/03/09 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
-
-### `r fa("github", fill = "white")` [GitHub Repository](https://github.com/christychoicc/RSCE_GROUP)
----
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
@@ -116,6 +102,7 @@ class: center, middle, title-slide
 - **Potential**: 7.9M m² suitable roof area, generation potential of 1,191 GWh/year around 60% of domestic electricity demand
 - **Low realisation**: City produces just 1% of its own energy, only 5% of households have solar installations in 2022
 - **Core Issue**: High location and technical potential, but low deployment
+- **Why**: Barcelona faces pressure on resilience, affordability and decarbonisation
 ]
 .pull-right-narrow[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
@@ -302,18 +289,22 @@ Source: <a href="https://www.energia.barcelona/en/generate-energy/generate-energ
 
 ---
 class: inverse, center, middle
-#What is missing from policy?
+# What is missing from policy?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
 
 ---
 class: inverse, center, middle
-## Analysis of Barcelona’s Current Solar Dashboard
+## How can we improve the operational system?
+### Analysis of Barcelona’s Current Solar Dashboard
 
 --
 Do you want to know how much energy you can generate in your home? 
 
 Search for your building and discover its energy potential:
+
+
+
 ---
 
 ```{css, echo=FALSE}
@@ -328,7 +319,7 @@ Search for your building and discover its energy potential:
   padding: 6px;
   border-left: 1px solid #802222;
 }
-/* 优化 Markdown 列表在 div 中的显示 */
+/* Markdown in div */
 .scroll-box ul { display: block; }
 ```
 
@@ -347,13 +338,12 @@ Search for your building and discover its energy potential:
 ### .center[Key Metrics]
 
 .scroll-box[
-#### 📊 Resource Potential
-- **Radiation:** Qualitative rating  
-######***(e.g., "Very Good")***
+#### ☀️ SOlar Resource Potential
+- **Incident Solar Radiation Radiation:** Qualitative rating  ***(e.g., "Very Good")***
 
-- **Surface Area:** Total roof area ($m^2$)
+- **Solar Irradiated Surface Area:** Total roof area ($m^2$)
 
-#### ⚡ Performance Data
+#### ⚡ Electric Performance Data
 - **Usable Area:** Net area
 - **Capacity:** Peak power ($kW$)
 - **Generation:** $kWh/year$
@@ -369,38 +359,6 @@ Search for your building and discover its energy potential:
 ]
 ]
 
----
-class: inverse, center, middle
-# Research Question: GAP
-
---
-### The "Static" Gap: 
-Current data dashboard provides a 'snapshot' of theoretical potential but cannot monitor the actual progress of solar installations in real-time. 
-
-(Without knowing what is already "on the roof," the city cannot track its progress toward Global Development Goals (e.g., SDG 7).) 
---
-
-### The "Precision" Gap: 
-Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimation of usable area. (resulting in unrealistic financial expectations for citizens and flawed energy planning for the city.) 
---
-
-### The "Integration" Gap:  
-Auto-Syncing API - Open Data 
-
----
-# What is missing from the current dashboard panel?
-- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
-- Some solar panels are not detected well, especially those located on top of private properties.
-- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
-- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
-
----
-# Our Solution
-
-1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
-2. Use Machine Learning methods to better understand the current solar panel distribution.
-3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
-4. Add more ways to calculate and prioritise the huge potential rooftop area.
 
 ???
 # Analysis of Barcelona’s Current Solar Dashboard
@@ -432,6 +390,43 @@ Auto-Syncing API - Open Data
  --**Estimated Maintenance Cost:** Yearly operational expenses ($€/year$) 
 
  --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
+ 
+ 
+ 
+---
+class: inverse, center, middle
+# Research Question: GAP
+
+--
+### The "Static" Gap: 
+Current data provides a "snapshot" of theoretical potential but cannot monitor the actual progress of solar installations in real-time. (Without knowing what is already "on the roof," the city cannot track its progress toward Global Development Goals (e.g., SDG 7).) 
+--
+
+### The "Precision" Gap: 
+Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimation of usable area. (resulting in unrealistic financial expectations for citizens and flawed energy planning for the city.) 
+--
+
+### The "Integration" Gap:  
+Auto-Syncing API - Open Data 
+
+
+---
+# What is missing from the current dashboard panel?
+- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
+- Some solar panels are not detected well, especially those located on top of private properties.
+- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
+- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
+
+
+---
+# Our Solution
+
+1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
+2. Use Machine Learning methods to better understand the current solar panel distribution.
+3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
+4. Add more ways to calculate and prioritise the huge potential rooftop area.
+
+
 
 
 
@@ -447,8 +442,11 @@ class: reverse, center, middle
 
 --
 ### Isolated---Intergrated  
+
  
 ???
+
+Bussiness as usual
 "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 
 
@@ -547,7 +545,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
 
 
@@ -558,7 +556,7 @@ Figure: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/a
 knitr::include_graphics("images/lidar2.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
+Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
 
 ---
@@ -568,7 +566,7 @@ Figure: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/
 knitr::include_graphics("images/lidar3.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
 
 ---
@@ -588,122 +586,27 @@ where??
 
 ---
 class: inverse, center, middle
-# Dashboard Show TIME
+# NEW!!! Dashboard Show Time
 
 
 ---
 
-## **Step 1：Deep Learning_Existing Asset Detection  **
 ```{css, echo=FALSE}
-/* 布局控制 */
-.left-70 { width: 68%; float: left; }
-.right-30 { width: 30%; float: right; height: 500px; overflow-y: auto; }
-
-/* 图片框容器 */
-.img-viewer {
-  width: 100%; height: 380px; 
-  border: 1px solid #ddd; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  background: #f8f8f8; position: relative;
-}
-.img-viewer img { max-width: 100%; transition: transform 0.3s; transform-origin: center; }
-
-/* 按钮与折叠面板 */
-.nav-btns { margin-top: 10px; text-align: center; }
-.nav-btns button { font-size: 12px; margin: 2px; cursor: pointer; }
-
-details { 
-  margin-bottom: 10px; padding: 8px;
-  background: #f9f9f9; border-left: 3px solid #802222; 
-}
-summary { font-weight: bold; cursor: pointer; color: #802222; }
-```
-
-.left-70[
-### .center[Interactive Map Layers]
-
-<div class="img-viewer">
-  <img id="target-img" src="images/01StatusLayerML.png">
-</div>
-
-<div class="nav-btns">
-  **Layers:** <button onclick="updateSlide('images/01StatusLayerML.png', 'Layer 1: Input Status')">01</button>
-  <button onclick="updateSlide('images/02StatusLayerMLOutcome.png', 'Layer 2: ML Segmentation')">02</button>
-  <button onclick="updateSlide('images/023StatusLayerMLOutcome.png', 'Layer 3: Final Output')">03</button>
-  <br>
-  **Tools:** <button onclick="doZoom(1.2)">➕ Zoom In</button>
-  <button onclick="doZoom(0.8)">➖ Zoom Out</button>
-  <button onclick="doReset()">🔄 Reset</button>
-</div>
-
-<p id="layer-caption" style="text-align:center; font-size:0.8em; color:#666;">Current: Layer 1: Input Status</p>
-]
-
-.right-30[
-### .center[System Specs]
-
-<details open>
-  <summary>🔍 Asset Detection</summary>
-  - **Existing PV Area:** `PV_Area_Detected` (m^2)
-  - Footprint extracted via **Mask2Former**.
-</details>
-
-<details>
-  <summary>⚡ Capacity Info</summary>
-  - **Current Capacity:** `Installed_Capacity` (kWp)
-  - Statistical certainty score provided.
-</details>
-
-<details>
-  <summary>📊 Meta Data</summary>
-  - **Confidence:** 0.95
-  - **Updated:** 2024-05-20
-</details>
-]
-
-<script>
-let currentScale = 1;
-const imgElem = document.getElementById('target-img');
-const captionElem = document.getElementById('layer-caption');
-
-function updateSlide(path, text) {
-  imgElem.src = path;
-  captionElem.innerHTML = "Current: " + text;
-  doReset();
-}
-
-function doZoom(factor) {
-  currentScale *= factor;
-  imgElem.style.transform = "scale(" + currentScale + ")";
-}
-
-function doReset() {
-  currentScale = 1;
-  imgElem.style.transform = "scale(1)";
-}
-</script>
-
-
----
-
-## **Step 2：LiDAR_Precision Refinement**
-
-```{css, echo=FALSE}
-/* 保持与上一页一致的 7-3 比例 */
+/* 7:3 */
 .left-70 { width: 63%; float: left; }
 .right-30 { width: 34%; float: right; }
 
-/* 滚动面板设置 */
-.scroll-box-lidar {
-  height: 420px;
+/* SLIDER */
+.scroll-box-dl {
+  height: 450px;
   overflow-y: auto;
   padding: 10px;
-  border-left: 1px solid #2980b9; /* 换成 LiDAR 蓝 */
-  background: rgba(240, 248, 255, 0.3);
+  border-left: 1px solid #802222;
+  background: rgba(128, 34, 34, 0.03);
 }
 
-/* 图片查看器容器 */
-.img-container {
+/* PIXEL */
+.img-container-dl {
   width: 100%;
   height: 340px;
   background: #f0f0f0;
@@ -712,8 +615,181 @@ function doReset() {
   justify-content: center;
   overflow: hidden;
   border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
+.img-container-dl img { transition: transform 0.3s ease; }
+
+/* BUTTON */
+.nav-btns-dl {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-btns-dl button {
+  font-size: 11px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #802222;
+  background: white;
+  border-radius: 4px;
+}
+
+.active-dl { background: #802222 !important; color: white; }
+
+/* FOLDER */
+.dl-details {
+  background: white;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  font-size: 0.8em;
+}
+.dl-details summary { font-weight: bold; cursor: pointer; color: #802222; }
+```
+
+---
+
+## Step 1: Deep Learning Existing Asset Detection
+
+.left-70[
+### .center[DL Segmentation Layers]
+
+<div class="img-container-dl">
+  <img id="dl-display" src="images/01StatusLayerML.png" width="100%">
+</div>
+
+<div class="nav-btns-dl">
+  <button class="active-dl" onclick="swapDL('images/01StatusLayerML.png', 'Layer 1: Input High Resolution Image', this)">01. Input</button>
+  <button onclick="swapDL('images/02StatusLayerMLOutcome.png', 'Layer 2: DL Segmentation', this)">02. Outcome</button>
+  <button onclick="swapDL('images/023StatusLayerMLOutcome.png', 'Layer 3: Final Detection- Results of U-net/OBIA', this)">03. Final</button>
+</div>
+
+<div class="nav-btns-dl" style="margin-top:10px;">
+  <button onclick="zoomDL(1.2)">🔍 Zoom In</button>
+  <button onclick="zoomDL(0.8)">🔍 Zoom Out</button>
+  <button onclick="resetDL()">🔄 Reset</button>
+</div>
+
+<p id="dl-caption" style="text-align:center; font-size:0.8em; color:#802222; margin-top:5px; font-weight:bold;">Current: Layer 1: Input Status</p>
+]
+
+.right-30[
+### .center[Key Metrics]
+
+.scroll-box-dl[
+
+<details open class="dl-details">
+<summary>🔍 Asset Detection</summary>
+
+- Existing PV Area: PV Area Detected($m^2$)  
+
+<br>
+
+- Data Source: VHR Satellite Imagery
+
+<br>
+
+- Input Resolution: 0.3m per pixel
+
+<br>
+
+- Last Updated: 2024-09-20  
+
+</details>
+
+
+<details class="dl-details">
+<summary>⚡ Capacity Info</summary>
+
+- Installed Capacity: 500 kW   
+
+<br>
+
+- Generation: 1,200 kWh/year
+
+<br>
+
+- Coverage:> 100% needs
+
+</details>
+
+<details class="dl-details">
+<summary>🛠️ Model Config</summary>
+
+- CNN: ResNet-50 / Swin-T
+
+
+</details>
+
+]
+]
+
+<script>
+let dlScale = 1;
+const dlImg = document.getElementById('dl-display');
+const dlCap = document.getElementById('dl-caption');
+
+function swapDL(path, text, btn) {
+  dlImg.src = path;
+  dlCap.innerText = "Current: " + text;
+  resetDL();
+  document.querySelectorAll('.nav-btns-dl button').forEach(b => b.classList.remove('active-dl'));
+  btn.classList.add('active-dl');
+}
+
+function zoomDL(f) {
+  dlScale *= f;
+  dlImg.style.transform = "scale(" + dlScale + ")";
+}
+
+function resetDL() {
+  dlScale = 1;
+  dlImg.style.transform = "scale(1)";
+}
+</script>
+
+<div style="clear: both;"></div>
+
+
+???
+ResNet-50 (Residual Network):
+Swin-T (Swin Transformer - Tiny):
+We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
+---
+
+```{css, echo=FALSE}
+/*  7-3 */
+.left-70 { width: 63%; float: left; }
+.right-30 { width: 34%; float: right; }
+
+/* SLIDER - LiDAR */
+.scroll-box-lidar {
+  height: 450px;
+  overflow-y: auto;
+  padding: 10px;
+  border-left: 1px solid #2980b9;
+  background: rgba(41, 128, 185, 0.03);
+}
+
+/* PIXEL */
+.img-container-lidar {
+  width: 100%;
+  height: 340px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* BUTTON */
 .nav-btns-lidar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -727,29 +803,42 @@ function doReset() {
   cursor: pointer;
   border: 1px solid #2980b9;
   background: white;
+  border-radius: 4px;
 }
 
 .active-lidar { background: #2980b9 !important; color: white; }
+
+/* FOLDER */
+.lidar-details {
+  background: white;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  font-size: 0.8em;
+}
+.lidar-details summary { font-weight: bold; cursor: pointer; color: #2980b9; }
 ```
 
+## Step 2: LiDAR Precision Refinement
 
 .left-70[
-### .center[LiDAR Precise Positioning]
+### .center[3D Geometric Analysis]
 
-<div class="img-container">
+<div class="img-container-lidar">
   <img id="lidar-display" src="images/032Shadeeve.png" width="100%">
 </div>
 
 <div class="nav-btns-lidar">
-  <button class="active-lidar" onclick="swapL('images/032Shadeeve.png', 'Evening Shade', this)">🌆 Evening</button>
   <button onclick="swapL('images/03ShadeMor.png', 'Morning Shade', this)">🌅 Morning</button>
   <button onclick="swapL('images/031Shadenoon.png', 'Noon Shade', this)">☀️ Noon</button>
+    <button class="active-lidar" onclick="swapL('images/032Shadeeve.png', 'Evening Shade', this)">🌆 Evening</button>
   <button onclick="swapL('images/04Slope.png', 'Slope Analysis', this)">📐 Slope</button>
   <button onclick="swapL('images/05Aspect.png', 'Aspect/Orientation', this)">🧭 Aspect</button>
   <button onclick="swapL('images/06Elevation.png', 'Elevation', this)">⛰️ Elevation</button>
 </div>
 
-<p id="lidar-caption" style="text-align:center; font-size:0.8em; color:#2980b9; margin-top:5px;">Layer: 032Shadeeve.png</p>
+<p id="lidar-caption" style="text-align:center; font-size:0.8em; color:#2980b9; margin-top:5px; font-weight:bold;">Current: 032Shadeeve.png</p>
 ]
 
 .right-30[
@@ -757,23 +846,38 @@ function doReset() {
 
 .scroll-box-lidar[
 
-#### 📐 LiDAR Analysis
-- **Average_Tilt:** $0.0 - 90.0^\circ$
-  - *Normal vector estimation*
-- **Azimuth:** $0 - 359^\circ$
-  - *180° = True South*
+<details open class="lidar-details">
+  <summary>📐 LiDAR Analysis</summary>
+  - Average_Tilt: $13.5^\circ$
+  
+<br>
+  
+  - Azimuth: $155^\circ$ (180°=South) 
+  
+<br>
 
-#### ☀️ Effective Potential
-- **Solar_Hours:** $0 - 8,760$ (h)
-  - *Dynamic ray-tracing*
-- **Obstacle_Ratio:** $0.00 - 1.00$
-  - *HVAC/Chimney detection*
-- **Net Area:** $\ge 0$ ($m^2$)
-  - *Voxel-based filtering*
+  - Shadows: Dynamic ray-tracing for 3D shadow casting.
+  
+<br> 
+  
+  - Detection obstacles: 10cm+ vertical rooftop appurtenances.  
 
-#### 📝 Technical Notes
-- **LiDAR:** 10cm+ vertical rooftop appurtenances detection.
-- **Shadows:** 3D shadow casting from neighbors.
+  
+<details class="lidar-details">
+<summary>☀️ Effective Potential</summary>
+
+  - Solar Hours:  10h (0-24)
+   
+<br>
+  
+  - Obstacle Ratio: 0.36 (0.00-1.00) 
+  
+<br>
+  
+  - Net Area: 12 $m^2$  
+
+</details>
+
 ]
 ]
 
@@ -789,25 +893,23 @@ function swapL(path, name, btn) {
 <div style="clear: both;"></div>
 
 
-
 ---
-## ** Syn API__Expansion Potential **
 
 ```{css, echo=FALSE}
-/* 维持一致的 7-3 比例 */
+/*  7-3  */
 .left-70 { width: 63%; float: left; }
 .right-30 { width: 34%; float: right; }
 
-/* 滚动面板设置 - 绿色系适配 API/生态数据 */
+/* SLIDER - API */
 .scroll-box-api {
-  height: 420px;
+  height: 450px;
   overflow-y: auto;
   padding: 10px;
-  border-left: 1px solid #27ae60; 
-  background: rgba(232, 245, 233, 0.3);
+  border-left: 1px solid #27ae60;
+  background: rgba(39, 174, 96, 0.03);
 }
 
-/* 图片查看器 */
+/* PIXEL */
 .img-container-api {
   width: 100%;
   height: 340px;
@@ -817,8 +919,10 @@ function swapL(path, name, btn) {
   justify-content: center;
   overflow: hidden;
   border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
+/* BUTTON */
 .nav-btns-api {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -832,11 +936,24 @@ function swapL(path, name, btn) {
   cursor: pointer;
   border: 1px solid #27ae60;
   background: white;
+  border-radius: 4px;
 }
 
 .active-api { background: #27ae60 !important; color: white; }
+
+/* FOLDER */
+.api-details {
+  background: white;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  font-size: 0.8em;
+}
+.api-details summary { font-weight: bold; cursor: pointer; color: #27ae60; }
 ```
 
+## Step 3: Syn API & Spectral Analysis
 
 .left-70[
 ### .center[Multispectral Index & Land Use]
@@ -852,7 +969,7 @@ function swapL(path, name, btn) {
   <button onclick="swapAPI('images/001LandUse.png', 'Land Use Classification', this)">🗺️ Land Use</button>
 </div>
 
-<p id="api-caption" style="text-align:center; font-size:0.8em; color:#27ae60; margin-top:5px;">Layer: ndvi2024.jpeg</p>
+<p id="api-caption" style="text-align:center; font-size:0.8em; color:#27ae60; margin-top:5px; font-weight:bold;">Current: Layer: NDVI (Vegetation Index)</p>
 ]
 
 .right-30[
@@ -860,24 +977,31 @@ function swapL(path, name, btn) {
 
 .scroll-box-api[
 
-#### 🛰️ Spectral Reflectance
-- **NDVI:** Normalized Difference Vegetation Index.
-  - *Identifies green roof potential.*
-- **NDBI:** Built-up Index.
-  - *Distinguishes roof materials vs. soil.*
-- **NDWI:** Water Index.
-  - *Detects ponding or water features.*
+<details open class="api-details">
+  <summary>🛰️ Spectral Reflectance</summary>
+  - NDVI: Identifies green roof potential.
+<br> 
 
-#### 🏠 Site Context
-- **Roof_Material:** Classification via reflectance.
-  - *Concrete, metal, or tile.*
-- **Land_Use_Class:** Contextual role.
-  - *Residential, Industrial, or Municipal.*
+  - NDBI: Distinguishes roof materials vs. soil.
+<br> 
 
-#### 🏛️ Constraints
-- **Heritage_Status:** Planning overlay.
-  - *Restricted zones for PV installation.*
-- **Data_Confidence:** API validation score.
+  - NDWI: Detects ponding or water features.
+</details>
+
+<details class="api-details">
+  <summary>🏠 Context</summary>
+  - Roof_Material: Concrete, metal, or tile.
+<br>
+  - Land_Use_Class: Residential, Industrial, or Municipal classification.
+</details>
+
+<details class="api-details">
+  <summary>🏛️ Regulatory Constraints</summary>
+  - Heritage_Status: 0/1 (Restricted zones)
+<br>
+  - Data_Confidence: API cross-validation score
+</details>
+
 ]
 ]
 
@@ -898,11 +1022,11 @@ function swapAPI(path, name, btn) {
 
 
 ```{css, echo=FALSE}
-/* 延续 7-3 比例 */
+/*  7-3  */
 .left-70 { width: 63%; float: left; }
 .right-30 { width: 34%; float: right; }
 
-/* 总结页滚动/折叠面板定制 */
+/* SLIDER */
 .summary-scroll {
   height: 500px;
   overflow-y: auto;
@@ -951,72 +1075,180 @@ function swapAPI(path, name, btn) {
 .summary-scroll[
 
 <details open class="summary-details">
-  <summary>🆔 Metadata & Baseline</summary>
+  <summary>🆔 Metadata</summary>
   - <span class="field-tag">Building_ID:</span> Municipal cadastre link.
+<br>
   - <span class="field-tag">Global_ID:</span> Spanish national parcel code.
+<br>
   - <span class="field-tag">Confidence:</span> RS reliability (0.0-1.0).
 </details>
 
 <details class="summary-details">
-  <summary>📏 Spatial & LiDAR</summary>
+  <summary>📏 Detection</summary>
   - <span class="field-tag">PV_Area_Detected:</span> Current panels ($m^2$).
+  <br>
   - <span class="field-tag">Effective_Potential:</span> Net gap ($m^2$).
+  <br>
   - <span class="field-tag">Obstacle_Ratio:</span> LiDAR point cloud filter.
 </details>
 
 <details class="summary-details">
-  <summary>📐 Technical Geometry</summary>
+  <summary>📐 Attributes</summary>
   - <span class="field-tag">Average_Tilt:</span> Slope ($0.0-90.0^\circ$).
+  <br>
   - <span class="field-tag">Azimuth:</span> Orientation ($0-359^\circ$).
+  <br>
   - <span class="field-tag">Solar_Hours:</span> Ray-tracing (0-8,760h).
 </details>
 
 <details class="summary-details">
-  <summary>🧱 Attributes & Context</summary>
+  <summary>⚖️ Assessmnet </summary>
+  - <span class="field-tag">Solar_Gap_Score:</span> Ranking priority.
+  <br>
+  - <span class="field-tag">Social_Equity:</span> Income + Poverty data.
+    <br>
+  - <span class="field-tag"> CO2_Offset_Annual:</span> Estimated carbon reduction potential.
+      <br>
+  - <span class="field-tag">Economic_ROI:</span> Dynamic return on investment period.
+
+</details>
+
+<details class="summary-details">
+  <summary>🧱  Context</summary>
   - <span class="field-tag">Roof_Material:</span> Spectral reflectance.
+  <br>
   - <span class="field-tag">Heritage_Status:</span> Planning constraint.
+  <br>
   - <span class="field-tag">Land_Use:</span> Million-AID classification.
 </details>
 
 <details class="summary-details">
   <summary>📈 Monitoring & Yield</summary>
   - <span class="field-tag">Self_Sufficiency:</span> IoT + RS fusion.
+  <br>
   - <span class="field-tag">Current_Gen_kW:</span> Real-time output.
 </details>
 
-<details class="summary-details">
-  <summary>⚖️ Policy & Equity</summary>
-  - <span class="field-tag">Solar_Gap_Score:</span> Ranking priority.
-  - <span class="field-tag">Social_Equity:</span> Income + Poverty data.
+]
+]
+
+---
+```{css, echo=FALSE}
+/* 直接在页面内定义局部样式 */
+.formula-accordion { width: 100%; font-family: 'Arial', sans-serif; }
+
+.formula-accordion details {
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.formula-accordion summary {
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.1em;
+}
+
+/* 颜色方案直接内嵌 */
+.orange-panel { border-left: 8px solid #e67e22 !important; color: #e67e22; }
+.green-panel  { border-left: 8px solid #27ae60 !important; color: #27ae60; }
+.pink-panel   { border-left: 8px solid #e91e63 !important; color: #e91e63; }
+.blue-panel   { border-left: 8px solid #2980b9 !important; color: #2980b9; }
+
+/* 展开时的背景微调 */
+.formula-accordion details[open] { background: #fcfcfc; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+/* 修正公式容器，确保不溢出 */
+.formula-content {
+  padding: 10px 0;
+  color: #333; /* 内容恢复黑色，方便阅读 */
+}
+```
+
+
+## Multiple Index Synthesis
+
+
+.formula-accordion[
+
+<details open class="orange-panel">
+
+<summary>1. Precision: Net Solar Potential Gap ($E_{gap}$)</summary>
+<div class="formula-content">
+$$E_{gap} = [ (A_{roof} \times f_{obs}) - A_{exist} ] \times \left( \sum_{h=1}^{8760} G_{h} \times \text{Shade}_h \right) \times \eta_{sys} \times PR$$
+</div>
 </details>
 
-]
-]
+<details class="green-panel"><summary>2. Climate: Carbon Gap Tracking ($\Delta CO_2$)</summary>
+
+<div class="formula-content">
+$$\Delta CO_2(t) = \text{Target}_{2030} - [ \sum (\text{Stock}_{detected} + \text{Potential}_{Egap}) \times EF_{grid} ]$$
+</div>
+</details>
+
+<details class="pink-panel"><summary>3. Economy: Dynamic ROI ($T_{payback}$)</summary>
+
+<div class="formula-content">
+
+$$T_{payback} = \frac{Cost_{invest}}{\sum_{y=1}^{n} [ (Yield \times SSR \times P_{buy}) + (Yield \times (1-SSR) \times P_{sell}) - Cost_{maint} ]}$$
+</div>
+</details>
+
+<details class="blue-panel"><summary>4. Equity: Social Equity Index ($SEI$)</summary>
+<div class="formula-content">
+$$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}}{\text{City\_Avg\_Income}} \right)$$
+</div>
+</details>]
+
+.center[<img src="images/EEE.png" width="70%" style="border-radius:12px; border: 1px solid #ddd;">]
+
+---
+
+???
+> **From Static to Dynamic:** Unlike the legacy dashboard, our engine uses **Auto-Syncing APIs** that update as the satellite passes. We don't just tell citizens how much sun hits their roof; we tell the City Council where to invest to achieve the highest **environmental, economic, and social return.**
+
+
+
+- Net Usable Area: $A_{roof} \times f_{obs}$ (Derived from LiDAR)
+
+ <br>
+
+- **Stock Deduction:** $A_{exist}$ (Detected via RS)
+
+- **3D Shadow Mask:** $Shade_h$ (Binary hourly coefficient)
+
+- **Target:** 2030 Carbon goal (Barcelona Assembly)
+
+- **Emission Factor:** $EF_{grid}$ (approx. 0.21 for Spain)
+
+- **SSR:** Self-Sufficiency Ratio (On-site consumption)
+
+- **Savings:** $P_{buy}$ (€0.25/kWh) vs $P_{sell}$ (€0.10/kWh)
+
+- **Gap Score:** Technical priority ($E_{gap} / A_{roof}$)
+
+- **Income Factor:** Census-based household income normalization
+
+
+**Problem:** Legacy maps ignore "micro-obstacles" and existing PV stock, leading to a 20% overestimation of capacity.
+**Outcome:** Ensures investment is based on **physically available space**, not theoretical geometry.
+
+**Problem:** Barcelona has a 2030 Neutrality target, but lacks a "Live" compass to measure progress.
+**Outcome:** Transitions the dashboard into a **Policy Compass** that shows the exact "Distance to Target" for municipal leaders.
+
+**Problem:** Static ROI estimates fail to account for energy behavior and "Self-Sufficiency."
+**Outcome:** Proves the financial case. It explains why a **school** (high daytime use) has a faster ROI than a **residential building** (high evening use).
+
+**Problem:** Solar subsidies often benefit wealthy districts, leaving vulnerable areas in "Energy Poverty."
+**Outcome:** Solves the **Injustice Gap**. A high $SEI$ triggers a **"High Priority"** badge for 100% municipal funding, targeting "Solar-Ready, Income-Poor" zones.
 
 
 ???
-## 2. API Field Specification (Table)
-
-| Category | Field Name | Description | Value / Source | Data Type | Range / Unit |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Metadata** | `Global_ID` | National parcel code for cadastre sync. | Spanish Cadastre | String | Unique ID |
-| | `Confidence_Score`| AI detection reliability rating. | RS Model Output | Float | 0.00 - 1.00 |
-| **Spatial** | `PV_Area_Detected` | Area of existing solar panels. | VHR Satellite | Float | $\ge 0$ $m^2$ |
-| | `Effective_Potential`| Net usable area for new panels. | LiDAR Point Cloud | Float | $\ge 0$ $m^2$ |
-| | `Obstacle_Ratio` | Ratio of roof blocked by obstacles. | LiDAR Analysis | Float | 0.00 - 1.00 |
-| **Technical** | `Average_Tilt` | Slope derived from 3D point cloud. | LiDAR Geometry | Float | 0.0 - 90.0 $^\circ$ |
-| | `Azimuth` | Orientation (180° = True South). | LiDAR Geometry | Integer | 0 - 359 $^\circ$ |
-| | `Solar_Hours` | Annual sun hours (3D shading applied).| Ray-tracing | Integer | 0 - 8760 h |
-| **Attributes**| `Roof_Material` | Surface material (e.g., Tile, Metal). | RS Spectral | Enum | [Material] |
-| | `Land_Use_Class` | Functional use (Million-AID classes). | RS/GIS | Enum | [Class] |
-| **Impact** | `Solar_Gap_Score` | Priority index for deployment. | Plugin Analytics | Float | 0.00 - 1.00 |
-| | `Social_Equity_Index`| Subsidization priority indicator. | Census + RS | Enum | [Low-High] |
-| | `CO2_Offset_Annual` | Estimated carbon reduction potential. | Performance Model | Float | $kgCO_2eq/y$ |
-| | `Economic_ROI` | Dynamic return on investment period. | Financial Model | Float | Years |
-
-
-???
-## 3. Full API Schema (JSON)
+##  Full API Schema (JSON)
 
 ```json
 {
@@ -1080,8 +1312,6 @@ function swapAPI(path, name, btn) {
 ```
 
 
-
-
 ---
 
 # Data Feasibility Analysis - Step 1_ ML (Solar PV Mapping)
@@ -1114,6 +1344,9 @@ function swapAPI(path, name, btn) {
 - Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
 
 
+
+
+
 ---
 # Budget (£500,000 total)
 - Work Package 1: Project Management & Scoping (10%) = £50,000
@@ -1134,73 +1367,15 @@ function swapAPI(path, name, btn) {
 
 https://qiyuechen1202.github.io/CASA0023_group/?panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#26
 
----
-
-# Formula  
-
-Outline and show the benefits it would bring to the city and its population. 
-
-Formula:  
-
-Social 
-
-Economic 
-
-Environmental 
-
-Multiple index =a Formula 1 + bFormula2 +cFormula 3 + e 
-
-### **1.1 Net Solar Potential Gap ($E_{gap}$)**
-*Correcting the "Precision Gap" by filtering micro-obstacles and existing stock.*
-$$E_{gap} = \left[ (A_{roof} \times f_{obs}) - A_{exist} \right] \times G \times \eta_{sys} \times PR$$
-* **$f_{obs}$**: LiDAR-derived Obstacle Factor (Usable Area / Total Area).
-* **$A_{exist}$**: RS-detected existing PV area.
-* **$PR$**: Performance Ratio (Correction for temperature and system losses).
-
-
-
-### **1.2 Tilt & Azimuth Gain ($G_{eff}$)**
-*Correcting irradiation based on 3D geometry from LiDAR point clouds.*
-$$G_{eff} = G \times \frac{\cos(i)}{\cos(z)}$$
-* **$i$**: Incidence angle (angle between the roof's normal vector and the sun).
 
 ---
-
-### **1.3 Solar Gap Score ($Score_{gap}$)**
-*Ranking rooftops for strategic development.*
-$$Score_{gap} = \frac{E_{gap}}{E_{max\_cadastre}} \times \text{Confidence\_Score}$$
-
-
-### **1.4 Social Equity Index ($SEI$)**
-*Weighting potential by socio-economic vulnerability.*
-$$SEI = \text{Norm}(Score_{gap}) \times \omega_{poverty}$$
-
-
-### **1.5 Self-Sufficiency Ratio ($SSR_{live}$)**
-*Real-time resilience monitoring for public building pilots.*
-$$SSR_{live} = \frac{\min(P_{gen}, P_{load})}{P_{load}}$$
+# Risk & Limitations
+https://qiyuechen1202.github.io/CASA0023_group/?panelset3=risks-%2526-ethic-considerations-&panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#28
 
 ---
-# Risk, Ethics and Limitations
-.panelset[
-.panel[.panel-name[Risks and Ethics]
-.pull-left[
-**Risks**
-- Budget Constraints and Cost Exceedance
-- Data Accuracy and Uncertainty
-- Technical and Implementation Barriers
-- Policy, Regulatory and Institutional Barriers
-]
-.pull-right[
-**Ethics**
-- Transparency and Accountability
-- Data Usage Consent, Privacy Concerns
-- Safety standards for rooftop installations
-]
-]
+# References
 
-.panel[.panel-name[Limitations]
-
-]
-]
+```{r, echo=FALSE, results='asis'}
+#PrintBibliography(myBib)
+```
 ---
