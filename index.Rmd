@@ -371,31 +371,35 @@ Search for your building and discover its energy potential:
 
 ---
 class: inverse, center, middle
-# Research Question: GAP
+# Research Question: 4 GAPs
 
 --
-### The "Static" Gap: 
+### 1 The "Static" Gap: 
 Current data dashboard provides a 'snapshot' of theoretical potential but cannot monitor the actual progress of solar installations in real-time. 
 
 (Without knowing what is already "on the roof," the city cannot track its progress toward Global Development Goals (e.g., SDG 7).) 
 --
 
-### The "Precision" Gap: 
+### 2 The "Precision" Gap: 
 Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimation of usable area. (resulting in unrealistic financial expectations for citizens and flawed energy planning for the city.) 
 --
 
-### The "Integration" Gap:  
+---
+class: inverse, center, middle
+# Research Question: 4 GAPs
+--
+
+### 3 The "Integration" Gap:  
 The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
 --
 
-### The "Future" Gap:
+### 4 The "Future" Gap:
 The dashboard provides limited support for understanding future development potential.
-
 
 ---
 # Our Solution
 
-1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
+1. Use remote sensing data to reduce the cost and turnaround time of data updates.
 2. Use Machine Learning methods to better understand the current solar panel distribution.
 3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
 4. Add more ways to calculate and prioritise the huge potential rooftop area.
@@ -570,19 +574,37 @@ Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proc
 </p>
 
 ---
-# Methodology -Step3 -
-NDVI
-NDWI
-NDBI
+# Methodology - Step 3: Multispectral Indices
+*Assessing Urban Resilience and Environmental Context using Sentinel-2*
 
---
+.panelset[
+.panel[.panel-name[🌿 NDVI (Vegetation)]
+**Definition:** The Normalized Difference Vegetation Index quantifies vegetation health and density by measuring the difference between near-infrared (which vegetation strongly reflects) and red light.  
+**Formula:** $NDVI = \frac{NIR - Red}{NIR + Red}$
 
-Poliocy
-Energy security
-Regional Difference
+**Purpose in Project:** Identifies existing green roofs and street-level tree canopies. It helps exclude tree-shaded areas from PV potential and flags vegetation-poor neighborhoods (low NDVI) as high-priority zones for **"Biosolar" (PV + Green Roof) subsidies** to mitigate heat risk.
 
-where??
+**Literature Support:** [Weng et al. (2004)](https://doi.org/10.1016/j.rse.2003.11.005) demonstrated a strong negative correlation between NDVI and Land Surface Temperature (LST), validating NDVI as a crucial metric for mapping urban heat vulnerability.
+]
 
+.panel[.panel-name[💧 NDWI (Water)]
+**Definition:** The Normalized Difference Water Index enhances water features while eliminating soil and terrestrial vegetation features.  
+**Formula:** $NDWI = \frac{Green - NIR}{Green + NIR}$
+
+**Purpose in Project:** Acts as a strict **spatial mask**. Barcelona is a coastal city; NDWI automatically delineates the Mediterranean Sea, inland water bodies, and large rooftop swimming pools, ensuring these flat surfaces are not falsely identified as viable solar potential areas by the algorithms.
+
+**Literature Support:** [McFeeters (1996)](https://doi.org/10.1080/01431169608948714) introduced NDWI to successfully delineate open water features and suppress non-water noise in urban and environmental remote sensing.
+]
+
+.panel[.panel-name[🏗️ NDBI (Built-up)]
+**Definition:** The Normalized Difference Built-up Index highlights urban areas of barren soil, concrete, and asphalt, which reflect shortwave infrared (SWIR) stronger than NIR.  
+**Formula:** $NDBI = \frac{SWIR - NIR}{SWIR + NIR}$
+
+**Purpose in Project:** Maps the density of the built environment (e.g., the Eixample district). High NDBI strongly correlates with **severe Urban Heat Islands (UHI)**. Overlapping high NDBI with our "Solar Gap" allows the city to target rooftop PV as a physical shading mechanism to cool down the most exposed concrete blocks.
+
+**Literature Support:** [Guo et al. (2015)](https://doi.org/10.1016/j.landurbplan.2014.11.007) explored the quantitative relationship between urban biophysical composition and heat, proving that NDBI is the primary driver of increased Land Surface Temperature in dense urban clusters.
+]
+]
 
 ---
 class: inverse, center, middle
@@ -1081,36 +1103,47 @@ function swapAPI(path, name, btn) {
 
 
 ---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
 
-# Data Feasibility Analysis - Step 1_ ML (Solar PV Mapping)
-**Main data source:** Airbus Pléiades Neo (30 cm)
-- Advantage: 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
-- Disadvantage: higher acquisition cost.
+.panelset[
+.panel[.panel-name[🤖 Step 1: PV Mapping]
+**Main data source: Airbus Pléiades Neo (30 cm)**
 
-**Supplementary data source:** Cartographic and Geological Institute of Catalonia (ICGC)
-- Advantage: 25 cm RGB plus infrared imagery to improve classification detail and robustness.
-- Disadvantage: does not provide NIR, so generalisation may require careful transfer learning.
+**Advantage:** 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 
----
-# Data Feasibility Analysis - Step 2_Potential Layers (Terrain & Shadows)
+**Disadvantage:** Higher acquisition cost.
 
-**Main data source:** ICGC LiDAR
-- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
-- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
+**Supplementary data source: Cartographic and Geological Institute of Catalonia (ICGC)**
+**Advantage:** 25 cm RGB plus infrared imagery to improve classification detail and robustness.
 
-**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+**Disadvantage:** Does not provide NIR, so generalisation may require careful transfer learning.
+]
 
+.panel[.panel-name[⛰️ Step 2: Potential Layers]
+**Main data source: ICGC LiDAR (Terrain & Shadows)**
 
----
-# Data Feasibility Analysis - Step 3_Other Layers (Context & Indicators)
-**Main data source:** Sentinel-2
-- Advantage: 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
-- Disadvantage: limited spatial detail for rooftop-scale signatures; cloud availability issues.
+**Advantage:** 
+1. Very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
+2. Supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
-**Supplementary data source:** Sentinel-3
-- Advantage: complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
-- Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
+**Disadvantage (Assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+]
 
+.panel[.panel-name[🌍 Step 3: Context & Indicators]
+**Main data source: Sentinel-2**
+
+**Advantage:** 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
+
+**Disadvantage:** Limited spatial detail for rooftop-scale signatures; cloud availability issues.
+
+**Supplementary data source: Sentinel-3**
+
+**Advantage:** Complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
+
+**Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
+]
+]
 
 ---
 # Budget (£500,000 total)
