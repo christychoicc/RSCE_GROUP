@@ -393,6 +393,55 @@ Search for your building and discover its energy potential:
  
  
  
+---
+class: inverse, center, middle
+# Research Question: GAP
+
+--
+### The "Static" Gap: 
+Current data provides a "snapshot" of theoretical potential but cannot monitor the actual progress of solar installations in real-time. (Without knowing what is already "on the roof," the city cannot track its progress toward Global Development Goals (e.g., SDG 7).) 
+--
+
+### The "Precision" Gap: 
+Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimation of usable area. (resulting in unrealistic financial expectations for citizens and flawed energy planning for the city.) 
+--
+
+### The "Integration" Gap:  
+Auto-Syncing API - Open Data 
+
+
+---
+# What is missing from the current dashboard panel?
+- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
+- Some solar panels are not detected well, especially those located on top of private properties.
+- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
+- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
+
+
+---
+# Our Solution
+
+1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
+2. Use Machine Learning methods to better understand the current solar panel distribution.
+3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
+4. Add more ways to calculate and prioritise the huge potential rooftop area.
+
+
+
+
+
+---
+class: reverse, center, middle
+# Dashboard Redesign   
+
+--
+### Static---Dynamic  
+
+--
+### Theoretical---Practical  
+
+--
+### Isolated---Intergrated  
 
  
 ???
@@ -1161,8 +1210,6 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 
 ???
 > **From Static to Dynamic:** Unlike the legacy dashboard, our engine uses **Auto-Syncing APIs** that update as the satellite passes. We don't just tell citizens how much sun hits their roof; we tell the City Council where to invest to achieve the highest **environmental, economic, and social return.**
-
-
 
 - Net Usable Area: $A_{roof} \times f_{obs}$ (Derived from LiDAR)
 
