@@ -12,18 +12,10 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+    seal: false
 ---
-
-```{r setup, include=FALSE}
-#library(RefManageR)
-#BibOptions(check.entries = FALSE,
-           #bib.style = "authoryear",
-           #cite.style = "authoryear",
-           #style = "markdown",
-           #hyperlink = TRUE,
-           #dashed = FALSE,
-           #no.print.fields=c("doi", "url", "urldate", "issn"))
-#myBib <- ReadBib("references.bib", check = FALSE)
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(fontawesome)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -51,7 +43,14 @@ style_mono_light(
       "background-repeat" = "no-repeat",
       "color" = "white",
       "text-shadow" = "none"
-    ),
+      ),
+    ".title-slide a" = list(
+      "color" = "white",
+      "text-decoration" = "none"
+      ),
+    ".title-slide a:visited" = list(
+      "color" = "white"
+      ),
     ".title-slide h1" = list(
       "font-size" = "44px",
       "margin-bottom" = "16px",
@@ -95,6 +94,21 @@ style_extra_css(css = list(
 ))
 xaringanExtra::use_panelset()
 ```
+
+class: center, middle, title-slide
+
+# Solar Potential in Barcelona through Earth Observation
+
+## Group RGB
+
+### Christy Choi, Entao Wang, Jiaying Li, Yanxi Ren, Tianyi Chen
+
+### CASA0023 Remotely Sensing Cities and Environments
+
+### 2026/03/09 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
+
+### `r fa("github", fill = "white")` [GitHub Repository](https://github.com/christychoicc/RSCE_GROUP)
+---
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
@@ -102,7 +116,6 @@ xaringanExtra::use_panelset()
 - **Potential**: 7.9M m² suitable roof area, generation potential of 1,191 GWh/year around 60% of domestic electricity demand
 - **Low realisation**: City produces just 1% of its own energy, only 5% of households have solar installations in 2022
 - **Core Issue**: High location and technical potential, but low deployment
-- **Why**: Barcelona faces pressure on resilience, affordability and decarbonisation
 ]
 .pull-right-narrow[
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
@@ -289,7 +302,7 @@ Source: <a href="https://www.energia.barcelona/en/generate-energy/generate-energ
 
 ---
 class: inverse, center, middle
-# What is missing from policy?
+#What is missing from policy?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
 
@@ -391,42 +404,71 @@ Search for your building and discover its energy potential:
 
  --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
  
- 
- 
 ---
 class: inverse, center, middle
-# Research Question: GAP
+# Research Question: 4 GAPs
 
 --
-### The "Static" Gap: 
-Current data provides a "snapshot" of theoretical potential but cannot monitor the actual progress of solar installations in real-time. (Without knowing what is already "on the roof," the city cannot track its progress toward Global Development Goals (e.g., SDG 7).) 
+### 1 The "Static" Gap: 
+Current data dashboard provides a 'snapshot' of theoretical potential but cannot monitor the actual progress of solar installations in real-time. 
+
+(Without knowing what is already "on the roof," the city cannot track its progress toward Global Development Goals (e.g., SDG 7).) 
 --
 
-### The "Precision" Gap: 
+### 2 The "Precision" Gap: 
 Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimation of usable area. (resulting in unrealistic financial expectations for citizens and flawed energy planning for the city.) 
 --
 
-### The "Integration" Gap:  
-Auto-Syncing API - Open Data 
-
-
 ---
-# What is missing from the current dashboard panel?
-- Current dashboard relies on manually collected, calibrated and validated data, so data collection takes a long time.
-- Some solar panels are not detected well, especially those located on top of private properties.
-- The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
-- The dashboard provides limited support for understanding future development potential and where it should be prioritised.
+class: inverse, center, middle
+# Research Question: 4 GAPs
+--
 
+### 3 The "Integration" Gap:  
+The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
+--
+
+### 4 The "Future" Gap:
+The dashboard provides limited support for understanding future development potential.
 
 ---
 # Our Solution
 
-1. Use remote sensing datasets to reduce the cost and turnaround time of data updates.
+1. Use remote sensing data to reduce the cost and turnaround time of data updates.
 2. Use Machine Learning methods to better understand the current solar panel distribution.
 3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
 4. Add more ways to calculate and prioritise the huge potential rooftop area.
 
+???
+# Analysis of Barcelona’s Current Solar Dashboard
 
+### 1. *Resource Potential*
+
+  --**Incident Solar Radiation:** Currently provided as a qualitative rating (e.g., "Very Good"). 
+
+  --**Solar Irradiated Surface Area:** The total roof area receiving effective sunlight ($m^2$) 
+
+### 2. *Performance Data*
+
+ --**Effective Usable Area:** Net rooftop area available for PV installation after general setbacks. 
+
+ --**Installable Capacity:** Potential peak power output measured in $kW$. 
+
+ --**Annual Energy Generation:** Estimated yearly electricity production in $kWh/year$ 
+
+ --**Common Area Consumption Coverage:** Indicates that the generation covers more than $100\%$ of the building's shared areas' energy needs. 
+
+### 3. *Environmental Impact* 
+
+ --**GHG Emissions Savings:** Measured in $kgCO_2eq/year$ to align with SDG 13 (Climate Action). 
+
+### 4. *Economic Assessment* 
+
+ --**Estimated Investment Cost:** Initial capital expenditure ($€$) for the installation. 
+
+ --**Estimated Maintenance Cost:** Yearly operational expenses ($€/year$) 
+
+ --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
 
 
 
@@ -442,11 +484,8 @@ class: reverse, center, middle
 
 --
 ### Isolated---Intergrated  
-
  
 ???
-
-Bussiness as usual
 "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 
 
@@ -545,7 +584,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
 
@@ -556,7 +595,7 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar2.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
 
 ---
@@ -566,23 +605,41 @@ Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.o
 knitr::include_graphics("images/lidar3.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
+Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
 </p>
 
 ---
-# Methodology -Step3 -
-NDVI
-NDWI
-NDBI
+# Methodology - Step 3: Multispectral Indices
+*Assessing Urban Resilience and Environmental Context using Sentinel-2*
 
---
+.panelset[
+.panel[.panel-name[🌿 NDVI (Vegetation)]
+**Definition:** The Normalized Difference Vegetation Index quantifies vegetation health and density by measuring the difference between near-infrared (which vegetation strongly reflects) and red light.  
+**Formula:** $NDVI = \frac{NIR - Red}{NIR + Red}$
 
-Poliocy
-Energy security
-Regional Difference
+**Purpose in Project:** Identifies existing green roofs and street-level tree canopies. It helps exclude tree-shaded areas from PV potential and flags vegetation-poor neighborhoods (low NDVI) as high-priority zones for **"Biosolar" (PV + Green Roof) subsidies** to mitigate heat risk.
 
-where??
+**Literature Support:** [Weng et al. (2004)](https://doi.org/10.1016/j.rse.2003.11.005) demonstrated a strong negative correlation between NDVI and Land Surface Temperature (LST), validating NDVI as a crucial metric for mapping urban heat vulnerability.
+]
 
+.panel[.panel-name[💧 NDWI (Water)]
+**Definition:** The Normalized Difference Water Index enhances water features while eliminating soil and terrestrial vegetation features.  
+**Formula:** $NDWI = \frac{Green - NIR}{Green + NIR}$
+
+**Purpose in Project:** Acts as a strict **spatial mask**. Barcelona is a coastal city; NDWI automatically delineates the Mediterranean Sea, inland water bodies, and large rooftop swimming pools, ensuring these flat surfaces are not falsely identified as viable solar potential areas by the algorithms.
+
+**Literature Support:** [McFeeters (1996)](https://doi.org/10.1080/01431169608948714) introduced NDWI to successfully delineate open water features and suppress non-water noise in urban and environmental remote sensing.
+]
+
+.panel[.panel-name[🏗️ NDBI (Built-up)]
+**Definition:** The Normalized Difference Built-up Index highlights urban areas of barren soil, concrete, and asphalt, which reflect shortwave infrared (SWIR) stronger than NIR.  
+**Formula:** $NDBI = \frac{SWIR - NIR}{SWIR + NIR}$
+
+**Purpose in Project:** Maps the density of the built environment (e.g., the Eixample district). High NDBI strongly correlates with **severe Urban Heat Islands (UHI)**. Overlapping high NDBI with our "Solar Gap" allows the city to target rooftop PV as a physical shading mechanism to cool down the most exposed concrete blocks.
+
+**Literature Support:** [Guo et al. (2015)](https://doi.org/10.1016/j.landurbplan.2014.11.007) explored the quantitative relationship between urban biophysical composition and heat, proving that NDBI is the primary driver of increased Land Surface Temperature in dense urban clusters.
+]
+]
 
 ---
 class: inverse, center, middle
@@ -1206,7 +1263,6 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 
 .center[<img src="images/EEE.png" width="70%" style="border-radius:12px; border: 1px solid #ddd;">]
 
----
 
 ???
 > **From Static to Dynamic:** Unlike the legacy dashboard, our engine uses **Auto-Syncing APIs** that update as the satellite passes. We don't just tell citizens how much sun hits their roof; we tell the City Council where to invest to achieve the highest **environmental, economic, and social return.**
@@ -1243,10 +1299,8 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 
 **Problem:** Solar subsidies often benefit wealthy districts, leaving vulnerable areas in "Energy Poverty."
 **Outcome:** Solves the **Injustice Gap**. A high $SEI$ triggers a **"High Priority"** badge for 100% municipal funding, targeting "Solar-Ready, Income-Poor" zones.
-
-
 ???
-##  Full API Schema (JSON)
+## 3. Full API Schema (JSON)
 
 ```json
 {
@@ -1309,41 +1363,48 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 }
 ```
 
-
 ---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
 
-# Data Feasibility Analysis - Step 1_ ML (Solar PV Mapping)
-**Main data source:** Airbus Pléiades Neo (30 cm)
-- Advantage: 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
-- Disadvantage: higher acquisition cost.
+.panelset[
+.panel[.panel-name[🤖 Step 1: PV Mapping]
+**Main data source: Airbus Pléiades Neo (30 cm)**
 
-**Supplementary data source:** Cartographic and Geological Institute of Catalonia (ICGC)
-- Advantage: 25 cm RGB plus infrared imagery to improve classification detail and robustness.
-- Disadvantage: does not provide NIR, so generalisation may require careful transfer learning.
+**Advantage:** 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 
----
-# Data Feasibility Analysis - Step 2_Potential Layers (Terrain & Shadows)
+**Disadvantage:** Higher acquisition cost.
 
-**Main data source:** ICGC LiDAR
-- Advantage: very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
-- Advantage: supports shadow modelling and incidence-geometry correction for solar potential calculations.
+**Supplementary data source: Cartographic and Geological Institute of Catalonia (ICGC)**
+**Advantage:** 25 cm RGB plus infrared imagery to improve classification detail and robustness.
 
-**Disadvantage (assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+**Disadvantage:** Does not provide NIR, so generalisation may require careful transfer learning.
+]
 
+.panel[.panel-name[⛰️ Step 2: Potential Layers]
+**Main data source: ICGC LiDAR (Terrain & Shadows)**
 
----
-# Data Feasibility Analysis - Step 3_Other Layers (Context & Indicators)
-**Main data source:** Sentinel-2
-- Advantage: 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
-- Disadvantage: limited spatial detail for rooftop-scale signatures; cloud availability issues.
+**Advantage:** 
+1. Very high resolution surface elevation (DEM/DSM) and robust derivation of slope and aspect.
+2. Supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
-**Supplementary data source:** Sentinel-3
-- Advantage: complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
-- Disadvantage: coarser resolution; used for city-scale context rather than rooftop-level detection.
+**Disadvantage (Assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
+]
 
+.panel[.panel-name[🌍 Step 3: Context & Indicators]
+**Main data source: Sentinel-2**
 
+**Advantage:** 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
 
+**Disadvantage:** Limited spatial detail for rooftop-scale signatures; cloud availability issues.
 
+**Supplementary data source: Sentinel-3**
+
+**Advantage:** Complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
+
+**Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
+]
+]
 
 ---
 # Budget (£500,000 total)
@@ -1366,14 +1427,28 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 https://qiyuechen1202.github.io/CASA0023_group/?panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#26
 
 
----
-# Risk & Limitations
-https://qiyuechen1202.github.io/CASA0023_group/?panelset3=risks-%2526-ethic-considerations-&panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#28
 
 ---
-# References
+# Risk, Ethics and Limitations
+.panelset[
+.panel[.panel-name[Risks and Ethics]
+.pull-left[
+**Risks**
+- Budget Constraints and Cost Exceedance
+- Data Accuracy and Uncertainty
+- Technical and Implementation Barriers
+- Policy, Regulatory and Institutional Barriers
+]
+.pull-right[
+**Ethics**
+- Transparency and Accountability
+- Data Usage Consent, Privacy Concerns
+- Safety standards for rooftop installations
+]
+]
 
-```{r, echo=FALSE, results='asis'}
-#PrintBibliography(myBib)
-```
+.panel[.panel-name[Limitations]
+
+]
+]
 ---
