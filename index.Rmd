@@ -158,6 +158,10 @@ Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/
   is not a resource problem but a matter for <span style="font-weight: bold;">targeting and implementation</span>.
 </div>
 
+<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
+Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Energia Barcelona(n.d.)</a>, <a href="https://netzerocities.app/resource-4178">Ajuntament de Barcelon(2024)</a> 
+</p>
+
 ---
 # Policy Goals and Agenda
 .panelset[
@@ -290,6 +294,11 @@ class: inverse, center, middle
 # What is missing from policy?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
+.clearfix[]
+
+<div style="background: #2c5f2e; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
+Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar deployment across Barcelona.
+</div>
 
 ---
 class: inverse, center, middle
