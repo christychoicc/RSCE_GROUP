@@ -373,41 +373,40 @@ class: reverse, center, middle
 
 ---
 # Workflow
-&lt;img src="images/workflow_hstep.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/workflow_final.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure: Model Workflow
-&lt;/p&gt;
-
----
-# Methodology - Step 1: U-net
-&lt;img src="images/U-net1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure: Results of U-net model (Source: &lt;a href="https://www.mdpi.com/2076-3417/11/14/6524"&gt; Pérez-González et.al.,(2021) &lt;/a&gt;) 
+Figure 10: Model Workflow
 &lt;/p&gt;
 
 ---
 # Methodology - Step 1.1: U-net
 
-**1. Contraction Path (Encoder)**: Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
-        
-**2. Expansion Path (Decoder)**: Achieves precise localization to address the "Where" (Restoration of spatial resolution).
-        
-**3. Skip Connections**: Facilitates cross-layer feature fusion to eliminate boundary blurring, ensuring pixel-level accuracy for rooftop edges.
-        
-**4. Symmetrical Design**: Harmonizes global semantic understanding with localized topological details.
+### **1. Symmetric Encoder-Decoder Structure**: 
 
-**5. End-to-End Extraction** 
-  - Enables automated identification of PV arrays within complex urban environments without manual intervention.
-        
-**6. Interference Robustness**
-  - Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
-        
-**7. High IoU Performance**
-  - Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
-        
-**8. Data Implementation** 
-  - Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;Contracting Path (Encoder)&lt;/b&gt;: Captures multi-scale spectral and geometric features of PV panels through deep feature extraction.
+  
+  &lt;li&gt;&lt;b&gt;Extensive Path (Decoder)&lt;/b&gt;: Recovers feature maps to original spatial resolution, enabling centimeter-level precision in localization.
+&lt;/ul&gt;
 
+### **2. Cross-Scale Skip Connections**
+        
+### **3. Robustness in Complex Urban Environments**
+
+### **4. End-to-End High-Efficiency Mapping**
+
+---
+# Methodology - Step 1.1: U-net
+&lt;img src="images/U-net.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure 11: Results of U-net model (Source: &lt;a href="https://www.mdpi.com/2076-3417/11/14/6524"&gt; Pérez-González et.al.,(2021) &lt;/a&gt;) 
+&lt;/p&gt;
+---
+# Methodology - Step 1.1: U-net
+&lt;img src="images/U-net1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure 12: Results of U-net model (Source: &lt;a href="https://www.mdpi.com/2076-3417/11/14/6524"&gt; Pérez-González et.al.,(2021) &lt;/a&gt;) 
+&lt;/p&gt;
 
 ---
 # Methodology - Step 1.2: OBIA
@@ -425,24 +424,18 @@ Figure: Results of U-net model (Source: &lt;a href="https://www.mdpi.com/2076-34
 
 ---
 # Methodology- Step 1.2: OBIA
-&lt;img src="images/OBIA_1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
-&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure: Workflow of OBIA model (Source: &lt;a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
-&lt;/p&gt;
 
----
-# Methodology - Step 1.2: OBIA
-&lt;img src="images/OBIA_2.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+.pull-left[
+&lt;img src="images/OBIA.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure: Process of OBIA model (Source: &lt;a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
-&lt;/p&gt;
+Figure 13: Workflow of OBIA model
+&lt;/p&gt;]
 
----
-# Methodology - Step 1: OBIA
-&lt;img src="images/OBIA_3.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
+.pull-right[
+&lt;img src="images/OBIA_4.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure: Results of OBIA model (Source: &lt;a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
-&lt;/p&gt;
+Figure 14: Result of SLIC (Source: &lt;a href="https://jakubnowosad.com/ogh2021/#10"&gt; Ladisa et.al.,(2022) &lt;/a&gt;)
+&lt;/p&gt;]
 
 ---
 # Methodology - Step2- Lidar Workflow
@@ -1225,21 +1218,28 @@ function swapAPI(path, name, btn) {
 # Data Feasibility Analysis
 *Evaluating the strengths and limitations of our Earth Observation data sources.*
 
-.panelset[
-.panel[.panel-name[🤖 Step 1: PV Mapping]
+### 🤖 Step 1: PV Mapping
+
 **Main data source: Airbus Pléiades Neo (30 cm)**
 
 **Advantage:** 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 
 **Disadvantage:** Higher acquisition cost.
 
+--
+
 **Supplementary data source: Cartographic and Geological Institute of Catalonia (ICGC)**
+
 **Advantage:** 25 cm RGB plus infrared imagery to improve classification detail and robustness.
 
 **Disadvantage:** Does not provide NIR, so generalisation may require careful transfer learning.
-]
 
-.panel[.panel-name[⛰️ Step 2: Potential Layers]
+---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
+
+### ⛰️ Step 2: Potential Layers
+
 **Main data source: ICGC LiDAR (Terrain &amp; Shadows)**
 
 **Advantage:** 
@@ -1247,22 +1247,26 @@ function swapAPI(path, name, btn) {
 2. Supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
 **Disadvantage (Assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
-]
 
-.panel[.panel-name[🌍 Step 3: Context &amp; Indicators]
+---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
+
+### 🌍 Step 3: Context &amp; Indicators
+
 **Main data source: Sentinel-2**
 
 **Advantage:** 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
 
 **Disadvantage:** Limited spatial detail for rooftop-scale signatures; cloud availability issues.
 
+--
+
 **Supplementary data source: Sentinel-3**
 
 **Advantage:** Complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
 
 **Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
-]
-]
 
 ---
 # Budget (£500,000 total)
@@ -1282,9 +1286,22 @@ function swapAPI(path, name, btn) {
 ---
 # Project Timeline
 
-https://qiyuechen1202.github.io/CASA0023_group/?panelset4=social2&amp;panelset5=heat-hazard%253A-lst2&amp;panelset6=low2&amp;panelset7=risks-%2526-ethic-considerations-2#26
+&lt;img src="images/Timeline1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure: Timeline
+&lt;/p&gt;
 
+PM: Project Manager
 
+GA: Geospatial Analyst
+
+SDA: Senior Data Analyst
+
+EC: Environmental Consultant
+
+BCN: Barcelona City Council
+
+IT/Dev: Web Developer
 
 ---
 # Risk, Ethics and Limitations
