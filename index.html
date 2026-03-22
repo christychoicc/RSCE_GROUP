@@ -1243,21 +1243,28 @@ function swapAPI(path, name, btn) {
 # Data Feasibility Analysis
 *Evaluating the strengths and limitations of our Earth Observation data sources.*
 
-.panelset[
-.panel[.panel-name[🤖 Step 1: PV Mapping]
+### 🤖 Step 1: PV Mapping
+
 **Main data source: Airbus Pléiades Neo (30 cm)**
 
 **Advantage:** 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 
 **Disadvantage:** Higher acquisition cost.
 
+--
+
 **Supplementary data source: Cartographic and Geological Institute of Catalonia (ICGC)**
+
 **Advantage:** 25 cm RGB plus infrared imagery to improve classification detail and robustness.
 
 **Disadvantage:** Does not provide NIR, so generalisation may require careful transfer learning.
-]
 
-.panel[.panel-name[⛰️ Step 2: Potential Layers]
+---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
+
+### ⛰️ Step 2: Potential Layers
+
 **Main data source: ICGC LiDAR (Terrain &amp; Shadows)**
 
 **Advantage:** 
@@ -1265,22 +1272,26 @@ function swapAPI(path, name, btn) {
 2. Supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
 **Disadvantage (Assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
-]
 
-.panel[.panel-name[🌍 Step 3: Context &amp; Indicators]
+---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
+
+### 🌍 Step 3: Context &amp; Indicators
+
 **Main data source: Sentinel-2**
 
 **Advantage:** 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
 
 **Disadvantage:** Limited spatial detail for rooftop-scale signatures; cloud availability issues.
 
+--
+
 **Supplementary data source: Sentinel-3**
 
 **Advantage:** Complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
 
 **Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
-]
-]
 
 ---
 # Budget (£500,000 total)
