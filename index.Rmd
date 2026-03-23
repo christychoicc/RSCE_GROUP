@@ -647,34 +647,14 @@ Figure17: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/conten
 
 
 ---
-class: reverse, center, middle
 
-### Total
+<div style="height: 30px;"></div> 
 
---
-<div style="margin-bottom: 10px;"></div>
-### ➖
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
 
---
-###Solar Panels 
-
---
-### ➖
-
---
-### Shadows
-
---
-### ➖
-
---
-### Unsuitable Slopes
-
---
-### 🟰
-
---
-### Potential Rooftops
+# Add picture
+knitr::include_graphics("images/final.png")
+```
 
 ---
 # Methodology - Step 3: Multispectral Indices
