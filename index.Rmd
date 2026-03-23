@@ -333,22 +333,24 @@ class: inverse, center, middle
 ## What is missing from the operational system?
 ### Analysis of Barcelona’s Current Solar Dashboard
 
---
-Do you want to know how much energy you can generate in your home? 
-
-Search for your building and discover its energy potential:
-
-
 ???
 ICY:  
 
-YESSSSS, We have the vision, and we have the political will. But here’s the problem: WITHOUT a visualization system, we’re flying blind.  
+YESSSSS, We have the vision, and we have the political will. But here’s the problem: WITHOUT a visualization system, we’re flying blind.  //  
 
 Do you want to know how much energy you can generate in your home?    
 
 That is exactly the question Barcelona’s official portal answers today.    
 
 BUT, let’s bring a critical eye to this:  
+
+--
+Do you want to know how much energy you can generate in your home? 
+
+Search for your building and discover its energy potential:
+
+
+
 
 
 ---
@@ -409,18 +411,20 @@ BUT, let’s bring a critical eye to this:
 ???
 ICY:   
 
-Take a look at the screen—this is the current Barcelona Energy Mapping. If you’re a resident and you want to see if your roof is 'solar-ready,' you type in your address, and you get this dashboard.  
+On the left is the current Barcelona SOLAR Energy Mapping dashboard.    
 
 
-It breaks down into four main buckets:  
+And  The information breaks down into four main buckets:    
 
-The Solar Resource: Is my roof 'Very Good' or just 'Okay'?  
+It answers the questions of  
 
-The electric Performance: How many Energy will I get?  estimated value     
+[solar] Is my roof 'Very Good' or just 'Okay'?    
 
-The Environment: how much you’ll save On carbon footprint reduction. OF course estimated   
+[ELec]]   How many Energy will I get?  estimated value       
 
-The Economics: What is my Capacity and my yearly savings?   Also estimated  
+[Environ] how much you’ll save On carbon footprint reduction. OF course estimated     
+
+[Econ] What is my Capacity and my yearly savings?   Also estimated  
 
  
 
@@ -428,45 +432,25 @@ Basically, You search your building, you see a number, and you feel the **potent
 
 It looks comprehensive, right? Well... not quite.    
 
-Its potential estimation is based on 2D data that doesn't see the real world.  
+Its only show the potential estimation which is based on 2D data that doesn't see in the real world.  //  
+
 
 (Here is an advanced question: where the government should prioritize investment on?)
 
- 
-???
-# Analysis of Barcelona’s Current Solar Dashboard
-
-### 1. *Resource Potential*
-
-  --**Incident Solar Radiation:** Currently provided as a qualitative rating (e.g., "Very Good"). 
-
-  --**Solar Irradiated Surface Area:** The total roof area receiving effective sunlight ($m^2$) 
-
-### 2. *Performance Data*
-
- --**Effective Usable Area:** Net rooftop area available for PV installation after general setbacks. 
-
- --**Installable Capacity:** Potential peak power output measured in $kW$. 
-
- --**Annual Energy Generation:** Estimated yearly electricity production in $kWh/year$ 
-
- --**Common Area Consumption Coverage:** Indicates that the generation covers more than $100\%$ of the building's shared areas' energy needs. 
-
-### 3. *Environmental Impact* 
-
- --**GHG Emissions Savings:** Measured in $kgCO_2eq/year$ to align with SDG 13 (Climate Action). 
-
-### 4. *Economic Assessment* 
-
- --**Estimated Investment Cost:** Initial capital expenditure ($€$) for the installation. 
-
- --**Estimated Maintenance Cost:** Yearly operational expenses ($€/year$) 
-
- --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
 
 ---
 class: inverse, center, middle
 # Research Question: 4 GAPs
+
+???
+We’ve identified four critical GAPs: 
+
+**The data is 'Static'**—it’s just a snapshot with no way to track real progress.   
+
+**It’s also 'Imprecise'**—by ignoring rooftop obstacles like chimneys, we are overestimating potential by 20% because we ignore rooftop obstacles,    
+
+and we are **missing the 'Social' and 'Future' context** needed for real policy action.
+
 
 --
 ### 1 The "Static" Gap: 
@@ -482,6 +466,15 @@ Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimat
 ---
 class: inverse, center, middle
 # Research Question: 4 GAPs
+
+???
+We’ve identified four critical GAPs: 
+
+**The data is 'Static'**—it’s just a snapshot with no way to track real progress.   
+
+**It’s also 'Imprecise'**—by ignoring rooftop obstacles like chimneys, we are overestimating potential by 20% because we ignore rooftop obstacles,    
+
+and we are **missing the 'Social' and 'Future' context** needed for real policy action.
 --
 
 ### 3 The "Integration" Gap:  
@@ -490,6 +483,8 @@ The dashboard does not place Barcelona in a broader background context (e.g., co
 
 ### 4 The "Future" Gap:
 The dashboard provides limited support for understanding future development potential.
+
+
 
 ---
 # Our Solution
@@ -500,14 +495,32 @@ The dashboard provides limited support for understanding future development pote
 4. Add more ways to calculate and prioritise the huge potential rooftop area.
 
 
+???
+SO, How can we deal with it?  
 
+By fusing Remote Sensing with Machine Learning and LIDAR, we precisely automate the audit and strip away the 3D noise.   
+
+Also we turning a flat map into a multi-layered policy tool that finally connects rooftop potential to urban reality.  
 
 ---
 class: reverse, center, middle
 # Dashboard Redesign   
 ## How can we improve the operational system?
 
+???
+ICY:  
 
+Now, we’ve identified the gaps, and we’ve built the technical solution. 
+ 
+We’ve redesigned the operational system based on three fundamental shifts:    
+
+First: From Static to Dynamic.  
+
+Second: From Theoretical to Practical. 
+
+Third: From Isolated to Integrated. //
+
+Yan: work flow:  "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Ver66666y High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 --
 
 ### 1. Static---Dynamic  
@@ -520,20 +533,7 @@ class: reverse, center, middle
 
 ### 3. Isolated---Intergrated  
  
-???
-ICY:  
 
-So, we’ve identified the gaps, and we’ve built the technical solution. But what does that actually look like in practice?  How do we take a 2D map and turn it into a 3D strategy?  
- 
-We’ve redesigned the operational system based on three fundamental shifts:    
-
-First: From Static to Dynamic.  (We don't just guess what's there; we see the current PV distribution in real-time.)   
-
-Second: From Theoretical to Practical. (We aren't giving you a 'theoretical' number; we are giving you the Net Potential Expansion Area—the high-fidelity truth of what can actually be built. )  
-
-Third: From Isolated to Integrated. (we transform this from an isolated energy map into an integrated decision tool that identifies where solar can actually solve social and economic problems.)  
-
-Yan: work flow:  "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 
 
 ---
@@ -629,6 +629,11 @@ Figure15: Models (DSM and DTM) from ICGC  (Source:
   <a href=https://www.icgc.cat/en/Geoinformation-and-Maps/Data-and-products/Elevations/Territorial-elevations/Territorial-LiDAR> Institut Cartogràfic i Geològic de Catalunya (ICGC) </a>)
 </p>
 
+???
+Now, we move on to **Step 2**, which focuses on the LiDAR workflow. 
+
+we **downloaded** the DEM data from the ICGC platform.
+
 ---
 # Methodology - Step2: Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
@@ -638,6 +643,11 @@ knitr::include_graphics("images/lidar1.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure16: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
+
+???
+**This step has two main parts: analyzing the rooftops and calculating the** solar radiation
+
+Then, we clipped the data to **cut out** streets and trees, **leaving just** the rooftops.
 
 ---
 # Methodology- Step 2.1: Slope
@@ -650,6 +660,9 @@ knitr::include_graphics("images/slop3.png")
 Figure17: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
+???
+For these clipped rooftops, we calculate the slope and aspect for each location. and fin out the rooftops that are physically unsuitable for installation.
+
 ---
 # Methodology - Step2: Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
@@ -659,6 +672,9 @@ knitr::include_graphics("images/lidar4.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure16: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
+
+???
+Next, we turn the rooftops into points.  Using the Point Solar Radiation tool in ArcGIS,  calculate the exactly annual solar radiation for each spot.
 
 ---
 # Methodology -Step2.2: Solar Radiation
@@ -670,6 +686,8 @@ knitr::include_graphics("images/lidar2.png")
 Figure18: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
 
+???
+This picture easily shows us the areas shaded by trees or taller buildings.
 
 ---
 
@@ -680,6 +698,9 @@ Figure18: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/conten
 # Add picture
 knitr::include_graphics("images/final.png")
 ```
+
+???
+Finally, we subtract existing panels, shaded areas, and unsuitable slopes from the total rooftop area. This gives us the rooftops with true solar potential.
 
 ---
 # Methodology - Step 3: Multispectral Indices
@@ -720,8 +741,7 @@ class: inverse, center, middle
 
 ???
 ICY:  
-All these complex algorithms are just the engine.   What we really need is the Steering Wheel.      
-We need a way to see all this data working together to make real decisions.   
+  
 So, we took all those methodologies and we fused them into one single, powerful interface.  
 
 ```{css, echo=FALSE}
@@ -1474,12 +1494,9 @@ knitr::include_graphics("images/budget.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure 19: Sankey Diagram of Project Budget Allocation
 
+???
+Over half of our budget supports the data infrastructure and our core algorithms. **The rest goes into building the final platform and daily management.** To ensure we deliver the product, but still keep a safe buffer for any risks.
 
----
-# Other Purchases or Preparations
-- Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
-- Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
-- GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
 
 ---
 # Project Timeline
