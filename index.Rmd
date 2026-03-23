@@ -482,14 +482,19 @@ The dashboard provides limited support for understanding future development pote
 class: reverse, center, middle
 # Dashboard Redesign   
 ## How can we improve the operational system?
---
-### Static---Dynamic  
+
 
 --
-### Theoretical---Practical  
+
+### 1. Static---Dynamic  
 
 --
-### Isolated---Intergrated  
+
+### 2. Theoretical---Practical  
+
+--
+
+### 3. Isolated---Intergrated  
  
 ???
 ICY:  
