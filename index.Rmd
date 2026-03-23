@@ -128,7 +128,7 @@ Figure 1: Spain Solar Irradiation (Adapted from:  <a href="https://www.sciencedi
 
 - High solar irradiation of around 1,500–1,700 kWh/m²/year
 
-- Average solar radiation of around 4.12-4.56 kWh/m²/day, offering excellent conditions for rooftop PV deployment
+- Average solar radiation of around 4.12-4.56 kWh/m²/day, offering excellent conditions for rooftop PV installation
 
 - Highest solar resource cities in Europe, favourable for solar energy generation year-round
 ]
@@ -158,8 +158,7 @@ Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/
 
 .clearfix[]
 <div style="background: #722f37; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
-  The gap between <span style="font-weight: bold;">solar potential</span> and <span style="font-weight: bold;">actual deployment</span> 
-  is not a resource problem but a matter for <span style="font-weight: bold;">targeting and implementation</span>.
+  Barcelona has the rooftop capacity for solar expansion, but current uptake remains far below that potential.
 </div>
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0;">
@@ -249,7 +248,7 @@ Figure 7:Line of Action 5, recover terrace roofs and increase PV generation; Sou
 knitr::include_graphics("images/bcp9.png")
 ```
 <p style="font-size: 0.4em; text-align: center; margin-top: 0;">
-Figure 8: Line of Action 9, renewables in public space and municipal deployment; Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>
+Figure 8: Line of Action 9, renewables in public space and municipal installation; Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>
 </p>
 ]
 .pull-right-3[
@@ -284,10 +283,10 @@ Despite strong policy frameworks, the situation remains concerning...
 - Ageing housing stock; 81% of properties have a low energy performance rating (E, F, or G)
 - Energy poverty persists, energy bills exceed 10% of household income for many households
 - Renewable transition is slow; energy system still relies on centralised, non-renewable sources
-- A major Iberian power outage exposed the fragility of Spain's centralised energy system in April 2025, underlining the urgency of strengthening energy sources and distributed solar deployment
+- A major Iberian power outage exposed the fragility of Spain's centralised energy system in April 2025, underlining the urgency of strengthening energy sources and distributed solar installation
 
 <div style="background: #722f37; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em; margin-top: 1em;">
-The challenge is not the absence of policy or resources but <span style="font-weight: bold;">implementation</span>.
+The key challenges Barcelona faces are an ageing building stock, uneven solar installation, and energy vulnerability, highlighting the need for targeted implementation. 
 </div>
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0.5em;">
@@ -301,7 +300,7 @@ class: inverse, center, middle
 .clearfix[]
 
 <div style="background: #2c5f2e; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
-Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar deployment across Barcelona.
+Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar installation across Barcelona.
 </div>
 
 ---
@@ -1480,7 +1479,7 @@ IT/Dev: Web Developer
 - Structural Stability and Load-Bearing Capacity
   - Structural integrity of existing building roofs is sufficient to withstand the additional weight and wind loads imposed by solar panels and their mounting structures were not assessed
   - A rooftop identified as suitable by the dashboard may still be rejected upon physical inspection. 
-  - Full deployment would require integration with structural engineering assessments and consultation with qualified professionals.
+  - Actual installation would require integration with structural engineering assessments and consultation with qualified professionals.
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0;">
 References: <a href="https://www.energy.gov/eere/solar/solar-rooftop-potential"> Energy.gov. (n.d.)</a>
