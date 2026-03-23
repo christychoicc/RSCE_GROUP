@@ -594,35 +594,66 @@ Figure 14: Result of SLIC (Source: <a href="https://jakubnowosad.com/ogh2021/#10
 </p>]
 
 ---
-# Methodology - Step2- Lidar Workflow
+# Methodology - Step2: Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/lidar1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
+---
+# Methodology- Step 2.1: slop
+
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/slop3.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure16: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+</p>
 
 ---
-# Methodology -Step2-Solar Radiation
+# Methodology -Step2.2: Solar Radiation
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/lidar2.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
+Figure17: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
+
 
 ---
+class: reverse, center, middle
 
-```{r, echo=FALSE, out.width='90%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/lidar3.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
-</p>
+### Total
+
+--
+<div style="margin-bottom: 10px;"></div>
+### ➖
+
+--
+###Solar Panels 
+
+--
+### ➖
+
+--
+### Shadows
+
+--
+### ➖
+
+--
+### Unsuitable Slopes
+
+--
+### 🟰
+
+--
+### Potential Rooftops
 
 ---
 # Methodology - Step 3: Multispectral Indices
@@ -1413,7 +1444,10 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 ---
 # Budget (£500,000 total)
 
+<div style="height: 30px;"></div> 
+
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
+
 # Add picture
 knitr::include_graphics("images/budget.png")
 ```
@@ -1435,7 +1469,7 @@ Figure 18: Sankey Diagram of Project Budget Allocation
 knitr::include_graphics("images/Timeline1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Timeline
+Figure19: Timeline
 </p>
 
 PM: Project Manager
