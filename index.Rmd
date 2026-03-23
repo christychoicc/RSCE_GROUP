@@ -658,9 +658,6 @@ All these complex algorithms are just the engine.   What we really need is the S
 We need a way to see all this data working together to make real decisions.   
 So, we took all those methodologies and we fused them into one single, powerful interface.  
 
-
----
-
 ```{css, echo=FALSE}
 /* 7:3 */
 .left-70 { width: 63%; float: left; }
