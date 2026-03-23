@@ -619,6 +619,11 @@ knitr::include_graphics("images/lidar1.png")
 Figure16: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
+???
+**This step has two main parts: analyzing the rooftops and calculating the** solar radiation
+
+Then, we clipped the data to **cut out** streets and trees, **leaving just** the rooftops.
+
 ---
 # Methodology- Step 2.1: Slope
 
@@ -630,6 +635,9 @@ knitr::include_graphics("images/slop3.png")
 Figure17: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
+???
+For these clipped rooftops, we calculate the slope and aspect for each location. and fin out the rooftops that are physically unsuitable for installation.
+
 ---
 # Methodology - Step2: Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
@@ -639,6 +647,9 @@ knitr::include_graphics("images/lidar4.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure16: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
+
+???
+Next, we turn the rooftops into points.  Using the Point Solar Radiation tool in ArcGIS,  calculate the exactly annual solar radiation for each spot.
 
 ---
 # Methodology -Step2.2: Solar Radiation
@@ -650,6 +661,8 @@ knitr::include_graphics("images/lidar2.png")
 Figure18: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
 
+???
+This picture easily shows us the areas shaded by trees or taller buildings.
 
 ---
 
@@ -660,6 +673,9 @@ Figure18: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/conten
 # Add picture
 knitr::include_graphics("images/final.png")
 ```
+
+???
+Finally, we subtract existing panels, shaded areas, and unsuitable slopes from the total rooftop area. This gives us the rooftops with true solar potential.
 
 ---
 # Methodology - Step 3: Multispectral Indices
@@ -1454,6 +1470,8 @@ knitr::include_graphics("images/budget.png")
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure 19: Sankey Diagram of Project Budget Allocation
 
+???
+Over half of our budget supports the data infrastructure and our core algorithms. **The rest goes into building the final platform and daily management.** To ensure we deliver the product, but still keep a safe buffer for any risks.
 
 ---
 # Other Purchases or Preparations
