@@ -344,7 +344,7 @@ BUT, let’s bring a critical eye to this:
 .scroll-box ul { display: block; }
 ```
 
-## Analysis of Barcelona’s Current Solar Dashboard
+# Analysis of Barcelona’s Current Solar Dashboard
 
 
 .left-70[
@@ -762,7 +762,7 @@ So, we took all those methodologies and we fused them into one single, powerful 
 
 ---
 
-## Step 1: Deep Learning Existing Asset Detection
+# Step 1: DL Existing Asset Detection
 
 .left-70[
 ### .center[DL Segmentation Layers]
@@ -947,7 +947,7 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 .lidar-details summary { font-weight: bold; cursor: pointer; color: #2980b9; }
 ```
 
-## Step 2: LiDAR Precision Refinement
+# Step 2: LiDAR Precision Refinement
 
 .left-70[
 ### .center[3D Geometric Analysis]
@@ -1106,7 +1106,7 @@ Elevation: This provides the vertical context, accounting for height differences
 .api-details summary { font-weight: bold; cursor: pointer; color: #27ae60; }
 ```
 
-## Step 3: Syn API & Spectral Analysis
+# Step 3: Syn API & Spectral Analysis
 
 .left-70[
 ### .center[Multispectral Index & Land Use]
@@ -1171,7 +1171,7 @@ function swapAPI(path, name, btn) {
 
 
 ---
-## Smart Solar Analytical Engine 
+# Smart Solar Analytical Engine 
 
 
 ```{css, echo=FALSE}
@@ -1337,7 +1337,7 @@ Let’s look at the Formula that powers this prioritization.
 ```
 
 
-## Multiple Index Synthesis
+# Multiple Index Synthesis
 
 
 .formula-accordion[
