@@ -593,6 +593,18 @@ Figure 14: Result of SLIC (Source: <a href="https://jakubnowosad.com/ogh2021/#10
 </p>]
 
 ---
+# Methodology - Step2: Data
+<div style="height: 30px;"></div> 
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar5.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure15: Models (DSM and DTM) from ICGC  (Source: 
+  <a href=https://www.icgc.cat/en/Geoinformation-and-Maps/Data-and-products/Elevations/Territorial-elevations/Territorial-LiDAR> Institut Cartogràfic i Geològic de Catalunya (ICGC) </a>)
+</p>
+
+---
 # Methodology - Step2: Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
@@ -611,6 +623,16 @@ knitr::include_graphics("images/slop3.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
 Figure16: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+</p>
+
+---
+# Methodology - Step2: Lidar Workflow
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar4.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
 ---
