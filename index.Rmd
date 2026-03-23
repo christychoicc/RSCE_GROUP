@@ -299,7 +299,7 @@ class: inverse, center, middle
 
 .clearfix[]
 
-<div style="background: #2c5f2e; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
+<div style="background: #F1BF00; color: #722f37; padding: 10px 16px; border-radius: 6px; font-size: 0.9em; text-shadow: none;">
 Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar installation across Barcelona.
 </div>
 
