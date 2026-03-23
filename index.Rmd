@@ -308,7 +308,7 @@ class: inverse, center, middle
 
 ---
 class: inverse, center, middle
-## How can we improve the operational system?
+## What is missing from the operational system?
 ### Analysis of Barcelona’s Current Solar Dashboard
 
 --
@@ -316,6 +316,17 @@ Do you want to know how much energy you can generate in your home?
 
 Search for your building and discover its energy potential:
 
+
+???
+ICY:  
+
+YESSSSS, We have the vision, and we have the political will. But here’s the problem: WITHOUT a visualization system, we’re flying blind.  
+
+Do you want to know how much energy you can generate in your home?    
+
+That is exactly the question Barcelona’s official portal answers today.    
+
+BUT, let’s bring a critical eye to this:  
 
 
 ---
@@ -374,6 +385,33 @@ Search for your building and discover its energy potential:
 
 
 ???
+ICY:   
+
+Take a look at the screen—this is the current Barcelona Energy Mapping. If you’re a resident and you want to see if your roof is 'solar-ready,' you type in your address, and you get this dashboard.  
+
+
+It breaks down into four main buckets:  
+
+The Solar Resource: Is my roof 'Very Good' or just 'Okay'?  
+
+The electric Performance: How many Energy will I get?  estimated value     
+
+The Environment: how much you’ll save On carbon footprint reduction. OF course estimated   
+
+The Economics: What is my Capacity and my yearly savings?   Also estimated  
+
+ 
+
+Basically, You search your building, you see a number, and you feel the **potential**
+
+It looks comprehensive, right? Well... not quite.    
+
+Its potential estimation is based on 2D data that doesn't see the real world.  
+
+(Here is an advanced question: where the government should prioritize investment on?)
+
+ 
+???
 # Analysis of Barcelona’s Current Solar Dashboard
 
 ### 1. *Resource Potential*
@@ -403,7 +441,7 @@ Search for your building and discover its energy potential:
  --**Estimated Maintenance Cost:** Yearly operational expenses ($€/year$) 
 
  --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
- 
+
 ---
 class: inverse, center, middle
 # Research Question: 4 GAPs
@@ -439,43 +477,13 @@ The dashboard provides limited support for understanding future development pote
 3. Fit Barcelona into a broader policy context by providing additional policy-relevant layers.
 4. Add more ways to calculate and prioritise the huge potential rooftop area.
 
-???
-# Analysis of Barcelona’s Current Solar Dashboard
-
-### 1. *Resource Potential*
-
-  --**Incident Solar Radiation:** Currently provided as a qualitative rating (e.g., "Very Good"). 
-
-  --**Solar Irradiated Surface Area:** The total roof area receiving effective sunlight ($m^2$) 
-
-### 2. *Performance Data*
-
- --**Effective Usable Area:** Net rooftop area available for PV installation after general setbacks. 
-
- --**Installable Capacity:** Potential peak power output measured in $kW$. 
-
- --**Annual Energy Generation:** Estimated yearly electricity production in $kWh/year$ 
-
- --**Common Area Consumption Coverage:** Indicates that the generation covers more than $100\%$ of the building's shared areas' energy needs. 
-
-### 3. *Environmental Impact* 
-
- --**GHG Emissions Savings:** Measured in $kgCO_2eq/year$ to align with SDG 13 (Climate Action). 
-
-### 4. *Economic Assessment* 
-
- --**Estimated Investment Cost:** Initial capital expenditure ($€$) for the installation. 
-
- --**Estimated Maintenance Cost:** Yearly operational expenses ($€/year$) 
-
- --**Estimated Financial Savings:** Annual reduction in electricity bills ($€/year$). 
 
 
 
 ---
 class: reverse, center, middle
 # Dashboard Redesign   
-
+## How can we improve the operational system?
 --
 ### Static---Dynamic  
 
@@ -486,7 +494,19 @@ class: reverse, center, middle
 ### Isolated---Intergrated  
  
 ???
-"While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
+ICY:  
+
+So, we’ve identified the gaps, and we’ve built the technical solution. But what does that actually look like in practice?  How do we take a 2D map and turn it into a 3D strategy?  
+ 
+We’ve redesigned the operational system based on three fundamental shifts:    
+
+First: From Static to Dynamic.  (We don't just guess what's there; we see the current PV distribution in real-time.)   
+
+Second: From Theoretical to Practical. (We aren't giving you a 'theoretical' number; we are giving you the Net Potential Expansion Area—the high-fidelity truth of what can actually be built. )  
+
+Third: From Isolated to Integrated. (we transform this from an isolated energy map into an integrated decision tool that identifies where solar can actually solve social and economic problems.)  
+
+Yan: work flow:  "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 
 
 ---
@@ -644,6 +664,12 @@ Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proc
 ---
 class: inverse, center, middle
 # NEW!!! Dashboard Show Time
+
+???
+ICY:  
+All these complex algorithms are just the engine.   What we really need is the Steering Wheel.      
+We need a way to see all this data working together to make real decisions.   
+So, we took all those methodologies and we fused them into one single, powerful interface.  
 
 
 ---
@@ -814,6 +840,25 @@ function resetDL() {
 
 
 ???
+
+First, remember that 'Static Gap' we talked about? Here is the fix.  
+
+[(Our Step 1 uses that U-Net and OBIA workflow to scan the city in real-time. We aren't just looking at roofs; )  
+By identifying every single existing solar panel across Barcelona’s skyline, we establish a **high-precision** Baseline.  
+To unlock the city's true growth potential, we must first quantify how much PV is already on the roof--- To **reveal the real gap** for expansion.]  
+
+On the left, you can see our DL Segmentation Layers.  
+
+We are processing VHR (Very High Resolution) Satellite Imagery at 0.3m per pixel resolution. You can toggle between the raw input and our model's outcome to see how the AI highlights existing solar panels in red with HIgh precision.  
+
+But it’s not just a pretty map; it’s a data-driven engine. We’ve updated the system with three critical variable groups:  
+
+Real-Time Asset Detection: 
+
+Actual Capacity Info: current energy baseline   
+
+Model Configuration: using backbones handle feature extraction: shadows or dark rooftops  (high-fidelity detection that is robust against the 'visual traps' of the complex urban environment.)
+
 ResNet-50 (Residual Network):
 Swin-T (Swin Transformer - Tiny):
 We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
@@ -889,7 +934,7 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 <div class="nav-btns-lidar">
   <button onclick="swapL('images/03ShadeMor.png', 'Morning Shade', this)">🌅 Morning</button>
   <button onclick="swapL('images/031Shadenoon.png', 'Noon Shade', this)">☀️ Noon</button>
-    <button class="active-lidar" onclick="swapL('images/032Shadeeve.png', 'Evening Shade', this)">🌆 Evening</button>
+  <button class="active-lidar" onclick="swapL('images/032Shadeeve.png', 'Evening Shade', this)">🌆 Evening</button>
   <button onclick="swapL('images/04Slope.png', 'Slope Analysis', this)">📐 Slope</button>
   <button onclick="swapL('images/05Aspect.png', 'Aspect/Orientation', this)">🧭 Aspect</button>
   <button onclick="swapL('images/06Elevation.png', 'Elevation', this)">⛰️ Elevation</button>
@@ -921,7 +966,7 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 
   
 <details class="lidar-details">
-<summary>☀️ Effective Potential</summary>
+  <summary>☀️ Effective Potential</summary>
 
   - Solar Hours:  10h (0-24)
    
@@ -948,6 +993,32 @@ function swapL(path, name, btn) {
 </script>
 
 <div style="clear: both;"></div>
+
+???
+ICY:  
+Now, even with the best AI, a 2D image is still just a flat surface.
+Step 2 gives us the 'How much, exactly and where they can actually fit'  
+
+We focus on four key dimensions:
+shade
+slope
+aspect
+elevation
+
+Using LiDAR, our Ray-tracing filters out shadows and identifies Slope to subtract 3D obstacles like chimneys/HVAC UNITS.   
+
+Specifically, Notice the Aspect: because of Barcelona’s unique Superblock grid, in this context, solar panels are perfectly aligned—either North-South or orthogonal to the streets.  
+
+
+[Shade: Through Dynamic Ray-tracing, we simulate shadows from sunrise to sunset. This tells us exactly which roofs are blocked by taller buildings or trees, filtering out 'low-value' surfaces.
+
+Slope: It identifies if a roof is flat or pitched, and more importantly, it helps our algorithm detect and subtract 3D obstacles like chimneys or AC units to find the Net Usable Area.
+
+Aspect:  Look at the pattern here. Because of Barcelona’s unique Superblock (Cerdà Grid) layout, rooftop orientations are remarkably regular. Most panels are either aligned North-South or placed orthogonal to the street grid, perfectly integrating solar technology with the city’s iconic urban landscape.
+
+Elevation: This provides the vertical context, accounting for height differences that affect solar exposure and the 'Urban Canyon' effect.]
+
+
 
 
 ---
@@ -1189,9 +1260,23 @@ function swapAPI(path, name, btn) {
 ]
 ]
 
+???
+ICY:  
+Now, let’s bring it all together. we’ve fused our Step 1 detection and Step 2 3D geometry into this Smart Solar Analytical Engine.   
+
+On the left, It's a Conceptual image, our Integrated Solar Potential Map.   
+it’s a high-fidelity fusion of Satellite imagery, LiDAR point clouds, and Municipal APIs. We’ve moved from the city's 'Static Gap' to a Dynamic Dashboard that recognizes existing assets and precisely calculates the Net Gap for every single rooftop in Barcelona.  
+
+By treating our Step 3 context as a dynamic, stackable layer, we’ve solved the Future Gap, allowing the city to simulate growth and prioritize social equity. As you can see on the map, by layering this multi-source data —we can finally filter the noise and pinpoint exactly where High-Potential zones meet High-Priority needs.  
+
+To make this operational for policy, we’ve structured our findings into a comprehensive Data Schema.  
+
+Most importantly, we move to Assessment. By layering Solar Potential with Social Equity and Economic ROI, we finally answer the 'City’s Question': Where should we prioritize investment?  
+Let’s look at the Formula that powers this prioritization.  
+
 ---
 ```{css, echo=FALSE}
-/* 直接在页面内定义局部样式 */
+/* local arrangemnt */
 .formula-accordion { width: 100%; font-family: 'Arial', sans-serif; }
 
 .formula-accordion details {
@@ -1210,19 +1295,19 @@ function swapAPI(path, name, btn) {
   font-size: 1.1em;
 }
 
-/* 颜色方案直接内嵌 */
+/* color bar */
 .orange-panel { border-left: 8px solid #e67e22 !important; color: #e67e22; }
 .green-panel  { border-left: 8px solid #27ae60 !important; color: #27ae60; }
 .pink-panel   { border-left: 8px solid #e91e63 !important; color: #e91e63; }
 .blue-panel   { border-left: 8px solid #2980b9 !important; color: #2980b9; }
 
-/* 展开时的背景微调 */
+/* bg */
 .formula-accordion details[open] { background: #fcfcfc; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 
-/* 修正公式容器，确保不溢出 */
+/* overflow */
 .formula-content {
   padding: 10px 0;
-  color: #333; /* 内容恢复黑色，方便阅读 */
+  color: #333; 
 }
 ```
 
@@ -1264,104 +1349,19 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 .center[<img src="images/EEE.png" width="70%" style="border-radius:12px; border: 1px solid #ddd;">]
 
 
+
+
+
 ???
-> **From Static to Dynamic:** Unlike the legacy dashboard, our engine uses **Auto-Syncing APIs** that update as the satellite passes. We don't just tell citizens how much sun hits their roof; we tell the City Council where to invest to achieve the highest **environmental, economic, and social return.**
+ICY:  
+Finally, we translate our vision into a repeatable Mathematical Framework. To close the four GAPs, we’ve developed these four core synthesis formulas:  
 
-- Net Usable Area: $A_{roof} \times f_{obs}$ (Derived from LiDAR)
+From Static to Dynamic: We identify the True precise Net soalr Gap.  
 
- <br>
+From Theoretical to Practical: We turn 'potential' into Payback Period,  factoring in self-consumption rates and maintenance costs to prove financial feasibility to homeowners. Also,  We track the distance to Barcelona's 2030 targets in real-time, subtracting our detected stock from the city's carbon goals.    
 
-- **Stock Deduction:** $A_{exist}$ (Detected via RS)
+From Isolated to Integrated: By weighting the solar gap against income levels, ensuring energy justice,  We layer Social Equity data to tell the city not just where the sun is, but where the Energy Poverty is.  
 
-- **3D Shadow Mask:** $Shade_h$ (Binary hourly coefficient)
-
-- **Target:** 2030 Carbon goal (Barcelona Assembly)
-
-- **Emission Factor:** $EF_{grid}$ (approx. 0.21 for Spain)
-
-- **SSR:** Self-Sufficiency Ratio (On-site consumption)
-
-- **Savings:** $P_{buy}$ (€0.25/kWh) vs $P_{sell}$ (€0.10/kWh)
-
-- **Gap Score:** Technical priority ($E_{gap} / A_{roof}$)
-
-- **Income Factor:** Census-based household income normalization
-
-
-**Problem:** Legacy maps ignore "micro-obstacles" and existing PV stock, leading to a 20% overestimation of capacity.
-**Outcome:** Ensures investment is based on **physically available space**, not theoretical geometry.
-
-**Problem:** Barcelona has a 2030 Neutrality target, but lacks a "Live" compass to measure progress.
-**Outcome:** Transitions the dashboard into a **Policy Compass** that shows the exact "Distance to Target" for municipal leaders.
-
-**Problem:** Static ROI estimates fail to account for energy behavior and "Self-Sufficiency."
-**Outcome:** Proves the financial case. It explains why a **school** (high daytime use) has a faster ROI than a **residential building** (high evening use).
-
-**Problem:** Solar subsidies often benefit wealthy districts, leaving vulnerable areas in "Energy Poverty."
-**Outcome:** Solves the **Injustice Gap**. A high $SEI$ triggers a **"High Priority"** badge for 100% municipal funding, targeting "Solar-Ready, Income-Poor" zones.
-???
-## 3. Full API Schema (JSON)
-
-```json
-{
-  "Metadata": {
-    "Building_ID": "BCN_EIX_12345",
-    "Global_ID": "ES.CAT.BCN.4567890",
-    "Last_Updated": "2024-05-20T10:30:00Z",
-    "Data_Confidence_Score": 0.95
-  },
-
-  "Spatial_Geometry_EO": {
-    "Total_Roof_Area": 250.5,
-    "PV_Detected_Area": 45.0,
-    "Effective_Potential_Area": 120.5,
-    "Obstacle_Metrics": {
-      "Obstacle_Area": 37.5,
-      "Obstacle_Ratio": 0.15,
-      "Major_Obstacles": ["HVAC_Units", "Chimneys", "Parapet_Walls"]
-    },
-    "Technical_Specs": {
-      "Average_Tilt": 15.5,
-      "Azimuth_Orientation": 180,
-      "Solar_Hours_Annual": 1650
-    }
-  },
-
-  "Urban_Context_Attributes": {
-    "Roof_Classification": {
-      "Type": "Flat",
-      "Material": "Concrete",
-      "Is_Green_Roof": false
-    },
-    "Planning_Constraints": {
-      "Land_Use_Class": "Municipal",
-      "Heritage_Status": 0,
-      "District_Zoning": "Eixample_Conservation_Area"
-    }
-  },
-
-  "Energy_Performance_Monitoring": {
-    "Installed_System": {
-      "Estimated_Capacity_kWp": 9.0,
-      "Installation_Age_Category": "3-5_Years",
-      "Performance_Ratio_Est": 0.82
-    },
-    "Live_Flow_Pilot": {
-      "Current_Generation_kW": 12.5,
-      "Current_Building_Load_kW": 8.2,
-      "Self_Sufficiency_Ratio": 0.65,
-      "Grid_Export_kW": 4.3
-    }
-  },
-
-  "Policy_Impact_Indicators": {
-    "Solar_Gap_Score": 0.88,
-    "Social_Equity_Index": "High_Priority",
-    "Estimated_CO2_Offset_Annual": 4373.7,
-    "Economic_ROI_Years": 6.5
-  }
-}
-```
 
 ---
 # Data Feasibility Analysis
