@@ -409,7 +409,7 @@ BUT, let’s bring a critical eye to this:
 ???
 ICY:   
 
-On the left is the current Barcelona SOLAR Energy Mapping dashboard.     
+On the left is the current dashboard.       
 
 
 
@@ -432,10 +432,10 @@ The problem is Its only show the potential estimation  //
 class: inverse, center, middle
 # Research Question: 4 GAPs
 
-???
+??? 
 We’ve identified four critical GAPs: 
 
- fail to track real progress.   
+fail to track real progress.   
 
 ignores rooftop obstacles
 
@@ -722,7 +722,7 @@ class: inverse, center, middle
 ???
 ICY:  
   
-So, we took all those methodologies and we fused them into one single, powerful interface.  
+Let's  took all those methodologies and we fused them into one single, powerful interface.  
 
 ```{css, echo=FALSE}
 /* 7:3 */
@@ -1024,7 +1024,6 @@ function swapL2(path, displayName, btn) {
 
 ???
 ICY:  
-Then we move to 3D identification 
 
 Using Ray-tracing, that filters out shadows and identifies Slope to subtract 3D obstacles like chimneys/HVAC UNITS.   
 
@@ -1276,7 +1275,7 @@ function swapAPI(path, name, btn) {
 
 ???
 ICY:  
-Now, let’s bring it all together.  
+Here is the integrated final outcome 
 
 We recognizes existing assets and  
 precisely calculates the Net solar Gap and   
