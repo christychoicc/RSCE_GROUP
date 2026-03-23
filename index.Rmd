@@ -333,16 +333,6 @@ class: inverse, center, middle
 ## What is missing from the operational system?
 ### Analysis of Barcelona’s Current Solar Dashboard
 
-???
-ICY:  
-
-We have the political vision,But here’s the problem: WITHOUT a visualization system, we’re flying blind.  //  
-
-Do you want to know how much energy you can generate in your home?    
-
-That is exactly the question Barcelona’s official portal answers today.    
-
-BUT, let’s bring a critical eye to this:  
 
 --
 Do you want to know how much energy you can generate in your home? 
@@ -351,6 +341,14 @@ Search for your building and discover its energy potential:
 
 
 
+???
+ICY:  
+
+Do you want to know how much energy you can generate in your home?    
+
+That is exactly the question Barcelona’s official portal answers today.    
+
+BUT, let’s bring a critical eye to this:  
 
 
 ---
@@ -414,28 +412,20 @@ ICY:
 On the left is the current Barcelona SOLAR Energy Mapping dashboard.     
 
 
-And The information breaks down into four main buckets:    
 
 It answers the questions of  
 
-[solar]   Is my roof 'Very Good' or just 'Okay'?    
+How is the soalr potential What is my Capacity of my roof?  
 
-[ELec]   How many Energy will I get?  Estimated value       
+How many Energy will I get?     
 
-[Environ] how much you’ll save On carbon footprint reduction. OF course estimated     
-
-[Econ]  What is my Capacity and my yearly savings?   Also estimated  
-
- 
-
-Basically, You search your building, you see a number, and you feel the **potential**
-
-It looks comprehensive, right? Well... not quite.    
-
-Its only show the potential estimation which is based on 2D data that doesn't see in the real world.  //  
+how much you’ll save On carbon footprint.  
 
 
-(Here is an advanced question: where the government should prioritize investment on?)
+The problem is Its only show the potential estimation  //  
+
+
+
 
 
 ---
@@ -445,11 +435,11 @@ class: inverse, center, middle
 ???
 We’ve identified four critical GAPs: 
 
-**The data is 'Static'**— fail to track real progress.   
+ fail to track real progress.   
 
-**It’s also 'Imprecise'**— ignores rooftop obstacles, and overestimate potential value
+ignores rooftop obstacles
 
-and we are **missing the 'Social' and 'Future' context** needed for real policy action.
+and we are **missing the 'Social' and 'Future' context**
 
 
 --
@@ -470,13 +460,12 @@ class: inverse, center, middle
 ???
 We’ve identified four critical GAPs: 
 
-**The data is 'Static'**— fail to track real progress.   
+fail to track real progress.   
 
-**It’s also 'Imprecise'**— ignores rooftop obstacles, and overestimate potential value
+ignores rooftop obstacles
 
-and we are **missing the 'Social' and 'Future' context** needed for real policy action.
+and we are **missing the 'Social' and 'Future' context**
 
---
 
 ### 3 The "Integration" Gap:  
 The dashboard does not place Barcelona in a broader background context (e.g., comparable spatial and policy indicators).
@@ -497,11 +486,9 @@ The dashboard provides limited support for understanding future development pote
 
 
 ???
-SO, How can we deal with it?  
-
-By fusing Remote Sensing with Machine Learning, we precisely automate the audit and strip away the 3D noise.   
-
-Turn it to multi-layered policy tool that connects rooftop potential to urban reality.  
+BY fusing Remote Sensing with Machine Learning, we can get across the gaps and   
+ 
+Turn it to multi-layered policy tool that **connects rooftop potential to urban reality** 
 
 ---
 class: reverse, center, middle
@@ -510,26 +497,10 @@ class: reverse, center, middle
 
 ???
 ICY:  
-
-Now, we’ve identified the gaps, and we’ve built the technical solution. 
  
-We’ve redesigned the operational system based on three fundamental shifts:   // 
+SO We’ve redesigned the operational system based on three fundamental shifts:    
 
-???
-We’ve identified four critical GAPs: 
 
-**The data is 'Static'**— fail to track real progress.   
-
-**It’s also 'Imprecise'**— ignores rooftop obstacles, and overestimate potential value
-
-and we are **missing the 'Social' and 'Future' context** needed for real policy action.
-First: From Static to Dynamic.  
-
-Second: From Theoretical to Practical. 
-
-Third: From Isolated to Integrated. //
-
-Yan: work flow:  "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Ver66666y High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 --
 
 ### 1. Static---Dynamic  
@@ -920,21 +891,13 @@ function resetDL() {
 
 ???
 
-First,  Here is the fix of Static Gap.
+Here is the fix of Static Gap.
+
+We input Very High Resolution Satellite Imagery and our model's outcome to see **how the AI highlights existing** solar panels **in red**.  
 
 
-On the left, you can see our DL Segmentation Layers.  
+and updated the system with three critical variable groups: 
 
-We input Very High Resolutio Satellite Imagery and our model's outcome to see how the AI highlights existing solar panels in red with HIgh precision.  
-
-
-On the right panel, We’ve updated the system with three critical variable groups:  
-
-Real-Time Asset Detection: 
-
-Actual Capacity Info: current energy baseline   
-
-Model Configuration:
 
 ---
 
@@ -1061,23 +1024,15 @@ function swapL2(path, displayName, btn) {
 
 ???
 ICY:  
-Now, we move to 3D identification 
+Then we move to 3D identification 
 
-
-Using LiDAR, our Ray-tracing filters out shadows and identifies Slope to subtract 3D obstacles like chimneys/HVAC UNITS.   
-
+Using Ray-tracing, that filters out shadows and identifies Slope to subtract 3D obstacles like chimneys/HVAC UNITS.   
 
 We focus on four key dimensions:
 shade  
 slope  
 aspect  
 elevation  
-
-
-Specifically, Notice the Aspect: because of Barcelona’s unique Superblock grid, in this context, solar panels are perfectly aligned—either North-South or orthogonal to the streets.    
-
-
-
 
 
 ---
@@ -1323,14 +1278,11 @@ function swapAPI(path, name, btn) {
 ICY:  
 Now, let’s bring it all together.  
 
-On the left, It's our Integrated Solar Potential Map.    
- 
-We recognizes existing assets and precisely calculates the Net solar Gap and filter the noise and point exactly where **High-Potential zones meet High-Priority needs**.  
+We recognizes existing assets and  
+precisely calculates the Net solar Gap and   
+most importantly point exactly where **High-Potential zones meet High-Priority needs**.  
 
-To make this operational for policy, we’ve layering all the multi-source data and compile it into a comprehensive Data Schema.  
-
-Most importantly, we move forward to Assessment.Let’s look at the Formula that powers this prioritization.  
-
+To make this operational system for policy, we move forward to Assessment. 
 ---
 ```{css, echo=FALSE}
 /* local arrangemnt */
@@ -1411,16 +1363,9 @@ $$SEI = \text{Norm}(Score_{gap}) \times \left( 1 - \frac{\text{District\_Income}
 
 ???
 ICY:  
-Finally,  To close the four GAPs, we’ve developed these four core synthesis formulas:    
+Here is the underlying Formula that powers this prioritization.    
 
-We identify the True precise Net soalr Gap.    
-
-turn 'potential' into Payback Period, to show the financial feasibility   
-
-Also,  We track the distance to Barcelona's 2030 carbon target 
-
-Additionally, Ensuring energy justice, our layer can not only show where the sun is, but also where the Energy Poverty is.  
-
+It shows the financial feasibility   , help tracking the carbon target,  Ensuring energy justice  
 
 ---
 # Data Feasibility Analysis
