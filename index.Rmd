@@ -114,24 +114,28 @@ class: center, middle, title-slide
 ---
 # Barcelona
 .pull-left-wide[
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add barcelona irradiation picture
 knitr::include_graphics("images/solar_irradiation.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Spain Solar Irradiation (Source: <a href="https://www.sciencedirect.com/science/article/pii/S1364032111002620">Sumper et.al.(2011)</a>)
+Figure 1: Spain Solar Irradiation (Adapted from:  <a href="https://www.sciencedirect.com/science/article/pii/S1364032111002620">Sumper et.al.(2011)</a>)
 </p>
 ]
 .pull-right-narrow[
 
-- Located in **Northeastern Spain**, benefiting from a **Mediterranean climate**
+- Located in northeast Spain, benefiting from a Mediterranean climate
 
-- High solar irradiation of **~1,600–1,800 kWh/m²/year**
+- High solar irradiation of around 1,500–1,700 kWh/m²/year
 
-- Average solar radiation of **4.3 kWh/m²/day**, offering excellent conditions for rooftop PV deployment
+- Average solar radiation of around 4.12-4.56 kWh/m²/day, offering excellent conditions for rooftop PV installation
 
-- Among the highest solar resource cities in Europe, favourable conditions for solar energy generation year-round
+- Highest solar resource cities in Europe, favourable for solar energy generation year-round
 ]
+<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
+Source: <a href="https://pvgis.com/en/blog/solar-energy-spain-guide-installers"> PVGIS (2024)</a>, <a href="https://www.mdpi.com/2071-1050/9/2/247"> Jiménez-Torres (2017)</a> 
+</p>
+
 ---
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
@@ -154,12 +158,11 @@ Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/
 
 .clearfix[]
 <div style="background: #722f37; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
-  The gap between <span style="font-weight: bold;">solar potential</span> and <span style="font-weight: bold;">actual deployment</span> 
-  is not a resource problem but a matter for <span style="font-weight: bold;">targeting and implementation</span>.
+  Barcelona has the rooftop capacity for solar expansion, but current uptake remains far below that potential.
 </div>
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0;">
-Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Energia Barcelona(n.d.)</a>, <a href="https://netzerocities.app/resource-4178">Ajuntament de Barcelon(2024)</a> 
+Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Energia Barcelona(n.d.)</a>, <a href="https://netzerocities.app/resource-4178">Ajuntament de Barcelona(2024)</a> 
 </p>
 
 ---
@@ -245,7 +248,7 @@ Figure 7:Line of Action 5, recover terrace roofs and increase PV generation; Sou
 knitr::include_graphics("images/bcp9.png")
 ```
 <p style="font-size: 0.4em; text-align: center; margin-top: 0;">
-Figure 8: Line of Action 9, renewables in public space and municipal deployment; Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>
+Figure 8: Line of Action 9, renewables in public space and municipal installation; Source: <a href="https://www.barcelona.cat/barcelona-pel-clima/sites/default/files/climate_plan_maig.pdf">Ajuntament de Barcelona(2018)</a>
 </p>
 ]
 .pull-right-3[
@@ -280,10 +283,10 @@ Despite strong policy frameworks, the situation remains concerning...
 - Ageing housing stock; 81% of properties have a low energy performance rating (E, F, or G)
 - Energy poverty persists, energy bills exceed 10% of household income for many households
 - Renewable transition is slow; energy system still relies on centralised, non-renewable sources
-- A major Iberian power outage exposed the fragility of Spain's centralised energy system in April 2025, underlining the urgency of strengthening energy sources and distributed solar deployment
+- A major Iberian power outage exposed the fragility of Spain's centralised energy system in April 2025, underlining the urgency of strengthening energy sources and distributed solar installation
 
 <div style="background: #722f37; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em; margin-top: 1em;">
-The challenge is not the absence of policy or resources but <span style="font-weight: bold;">implementation</span>.
+The key challenges Barcelona faces are an ageing building stock, uneven solar installation, and energy vulnerability, highlighting the need for targeted implementation. 
 </div>
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0.5em;">
@@ -291,13 +294,13 @@ Sources: <a href="https://ajuntament.barcelona.cat/barcelonallibres/en/noticia/a
 </p>
 ---
 class: inverse, center, middle
-# What is missing from policy?
+# What is missing?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
 .clearfix[]
 
 <div style="background: #2c5f2e; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
-Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar deployment across Barcelona.
+Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar installation across Barcelona.
 </div>
 
 ---
@@ -478,14 +481,19 @@ The dashboard provides limited support for understanding future development pote
 class: reverse, center, middle
 # Dashboard Redesign   
 ## How can we improve the operational system?
---
-### Static---Dynamic  
+
 
 --
-### Theoretical---Practical  
+
+### 1. Static---Dynamic  
 
 --
-### Isolated---Intergrated  
+
+### 2. Theoretical---Practical  
+
+--
+
+### 3. Isolated---Intergrated  
  
 ???
 ICY:  
@@ -585,35 +593,68 @@ Figure 14: Result of SLIC (Source: <a href="https://jakubnowosad.com/ogh2021/#10
 </p>]
 
 ---
-# Methodology - Step2- Lidar Workflow
+# Methodology - Step2: Data
+<div style="height: 30px;"></div> 
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar5.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure15: Models (DSM and DTM) from ICGC  (Source: 
+  <a href=https://www.icgc.cat/en/Geoinformation-and-Maps/Data-and-products/Elevations/Territorial-elevations/Territorial-LiDAR> Institut Cartogràfic i Geològic de Catalunya (ICGC) </a>)
+</p>
+
+---
+# Methodology - Step2: Lidar Workflow
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/lidar1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
+---
+# Methodology- Step 2.1: Slope
+
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/slop3.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure16: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+</p>
 
 ---
-# Methodology -Step2-Solar Radiation
+# Methodology - Step2: Lidar Workflow
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/lidar4.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+</p>
+
+---
+# Methodology -Step2.2: Solar Radiation
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/lidar2.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
+Figure17: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
+
 
 ---
 
-```{r, echo=FALSE, out.width='90%', fig.align='center'}
+<div style="height: 30px;"></div> 
+
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+
 # Add picture
-knitr::include_graphics("images/lidar3.png")
+knitr::include_graphics("images/final.png")
 ```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: xxx (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
-</p>
 
 ---
 # Methodology - Step 3: Multispectral Indices
@@ -657,9 +698,6 @@ ICY:
 All these complex algorithms are just the engine.   What we really need is the Steering Wheel.      
 We need a way to see all this data working together to make real decisions.   
 So, we took all those methodologies and we fused them into one single, powerful interface.  
-
-
----
 
 ```{css, echo=FALSE}
 /* 7:3 */
@@ -1405,16 +1443,24 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 **Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
 
 ---
+class: inverse, center, middle
+# Project General Plan
+---
 # Budget (£500,000 total)
-- Work Package 1: Project Management & Scoping (10%) = £50,000
-- Work Package 2: EO Data & Infrastructure (15%) = £75,000
-- Work Package 3: Data Pipeline Development (40%) = £200,000
-- Work Package 4: Integration & Capacity Building (25%) = £125,000
-- Work Package 5: Contingency Fund (10%) = £50,000
+
+<div style="height: 30px;"></div> 
+
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+
+# Add picture
+knitr::include_graphics("images/budget.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 18: Sankey Diagram of Project Budget Allocation
 
 
 ---
-# Other needed to purchase / prepare
+# Other Purchases or Preparations
 - Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
 - Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
 - GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
@@ -1427,7 +1473,7 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 knitr::include_graphics("images/Timeline1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Timeline
+Figure19: Timeline
 </p>
 
 PM: Project Manager
@@ -1452,17 +1498,33 @@ IT/Dev: Web Developer
 - Data Accuracy and Uncertainty
 - Technical and Implementation Barriers
 - Policy, Regulatory and Institutional Barriers
+- Timeline Sensitivity
 ]
 .pull-right[
 **Ethics**
 - Transparency and Accountability
-- Data Usage Consent, Privacy Concerns
-- Safety standards for rooftop installations
+- Data Usage, Consent and Privacy
+- Social Equity Considerations
+- Safety Standards and Professional Responsibility
 ]
 ]
 
 .panel[.panel-name[Limitations]
+- Identified potential does not reflect economic or market viability
+  - Rooftops identified suitable for solar installation are based on size, shading, orientation, and location but does not reflect any financial considerations.
+  - Costs for installation, grid connection, and prevailing market conditions remain outside the scope.
+
+- Structural Stability and Load-Bearing Capacity
+  - Structural integrity of existing building roofs is sufficient to withstand the additional weight and wind loads imposed by solar panels and their mounting structures were not assessed
+  - A rooftop identified as suitable by the dashboard may still be rejected upon physical inspection. 
+  - Actual installation would require integration with structural engineering assessments and consultation with qualified professionals.
+
+<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
+References: <a href="https://www.energy.gov/eere/solar/solar-rooftop-potential"> Energy.gov. (n.d.)</a>
+</p>
 
 ]
 ]
 ---
+class: inverse, center, middle
+# Thank you !
