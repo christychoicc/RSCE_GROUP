@@ -611,7 +611,7 @@ Figure15: Models (DSM and DTM) from ICGC  (Source:
 knitr::include_graphics("images/lidar1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+Figure16: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
 ---
@@ -622,7 +622,7 @@ Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science
 knitr::include_graphics("images/slop3.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure16: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+Figure17: Calculate the slope (in degrees)  (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
 ---
@@ -632,7 +632,7 @@ Figure16: Calculate the slope (in degrees)  (Source: <a href="https://www.scienc
 knitr::include_graphics("images/lidar4.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
+Figure16: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"> Suomalainen et.al.,(2017) </a>)
 </p>
 
 ---
@@ -642,7 +642,7 @@ Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science
 knitr::include_graphics("images/lidar2.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure17: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
+Figure18: LiDAR Solar Detection (Source: <a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"> Els-cdn.com. (2017) </a>)
 </p>
 
 
@@ -1447,7 +1447,7 @@ class: inverse, center, middle
 knitr::include_graphics("images/budget.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 18: Sankey Diagram of Project Budget Allocation
+Figure 19: Sankey Diagram of Project Budget Allocation
 
 
 ---
@@ -1464,7 +1464,7 @@ Figure 18: Sankey Diagram of Project Budget Allocation
 knitr::include_graphics("images/Timeline1.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure19: Timeline
+Figure20: Timeline
 </p>
 
 PM: Project Manager
