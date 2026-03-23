@@ -810,25 +810,26 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 .lidar-details summary { font-weight: bold; cursor: pointer; color: #2980b9; }
 &lt;/style&gt;
 
+
 ## Step 2: LiDAR Precision Refinement
 
 .left-70[
 ### .center[3D Geometric Analysis]
 
 &lt;div class="img-container-lidar"&gt;
-  &lt;img id="lidar-display" src="images/032Shadeeve.png" width="100%"&gt;
+  &lt;img id="lidar-display-s2" src="images/032Shadeeve.png" width="100%"&gt;
 &lt;/div&gt;
 
 &lt;div class="nav-btns-lidar"&gt;
-  &lt;button onclick="swapL('images/03ShadeMor.png', 'Morning Shade', this)"&gt;🌅 Morning&lt;/button&gt;
-  &lt;button onclick="swapL('images/031Shadenoon.png', 'Noon Shade', this)"&gt;☀️ Noon&lt;/button&gt;
-  &lt;button class="active-lidar" onclick="swapL('images/032Shadeeve.png', 'Evening Shade', this)"&gt;🌆 Evening&lt;/button&gt;
-  &lt;button onclick="swapL('images/04Slope.png', 'Slope Analysis', this)"&gt;📐 Slope&lt;/button&gt;
-  &lt;button onclick="swapL('images/05Aspect.png', 'Aspect/Orientation', this)"&gt;🧭 Aspect&lt;/button&gt;
-  &lt;button onclick="swapL('images/06Elevation.png', 'Elevation', this)"&gt;⛰️ Elevation&lt;/button&gt;
+  &lt;button onclick="swapL2('images/03ShadeMor.png', 'Morning Shade', this)"&gt;🌅 Morning&lt;/button&gt;
+  &lt;button onclick="swapL2('images/031Shadenoon.png', 'Noon Shade', this)"&gt;☀️ Noon&lt;/button&gt;
+  &lt;button class="active-lidar" onclick="swapL2('images/032Shadeeve.png', 'Evening Shade', this)"&gt;🌆 Evening&lt;/button&gt;
+  &lt;button onclick="swapL2('images/04Slope.png', 'Slope Analysis', this)"&gt;📐 Slope&lt;/button&gt;
+  &lt;button onclick="swapL2('images/05Aspect.png', 'Aspect Analysis', this)"&gt;🧭 Aspect&lt;/button&gt;
+  &lt;button onclick="swapL2('images/06Elevation.png', 'Elevation Analysis', this)"&gt;⛰️ Elevation&lt;/button&gt;
 &lt;/div&gt;
 
-&lt;p id="lidar-caption" style="text-align:center; font-size:0.8em; color:#2980b9; margin-top:5px; font-weight:bold;"&gt;Current: 032Shadeeve.png&lt;/p&gt;
+&lt;p id="lidar-caption-s2" style="text-align:center; font-size:0.8em; color:#2980b9; margin-top:5px; font-weight:bold;"&gt;Current: Evening Shade&lt;/p&gt;
 ]
 
 .right-30[
@@ -837,45 +838,36 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 .scroll-box-lidar[
 
 &lt;details open class="lidar-details"&gt;
-  &lt;summary&gt;📐 LiDAR Analysis&lt;/summary&gt;
-  - Average_Tilt: `\(13.5^\circ\)`
-  
+&lt;summary&gt;📐 LiDAR Analysis&lt;/summary&gt;
+- Average Tilt: `\(13.5^\circ\)`
 &lt;br&gt;
-  
-  - Azimuth: `\(155^\circ\)` (180°=South) 
-  
+- Azimuth: `\(155^\circ\)` (180°=South)
 &lt;br&gt;
-
-  - Shadows: Dynamic ray-tracing for 3D shadow casting.
-  
-&lt;br&gt; 
-  
-  - Detection obstacles: 10cm+ vertical rooftop appurtenances.  
-
-  
-&lt;details class="lidar-details"&gt;
-  &lt;summary&gt;☀️ Effective Potential&lt;/summary&gt;
-
-  - Solar Hours:  10h (0-24)
-   
+- Shadows: Dynamic ray-tracing.
 &lt;br&gt;
-  
-  - Obstacle Ratio: 0.36 (0.00-1.00) 
-  
-&lt;br&gt;
-  
-  - Net Area: 12 `\(m^2\)`  
-
+- Detection: 10cm+ rooftop obstacles.
 &lt;/details&gt;
 
-]
-]
+&lt;details class="lidar-details"&gt;
+&lt;summary&gt;☀️ Effective Potential&lt;/summary&gt;
+- Solar Hours: 10h (0-24)
+&lt;br&gt;
+- Obstacle Ratio: 0.36
+&lt;br&gt;
+- Net Area: 12 `\(m^2\)`
+&lt;/details&gt;
 
-&lt;script&gt;
-function swapL(path, name, btn) {
-  document.getElementById('lidar-display').src = path;
-  document.getElementById('lidar-caption').innerText = "Layer: " + path.split('/').pop();
-  document.querySelectorAll('.nav-btns-lidar button').forEach(b =&gt; b.classList.remove('active-lidar'));
+] ] &lt;script&gt;
+
+function swapL2(path, displayName, btn) {
+  var img = document.getElementById('lidar-display-s2');
+  var caption = document.getElementById('lidar-caption-s2');
+  
+  if(img) img.src = path;
+  if(caption) caption.innerText = "Current: " + displayName;
+
+  var buttons = btn.parentElement.querySelectorAll('button');
+  buttons.forEach(b =&gt; b.classList.remove('active-lidar'));
   btn.classList.add('active-lidar');
 }
 &lt;/script&gt;

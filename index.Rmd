@@ -947,25 +947,26 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 .lidar-details summary { font-weight: bold; cursor: pointer; color: #2980b9; }
 ```
 
+
 ## Step 2: LiDAR Precision Refinement
 
 .left-70[
 ### .center[3D Geometric Analysis]
 
 <div class="img-container-lidar">
-  <img id="lidar-display" src="images/032Shadeeve.png" width="100%">
+  <img id="lidar-display-s2" src="images/032Shadeeve.png" width="100%">
 </div>
 
 <div class="nav-btns-lidar">
-  <button onclick="swapL('images/03ShadeMor.png', 'Morning Shade', this)">🌅 Morning</button>
-  <button onclick="swapL('images/031Shadenoon.png', 'Noon Shade', this)">☀️ Noon</button>
-  <button class="active-lidar" onclick="swapL('images/032Shadeeve.png', 'Evening Shade', this)">🌆 Evening</button>
-  <button onclick="swapL('images/04Slope.png', 'Slope Analysis', this)">📐 Slope</button>
-  <button onclick="swapL('images/05Aspect.png', 'Aspect/Orientation', this)">🧭 Aspect</button>
-  <button onclick="swapL('images/06Elevation.png', 'Elevation', this)">⛰️ Elevation</button>
+  <button onclick="swapL2('images/03ShadeMor.png', 'Morning Shade', this)">🌅 Morning</button>
+  <button onclick="swapL2('images/031Shadenoon.png', 'Noon Shade', this)">☀️ Noon</button>
+  <button class="active-lidar" onclick="swapL2('images/032Shadeeve.png', 'Evening Shade', this)">🌆 Evening</button>
+  <button onclick="swapL2('images/04Slope.png', 'Slope Analysis', this)">📐 Slope</button>
+  <button onclick="swapL2('images/05Aspect.png', 'Aspect Analysis', this)">🧭 Aspect</button>
+  <button onclick="swapL2('images/06Elevation.png', 'Elevation Analysis', this)">⛰️ Elevation</button>
 </div>
 
-<p id="lidar-caption" style="text-align:center; font-size:0.8em; color:#2980b9; margin-top:5px; font-weight:bold;">Current: 032Shadeeve.png</p>
+<p id="lidar-caption-s2" style="text-align:center; font-size:0.8em; color:#2980b9; margin-top:5px; font-weight:bold;">Current: Evening Shade</p>
 ]
 
 .right-30[
@@ -974,45 +975,36 @@ We chose ResNet-50 or Swin-T to balance inference speed and accuracy.
 .scroll-box-lidar[
 
 <details open class="lidar-details">
-  <summary>📐 LiDAR Analysis</summary>
-  - Average_Tilt: $13.5^\circ$
-  
+<summary>📐 LiDAR Analysis</summary>
+- Average Tilt: $13.5^\circ$
 <br>
-  
-  - Azimuth: $155^\circ$ (180°=South) 
-  
+- Azimuth: $155^\circ$ (180°=South)
 <br>
-
-  - Shadows: Dynamic ray-tracing for 3D shadow casting.
-  
-<br> 
-  
-  - Detection obstacles: 10cm+ vertical rooftop appurtenances.  
-
-  
-<details class="lidar-details">
-  <summary>☀️ Effective Potential</summary>
-
-  - Solar Hours:  10h (0-24)
-   
+- Shadows: Dynamic ray-tracing.
 <br>
-  
-  - Obstacle Ratio: 0.36 (0.00-1.00) 
-  
-<br>
-  
-  - Net Area: 12 $m^2$  
-
+- Detection: 10cm+ rooftop obstacles.
 </details>
 
-]
-]
+<details class="lidar-details">
+<summary>☀️ Effective Potential</summary>
+- Solar Hours: 10h (0-24)
+<br>
+- Obstacle Ratio: 0.36
+<br>
+- Net Area: 12 $m^2$
+</details>
 
-<script>
-function swapL(path, name, btn) {
-  document.getElementById('lidar-display').src = path;
-  document.getElementById('lidar-caption').innerText = "Layer: " + path.split('/').pop();
-  document.querySelectorAll('.nav-btns-lidar button').forEach(b => b.classList.remove('active-lidar'));
+] ] <script>
+
+function swapL2(path, displayName, btn) {
+  var img = document.getElementById('lidar-display-s2');
+  var caption = document.getElementById('lidar-caption-s2');
+  
+  if(img) img.src = path;
+  if(caption) caption.innerText = "Current: " + displayName;
+
+  var buttons = btn.parentElement.querySelectorAll('button');
+  buttons.forEach(b => b.classList.remove('active-lidar'));
   btn.classList.add('active-lidar');
 }
 </script>
