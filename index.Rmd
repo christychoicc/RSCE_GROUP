@@ -90,7 +90,10 @@ style_extra_css(css = list(
    # 3 columns
    ".pull-left-3" = list("float" = "left", "width" = "30%"),
    ".pull-middle-3" = list("float" = "left", "width" = "30%", "margin-left" = "5%", "margin-right" = "5%"),
-   ".pull-right-3" = list("float" = "right", "width" = "30%")
+   ".pull-right-3" = list("float" = "right", "width" = "30%"),
+   # bottom-push layout
+   ".bottom-note" = list("position" = "absolute","bottom" = "1em","left" = "1em", "right" = "1em"),
+   ".clearfix" = list("clear" = "both", "display" = "block")
 ))
 xaringanExtra::use_panelset()
 ```
@@ -110,22 +113,37 @@ class: center, middle, title-slide
 ### `r fa("github", fill = "white")` [GitHub Repository](https://github.com/christychoicc/RSCE_GROUP)
 ---
 # Barcelona
-### High Solar Potential, Low Energy Self-sufficiency
 .pull-left-wide[
-- **Ideal conditions**: High solar exposure, dense flat roofscape, existing policy commitments
-- **Potential**: 7.9M m² suitable roof area, generation potential of 1,191 GWh/year around 60% of domestic electricity demand
-- **Low realisation**: City produces just 1% of its own energy, only 5% of households have solar installations in 2022
-- **Core Issue**: High location and technical potential, but low deployment
-]
-.pull-right-narrow[
-```{r, echo=FALSE, out.width='80%', fig.align='center'}
-# Add EU sunshine picture
-knitr::include_graphics("images/eu_sunshine_arrow.jpg")
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add barcelona irradiation picture
+knitr::include_graphics("images/solar_irradiation.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Levels of sunshine across Europe (Source: <a href="https://quierosol.com/en/solar-panels/installation/barcelona">Quiero Sol.(2021)</a>)
+Figure 1: Spain Solar Irradiation (Source: <a href="https://www.sciencedirect.com/science/article/pii/S1364032111002620">Sumper et.al.(2011)</a>)
 </p>
-```{r, echo=FALSE, out.width='80%', fig.align='center'}
+]
+.pull-right-narrow[
+
+- Located in **Northeastern Spain**, benefiting from a **Mediterranean climate**
+
+- High solar irradiation of **~1,600–1,800 kWh/m²/year**
+
+- Average solar radiation of **4.3 kWh/m²/day**, offering excellent conditions for rooftop PV deployment
+
+- Among the highest solar resource cities in Europe, favourable conditions for solar energy generation year-round
+]
+---
+# Barcelona
+### High Solar Potential, Low Energy Self-sufficiency
+.pull-left-wide[
+- **Potential**: 7.9M m² suitable roof area, where flat and slightly inclined terraces account for 67% of total roof surface; Generation potential of 1,191 GWh/year, around 60% of domestic electricity demand
+
+- **Low realisation**: City produces just **1%** of its own energy, only **5%** of households have solar installations
+
+- **Core Issue**: Barcelona has potential but the rooftops are under utilised for the city 
+]
+.pull-right-narrow[
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
 knitr::include_graphics("images/solar_panels_barca.webp")
 ```
@@ -133,50 +151,16 @@ knitr::include_graphics("images/solar_panels_barca.webp")
 Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/jul/24/barcelona-school-residents-create-solar-energy-community">the Guardian (2022)</a>)
 </p>
 ]
----
-# Key Problems and Issues
-Barcelona has high rooftop solar potential, but remains undeveloped at local and regional scale...
-.panelset[
-.panel[.panel-name[Low Local Energy Self-Sufficiency]
-- Barcelona produces approximately 1% of the energy it consumes on its territory
 
-- Only 5% of households have solar energy installations
-
-- Renewable energy generation remains underdeveloped at both local and regional scale
+.clearfix[]
+<div style="background: #722f37; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
+  The gap between <span style="font-weight: bold;">solar potential</span> and <span style="font-weight: bold;">actual deployment</span> 
+  is not a resource problem but a matter for <span style="font-weight: bold;">targeting and implementation</span>.
+</div>
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0;">
-Source: <a href="https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/134731/2/Climate%20City%20Contracte%20of%20Barcelona%20%28Annexes%29.pdf">Ajuntament de Barcelona(n.d.)</a>
+Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Energia Barcelona(n.d.)</a>, <a href="https://netzerocities.app/resource-4178">Ajuntament de Barcelon(2024)</a> 
 </p>
-]
-
-.panel[.panel-name[Under Utilised Rooftop Potential]
-- 7.9 million m² of available roof area
-
-- Potential to generate 1,191 GWh/year (approximately ~60% of domestic electricity consumption)
-
-- Flat and slightly inclined terraces account for 67% of total roof surface
-
-- Current installations are concentrated in public and municipal buildings
-
-<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
-Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Barcelona Energia(n.d.)</a>
-</p>
-]
-
-.panel[.panel-name[Social and Building Constraints]
-- 81% of properties have a low energy performance rating (E, F, or G)
-
-- Ageing housing stock: most residential buildings predate modern energy efficiency standards
-
-- Energy poverty, energy bills account for over 10% of household income for many Barcelona residents
-
-- Low-income households in poorer neighborhoods are least likely to invest in solar installation, compounding spatial inequality
-
-<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
-Source: <a href="https://ajuntament.barcelona.cat/barcelonallibres/en/noticia/ageing-housing-with-poor-energy-efficiency-but-a-huge-potential-for-improvement-1188771">Ajuntament de Barcelona(n.d.)</a>
-</p>
-]
-]
 
 ---
 # Policy Goals and Agenda
@@ -244,7 +228,6 @@ Source: <a href="https://www.miteco.gob.es/es/prensa/ultimas-noticias/2024/septi
 ]
 
 .panel[.panel-name[Municipal Policy]
-Barcelona 2030 Agenda localises SDGs into city scale targets and indicators as a municipal framework. Key policy objectives includes the Barcelona Climate Plan and Strategy for Energy Transition. 
 .pull-left-wide[
 **Barcelona Climate Plan 2018-2030**
 .pull-left-3[
@@ -276,35 +259,46 @@ Figure 9: Line of Action 12,green jobs, self-employment and climate-related econ
 ]
 ]
 .pull-right-narrow[
-**Strategy for Energy Transition**
+**Strategy for Energy Transition**: increase renewable electricity generation by 10% and PV capacity fivefold, promote and financially support installations
 
-Increasing electricity generation by 10% with renewables across city, increase PV capacity fivefold,support energy refurbishment, promote and financially support installations
-<p style="font-size: 0.4em; text-align: left; margin-top: 0;">
-Source: <a href="https://ajuntament.barcelona.cat/ecologiaurbana/en/what-we-do-and-why/energy-and-climate-change/strategy-energy-transition">Ajuntament de Barcelona(n.d.)</a>, <a href="https://www.barcelona.cat/barcelona-pel-clima/en/pla-clima/pla-transicio-energetica">Barcelona for Climate(2025)</a>
-</p>
-]
-]
-.panel[.panel-name[Municipal Incentives]
-Tax Incentives
-- The Barcelona City Council offers tax incentives for solar installations
-
-  - Up to 50% reduction on property tax (IBI) for first 3 years after installation
-  
-  - 95% reduction on construction and installation works tax (ICIO)
-  
-  - 50% reduction on business activity tax (IAE) for related economic activities
+**Tax Incentives**: up to 50% IBI on property, 95% ICIO on construction and installation and 50% IAE on business tax reduction for solar installations
 
 <p style="font-size: 0.4em; text-align: left; margin-top: 0;">
-Source: <a href="https://www.energia.barcelona/en/generate-energy/generate-energy/grants-and-allowances">Barcelona Energia(n.d.)</a>
+Source: <a href="https://ajuntament.barcelona.cat/ecologiaurbana/en/what-we-do-and-why/energy-and-climate-change/strategy-energy-transition">Ajuntament de Barcelona(n.d.)</a>, <a href="https://www.barcelona.cat/barcelona-pel-clima/en/pla-clima/pla-transicio-energetica">Barcelona for Climate(2025)</a>, <a href="https://www.energia.barcelona/en/generate-energy/generate-energy/grants-and-allowances">Barcelona Energia(n.d.)</a>
 </p>
+]
 ]
 ]
 
 ---
+# Key Problems and Issues
+
+Despite strong policy frameworks, the situation remains concerning...
+
+- Renewable energy generation remains underdeveloped at both local and regional scale
+- Current installations are concentrated in public and municipal buildings
+- Ageing housing stock; 81% of properties have a low energy performance rating (E, F, or G)
+- Energy poverty persists, energy bills exceed 10% of household income for many households
+- Renewable transition is slow; energy system still relies on centralised, non-renewable sources
+- A major Iberian power outage exposed the fragility of Spain's centralised energy system in April 2025, underlining the urgency of strengthening energy sources and distributed solar deployment
+
+<div style="background: #722f37; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em; margin-top: 1em;">
+The challenge is not the absence of policy or resources but <span style="font-weight: bold;">implementation</span>.
+</div>
+
+<p style="font-size: 0.6em; text-align: left; margin-top: 0.5em;">
+Sources: <a href="https://ajuntament.barcelona.cat/barcelonallibres/en/noticia/ageing-housing-with-poor-energy-efficiency-but-a-huge-potential-for-improvement-1188771">Ajuntament de Barcelona (n.d.)</a>, <a href="https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/134731/2/Climate%20City%20Contracte%20of%20Barcelona%20%28Annexes%29.pdf">Ajuntament de Barcelona(n.d.)</a>, <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Barcelona Energia(n.d.)</a>, <a href="https://ajuntament.barcelona.cat/barcelonallibres/en/noticia/ageing-housing-with-poor-energy-efficiency-but-a-huge-potential-for-improvement-1188771">Ajuntament de Barcelona(n.d.)</a>
+</p>
+---
 class: inverse, center, middle
-#What is missing from policy?
+# What is missing from policy?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
+.clearfix[]
+
+<div style="background: #2c5f2e; color: white; padding: 10px 16px; border-radius: 6px; font-size: 0.9em;">
+Therefore, we aim to address this implementation gap using Earth Observation to improve identification and prioritisation of rooftop solar deployment across Barcelona.
+</div>
 
 ---
 class: inverse, center, middle
@@ -513,45 +507,47 @@ Yan: work flow:  "While Barcelona’s current dashboard relies on static geometr
 # Workflow
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
-knitr::include_graphics("images/workflow_hstep.png")
+knitr::include_graphics("images/workflow_final.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Model Workflow
-</p>
-
----
-# Methodology - Step 1: U-net
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/U-net1.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
+Figure 10: Model Workflow
 </p>
 
 ---
 # Methodology - Step 1.1: U-net
 
-**1. Contraction Path (Encoder)**: Captures contextual information to address the "What" (Feature extraction of photovoltaic signatures).
-        
-**2. Expansion Path (Decoder)**: Achieves precise localization to address the "Where" (Restoration of spatial resolution).
-        
-**3. Skip Connections**: Facilitates cross-layer feature fusion to eliminate boundary blurring, ensuring pixel-level accuracy for rooftop edges.
-        
-**4. Symmetrical Design**: Harmonizes global semantic understanding with localized topological details.
+### **1. Symmetric Encoder-Decoder Structure**: 
 
-**5. End-to-End Extraction** 
-  - Enables automated identification of PV arrays within complex urban environments without manual intervention.
-        
-**6. Interference Robustness**
-  - Effectively distinguishes PV panels from spectrally similar distractors, such as dark rooftops, glass facades, and shadows.
-        
-**7. High IoU Performance**
-  - Demonstrates superior Intersection over Union (IoU) metrics, showing high congruence with ground-truth annotations.
-        
-**8. Data Implementation** 
-  - Integrated with OBIA post-processing to generate policy-ready Shapefile vector databases for governmental decision-making.
+<ul>
+  <li><b>Contracting Path (Encoder)</b>: Captures multi-scale spectral and geometric features of PV panels through deep feature extraction.
+  
+  <li><b>Extensive Path (Decoder)</b>: Recovers feature maps to original spatial resolution, enabling centimeter-level precision in localization.
+</ul>
 
+### **2. Cross-Scale Skip Connections**
+        
+### **3. Robustness in Complex Urban Environments**
+
+### **4. End-to-End High-Efficiency Mapping**
+
+---
+# Methodology - Step 1.1: U-net
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/U-net.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 11: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
+</p>
+---
+# Methodology - Step 1.1: U-net
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/U-net1.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 12: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/11/14/6524"> Pérez-González et.al.,(2021) </a>) 
+</p>
 
 ---
 # Methodology - Step 1.2: OBIA
@@ -569,33 +565,24 @@ Figure: Results of U-net model (Source: <a href="https://www.mdpi.com/2076-3417/
 
 ---
 # Methodology- Step 1.2: OBIA
+
+.pull-left[
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
-knitr::include_graphics("images/OBIA_1.png")
+knitr::include_graphics("images/OBIA.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Workflow of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
-</p>
+Figure 13: Workflow of OBIA model
+</p>]
 
----
-# Methodology - Step 1.2: OBIA
+.pull-right[
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 # Add picture
-knitr::include_graphics("images/OBIA_2.png")
+knitr::include_graphics("images/OBIA_4.png")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Process of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
-</p>
-
----
-# Methodology - Step 1: OBIA
-```{r, echo=FALSE, out.width='90%', fig.align='center'}
-# Add picture
-knitr::include_graphics("images/OBIA_3.png")
-```
-<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure: Results of OBIA model (Source: <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12262/122620K/Combining-OBIA-approach-and-machine-learning-algorithm-to-extract-photovoltaic/10.1117/12.2636451.full?tab=ArticleLinkCited"> Ladisa et.al.,(2022) </a>)
-</p>
+Figure 14: Result of SLIC (Source: <a href="https://jakubnowosad.com/ogh2021/#10"> Ladisa et.al.,(2022) </a>)
+</p>]
 
 ---
 # Methodology - Step2- Lidar Workflow
@@ -1367,21 +1354,28 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 # Data Feasibility Analysis
 *Evaluating the strengths and limitations of our Earth Observation data sources.*
 
-.panelset[
-.panel[.panel-name[🤖 Step 1: PV Mapping]
+### 🤖 Step 1: PV Mapping
+
 **Main data source: Airbus Pléiades Neo (30 cm)**
 
 **Advantage:** 30 cm RGB imagery plus infrared and Near Infrared (NIR) bands for PV vs. non-PV discrimination.
 
 **Disadvantage:** Higher acquisition cost.
 
+--
+
 **Supplementary data source: Cartographic and Geological Institute of Catalonia (ICGC)**
+
 **Advantage:** 25 cm RGB plus infrared imagery to improve classification detail and robustness.
 
 **Disadvantage:** Does not provide NIR, so generalisation may require careful transfer learning.
-]
 
-.panel[.panel-name[⛰️ Step 2: Potential Layers]
+---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
+
+### ⛰️ Step 2: Potential Layers
+
 **Main data source: ICGC LiDAR (Terrain & Shadows)**
 
 **Advantage:** 
@@ -1389,22 +1383,26 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 2. Supports shadow modelling and incidence-geometry correction for solar potential calculations.
 
 **Disadvantage (Assumption):** LiDAR-derived features may be insufficient alone for complex rooftop cases, so ML + rule-based corrections are needed for final obstacle handling and PV mapping.
-]
 
-.panel[.panel-name[🌍 Step 3: Context & Indicators]
+---
+# Data Feasibility Analysis
+*Evaluating the strengths and limitations of our Earth Observation data sources.*
+
+### 🌍 Step 3: Context & Indicators
+
 **Main data source: Sentinel-2**
 
 **Advantage:** 10 m imagery and derived indices (RGB, NDVI, NDBI, NDWI) available since 2015.
 
 **Disadvantage:** Limited spatial detail for rooftop-scale signatures; cloud availability issues.
 
+--
+
 **Supplementary data source: Sentinel-3**
 
 **Advantage:** Complementary thermal/heat-map style context at low cost (useful for broader environmental interpretation).
 
 **Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
-]
-]
 
 ---
 # Budget (£500,000 total)
@@ -1424,9 +1422,25 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 ---
 # Project Timeline
 
-https://qiyuechen1202.github.io/CASA0023_group/?panelset4=social2&panelset5=heat-hazard%253A-lst2&panelset6=low2&panelset7=risks-%2526-ethic-considerations-2#26
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/Timeline1.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure: Timeline
+</p>
 
+PM: Project Manager
 
+GA: Geospatial Analyst
+
+SDA: Senior Data Analyst
+
+EC: Environmental Consultant
+
+BCN: Barcelona City Council
+
+IT/Dev: Web Developer
 
 ---
 # Risk, Ethics and Limitations
