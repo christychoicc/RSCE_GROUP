@@ -1452,12 +1452,14 @@ IT/Dev: Web Developer
 - Data Accuracy and Uncertainty
 - Technical and Implementation Barriers
 - Policy, Regulatory and Institutional Barriers
+- Timeline Sensitivity
 ]
 .pull-right[
 **Ethics**
 - Transparency and Accountability
-- Data Usage Consent, Privacy Concerns
-- Safety standards for rooftop installations
+- Data Usage, Consent and Privacy
+- Equity
+- Safety Standards and Professional Responsibility
 ]
 ]
 
@@ -1465,4 +1467,7 @@ IT/Dev: Web Developer
 
 ]
 ]
+---
+class: inverse, center, middle
+# Thank you !
 ---
