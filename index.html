@@ -494,41 +494,62 @@ Figure15: Models (DSM and DTM) from ICGC  (Source:
   &lt;a href=https://www.icgc.cat/en/Geoinformation-and-Maps/Data-and-products/Elevations/Territorial-elevations/Territorial-LiDAR&gt; Institut Cartogràfic i Geològic de Catalunya (ICGC) &lt;/a&gt;)
 &lt;/p&gt;
 
+???
+Now, we move on to **Step 2**, which focuses on the LiDAR workflow. 
+
+we **downloaded** the DEM data from the ICGC platform.
+
 ---
 # Methodology - Step2: Lidar Workflow
 &lt;img src="images/lidar1.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure15: LiDAR Workflow (Source: &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"&gt; Suomalainen et.al.,(2017) &lt;/a&gt;)
+Figure16: LiDAR Workflow (Source: &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"&gt; Suomalainen et.al.,(2017) &lt;/a&gt;)
 &lt;/p&gt;
+
+???
+**This step has two main parts: analyzing the rooftops and calculating the** solar radiation
+
+Then, we clipped the data to **cut out** streets and trees, **leaving just** the rooftops.
 
 ---
 # Methodology- Step 2.1: Slope
 
 &lt;img src="images/slop3.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure16: Calculate the slope (in degrees)  (Source: &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"&gt; Suomalainen et.al.,(2017) &lt;/a&gt;)
+Figure17: Calculate the slope (in degrees)  (Source: &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"&gt; Suomalainen et.al.,(2017) &lt;/a&gt;)
 &lt;/p&gt;
+
+???
+For these clipped rooftops, we calculate the slope and aspect for each location. and fin out the rooftops that are physically unsuitable for installation.
 
 ---
 # Methodology - Step2: Lidar Workflow
 &lt;img src="images/lidar4.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure15: LiDAR Workflow (Source: &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"&gt; Suomalainen et.al.,(2017) &lt;/a&gt;)
+Figure16: LiDAR Workflow (Source: &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0960148117303324"&gt; Suomalainen et.al.,(2017) &lt;/a&gt;)
 &lt;/p&gt;
+
+???
+Next, we turn the rooftops into points.  Using the Point Solar Radiation tool in ArcGIS,  calculate the exactly annual solar radiation for each spot.
 
 ---
 # Methodology -Step2.2: Solar Radiation
 &lt;img src="images/lidar2.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure17: LiDAR Solar Detection (Source: &lt;a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"&gt; Els-cdn.com. (2017) &lt;/a&gt;)
+Figure18: LiDAR Solar Detection (Source: &lt;a href="https://ars.els-cdn.com/content/image/1-s2.0-S0960148117303324-gr7.jpg"&gt; Els-cdn.com. (2017) &lt;/a&gt;)
 &lt;/p&gt;
 
+???
+This picture easily shows us the areas shaded by trees or taller buildings.
 
 ---
 
 &lt;div style="height: 30px;"&gt;&lt;/div&gt; 
 
 &lt;img src="images/final.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+
+???
+Finally, we subtract existing panels, shaded areas, and unsuitable slopes from the total rooftop area. This gives us the rooftops with true solar potential.
 
 ---
 # Methodology - Step 3: Multispectral Indices
@@ -1317,8 +1338,10 @@ class: inverse, center, middle
 
 &lt;img src="images/budget.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure 18: Sankey Diagram of Project Budget Allocation
+Figure 19: Sankey Diagram of Project Budget Allocation
 
+???
+Over half of our budget supports the data infrastructure and our core algorithms. **The rest goes into building the final platform and daily management.** To ensure we deliver the product, but still keep a safe buffer for any risks.
 
 ---
 # Other Purchases or Preparations
@@ -1331,7 +1354,7 @@ Figure 18: Sankey Diagram of Project Budget Allocation
 
 &lt;img src="images/Timeline1.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
-Figure19: Timeline
+Figure20: Timeline
 &lt;/p&gt;
 
 PM: Project Manager
