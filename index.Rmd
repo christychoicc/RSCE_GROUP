@@ -1408,11 +1408,13 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 
 ---
 # Budget (£500,000 total)
-- Work Package 1: Project Management & Scoping (10%) = £50,000
-- Work Package 2: EO Data & Infrastructure (15%) = £75,000
-- Work Package 3: Data Pipeline Development (40%) = £200,000
-- Work Package 4: Integration & Capacity Building (25%) = £125,000
-- Work Package 5: Contingency Fund (10%) = £50,000
+
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+# Add picture
+knitr::include_graphics("images/budget.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 18: Sankey Diagram of Project Budget Allocation
 
 
 ---
