@@ -162,7 +162,7 @@ Figure 2: Solar Panels (Source: <a href="https://www.theguardian.com/world/2022/
 </div>
 
 <p style="font-size: 0.6em; text-align: left; margin-top: 0;">
-Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Energia Barcelona(n.d.)</a>, <a href="https://netzerocities.app/resource-4178">Ajuntament de Barcelon(2024)</a> 
+Source: <a href="https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate">Energia Barcelona(n.d.)</a>, <a href="https://netzerocities.app/resource-4178">Ajuntament de Barcelona(2024)</a> 
 </p>
 
 ---
@@ -294,7 +294,7 @@ Sources: <a href="https://ajuntament.barcelona.cat/barcelonallibres/en/noticia/a
 </p>
 ---
 class: inverse, center, middle
-# What is missing from policy?
+# What is missing?
 ### Barcelona has a strong policy commitment, but lack of a city-scale operational system to identify where rooftop solar should be prioritised to maximum social, economic, and environmental benefit!
 
 .clearfix[]
@@ -615,7 +615,7 @@ Figure15: LiDAR Workflow (Source: <a href="https://www.sciencedirect.com/science
 </p>
 
 ---
-# Methodology- Step 2.1: slop
+# Methodology- Step 2.1: Slope
 
 ```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add picture
