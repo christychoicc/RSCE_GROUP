@@ -737,7 +737,7 @@ Finally, we subtract existing panels, shaded areas, and unsuitable slopes from t
 
 ---
 class: inverse, center, middle
-# NEW!!! Dashboard Show Time
+# NEW Dashboard!
 
 ???
 ICY:  

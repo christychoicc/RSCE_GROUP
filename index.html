@@ -308,18 +308,20 @@ Search for your building and discover its energy potential:
 ???
 ICY:   
 
-On the left is the current Barcelona SOLAR Energy Mapping dashboard.  
+On the left is the current Barcelona SOLAR Energy Mapping dashboard.    
 
 
-And  The information breaks down into four main buckets:  
+And  The information breaks down into four main buckets:    
 
-The Olar Resource Potential:  [] Is my roof 'Very Good' or just 'Okay'?  
+It answers the questions of  
 
-The electric Performance:   [] How many Energy will I get?  estimated value     
+[solar] Is my roof 'Very Good' or just 'Okay'?    
 
-The Environment Impact:   []]how much you’ll save On carbon footprint reduction. OF course estimated   
+[ELec]]   How many Energy will I get?  estimated value       
 
-The Economics Assessment:  [] What is my Capacity and my yearly savings?   Also estimated  
+[Environ] how much you’ll save On carbon footprint reduction. OF course estimated     
+
+[Econ] What is my Capacity and my yearly savings?   Also estimated  
 
  
 
@@ -332,43 +334,19 @@ Its only show the potential estimation which is based on 2D data that doesn't se
 
 (Here is an advanced question: where the government should prioritize investment on?)
 
- 
-# Analysis of Barcelona’s Current Solar Dashboard
-
-### 1. *Resource Potential*
-
-  --**Incident Solar Radiation:** Currently provided as a qualitative rating (e.g., "Very Good"). 
-
-  --**Solar Irradiated Surface Area:** The total roof area receiving effective sunlight (`\(m^2\)`) 
-
-### 2. *Performance Data*
-
- --**Effective Usable Area:** Net rooftop area available for PV installation after general setbacks. 
-
- --**Installable Capacity:** Potential peak power output measured in `\(kW\)`. 
-
- --**Annual Energy Generation:** Estimated yearly electricity production in `\(kWh/year\)` 
-
- --**Common Area Consumption Coverage:** Indicates that the generation covers more than `\(100\%\)` of the building's shared areas' energy needs. 
-
-### 3. *Environmental Impact* 
-
- --**GHG Emissions Savings:** Measured in `\(kgCO_2eq/year\)` to align with SDG 13 (Climate Action). 
-
-### 4. *Economic Assessment* 
-
- --**Estimated Investment Cost:** Initial capital expenditure (`\(€\)`) for the installation. 
-
- --**Estimated Maintenance Cost:** Yearly operational expenses (`\(€/year\)`) 
-
- --**Estimated Financial Savings:** Annual reduction in electricity bills (`\(€/year\)`). 
 
 ---
 class: inverse, center, middle
 # Research Question: 4 GAPs
 
 ???
-We’ve identified four critical GAPs: The data is 'Static'—it’s just a snapshot with no way to track real progress. It’s also 'Imprecise'—by ignoring rooftop obstacles like chimneys, we are overestimating potential by 20% because we ignore rooftop obstacles, and we are missing the 'Social' and 'Future' context needed for real policy action.
+We’ve identified four critical GAPs: 
+
+**The data is 'Static'**—it’s just a snapshot with no way to track real progress.   
+
+**It’s also 'Imprecise'**—by ignoring rooftop obstacles like chimneys, we are overestimating potential by 20% because we ignore rooftop obstacles,    
+
+and we are **missing the 'Social' and 'Future' context** needed for real policy action.
 
 
 --
@@ -385,8 +363,15 @@ Small obstacles (chimneys, HVAC) are often ignored, leading to a 20% overestimat
 ---
 class: inverse, center, middle
 # Research Question: 4 GAPs
+
 ???
-We’ve identified four critical GAPs: The data is 'Static'—it’s just a snapshot with no way to track real progress. It’s also 'Imprecise'—by ignoring rooftop obstacles like chimneys, we are overestimating potential by 20% because we ignore rooftop obstacles, and we are missing the 'Social' and 'Future' context needed for real policy action.
+We’ve identified four critical GAPs: 
+
+**The data is 'Static'**—it’s just a snapshot with no way to track real progress.   
+
+**It’s also 'Imprecise'**—by ignoring rooftop obstacles like chimneys, we are overestimating potential by 20% because we ignore rooftop obstacles,    
+
+and we are **missing the 'Social' and 'Future' context** needed for real policy action.
 --
 
 ### 3 The "Integration" Gap:  
@@ -408,7 +393,11 @@ The dashboard provides limited support for understanding future development pote
 
 
 ???
-By fusing Remote Sensing with Machine Learning, we automate the audit and strip away the 3D noise. We’re turning a flat map into a multi-layered policy tool that finally connects rooftop potential to urban reality.
+SO, How can we deal with it?  
+
+By fusing Remote Sensing with Machine Learning and LIDAR, we precisely automate the audit and strip away the 3D noise.   
+
+Also we turning a flat map into a multi-layered policy tool that finally connects rooftop potential to urban reality.  
 
 ---
 class: reverse, center, middle
@@ -418,17 +407,17 @@ class: reverse, center, middle
 ???
 ICY:  
 
-So, we’ve identified the gaps, and we’ve built the technical solution. But what does that actually look like in practice?  How do we take a 2D map and turn it into a 3D strategy?  
+Now, we’ve identified the gaps, and we’ve built the technical solution. 
  
 We’ve redesigned the operational system based on three fundamental shifts:    
 
-First: From Static to Dynamic.  (We don't just guess what's there; we see the current PV distribution in real-time.)   
+First: From Static to Dynamic.  
 
-Second: From Theoretical to Practical. (We aren't giving you a 'theoretical' number; we are giving you the Net Potential Expansion Area—the high-fidelity truth of what can actually be built. )  
+Second: From Theoretical to Practical. 
 
-Third: From Isolated to Integrated. (we transform this from an isolated energy map into an integrated decision tool that identifies where solar can actually solve social and economic problems.)  
+Third: From Isolated to Integrated. //
 
-Yan: work flow:  "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Very High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
+Yan: work flow:  "While Barcelona’s current dashboard relies on static geometric estimations (e.g., gross rooftop area), our Smart Plugin integrates VHR (Ver66666y High Resolution) imagery and LiDAR point clouds. By deploying Deep Learning segmentation, we verify 'true availability' by filtering out micro-obstacles (HVAC, chimneys) and existing PV panels, thereby providing a high-fidelity mapping of the Net Potential Expansion Area."
 --
 
 ### 1. Static---Dynamic  
@@ -611,12 +600,11 @@ Finally, we subtract existing panels, shaded areas, and unsuitable slopes from t
 
 ---
 class: inverse, center, middle
-# NEW!!! Dashboard Show Time
+# NEW Dashboard!
 
 ???
 ICY:  
-All these complex algorithms are just the engine.   What we really need is the Steering Wheel.      
-We need a way to see all this data working together to make real decisions.   
+  
 So, we took all those methodologies and we fused them into one single, powerful interface.  
 
 &lt;style type="text/css"&gt;
