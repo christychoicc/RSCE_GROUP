@@ -119,7 +119,7 @@ class: center, middle, title-slide
 knitr::include_graphics("images/solar_irradiation.jpg")
 ```
 <p style="font-size: 0.6em; text-align: center; margin-top: 0;">
-Figure 1: Spain Solar Irradiation (Source: <a href="https://www.sciencedirect.com/science/article/pii/S1364032111002620">Sumper et.al.(2011)</a>)
+Figure 1: Spain Solar Irradiation (Adapted from:  <a href="https://www.sciencedirect.com/science/article/pii/S1364032111002620">Sumper et.al.(2011)</a>)
 </p>
 ]
 .pull-right-narrow[
@@ -1411,6 +1411,9 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 **Disadvantage:** Coarser resolution; used for city-scale context rather than rooftop-level detection.
 
 ---
+class: inverse, center, middle
+# Project General Plan
+---
 # Budget (£500,000 total)
 - Work Package 1: Project Management & Scoping (10%) = £50,000
 - Work Package 2: EO Data & Infrastructure (15%) = £75,000
@@ -1420,7 +1423,7 @@ From Isolated to Integrated: By weighting the solar gap against income levels, e
 
 
 ---
-# Other needed to purchase / prepare
+# Other Purchases or Preparations
 - Compute resources for training/inference (GPU/cloud) and data preprocessing (mosaicking, orthorectification).
 - Ground-truth validation and annotation effort for PV vs. non-PV rooftop cases (to calibrate confidence scoring).
 - GIS/workflow tooling for converting EO outputs into policy-ready vector/raster layers and API inputs.
@@ -1464,12 +1467,24 @@ IT/Dev: Web Developer
 **Ethics**
 - Transparency and Accountability
 - Data Usage, Consent and Privacy
-- Equity
+- Social Equity Considerations
 - Safety Standards and Professional Responsibility
 ]
 ]
 
 .panel[.panel-name[Limitations]
+- Identified potential does not reflect economic or market viability
+  - Our dashboard identifies rooftops suitable for solar installation based on size, shading, orientation, and location but does not reflect any financial considerations of installation.
+  - Installation costs, ownership barriers, grid connection fees, and prevailing market conditions remain outside the scope.
+
+- Structural Stability and Load-Bearing Capacity
+  - Structural integrity of existing building roofs is sufficient to withstand the additional weight and wind loads imposed by solar panels and their mounting structures were not assessed
+  - A rooftop identified as suitable by the dashboard may still be rejected upon physical inspection. 
+  - Full deployment would require integration with structural engineering assessments and consultation with qualified professionals.
+
+<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
+References: <a href="https://www.energy.gov/eere/solar/solar-rooftop-potential"> Energy.gov. (n.d.)</a>
+</p>
 
 ]
 ]
