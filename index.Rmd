@@ -114,7 +114,7 @@ class: center, middle, title-slide
 ---
 # Barcelona
 .pull-left-wide[
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
 # Add barcelona irradiation picture
 knitr::include_graphics("images/solar_irradiation.jpg")
 ```
@@ -124,14 +124,18 @@ Figure 1: Spain Solar Irradiation (Source: <a href="https://www.sciencedirect.co
 ]
 .pull-right-narrow[
 
-- Located in **Northeastern Spain**, benefiting from a **Mediterranean climate**
+- Located in northeast Spain, benefiting from a Mediterranean climate
 
-- High solar irradiation of **~1,600–1,800 kWh/m²/year**
+- High solar irradiation of around 1,500–1,700 kWh/m²/year
 
-- Average solar radiation of **4.3 kWh/m²/day**, offering excellent conditions for rooftop PV deployment
+- Average solar radiation of around 4.12-4.56 kWh/m²/day, offering excellent conditions for rooftop PV deployment
 
-- Among the highest solar resource cities in Europe, favourable conditions for solar energy generation year-round
+- Highest solar resource cities in Europe, favourable for solar energy generation year-round
 ]
+<p style="font-size: 0.6em; text-align: left; margin-top: 0;">
+Source: <a href="https://pvgis.com/en/blog/solar-energy-spain-guide-installers"> PVGIS (2024)</a>, <a href="https://www.mdpi.com/2071-1050/9/2/247"> Jiménez-Torres (2017)</a> 
+</p>
+
 ---
 # Barcelona
 ### High Solar Potential, Low Energy Self-sufficiency
@@ -1474,4 +1478,3 @@ IT/Dev: Web Developer
 ---
 class: inverse, center, middle
 # Thank you !
----
